@@ -1,0 +1,78 @@
+@function getGridWidth($columnWidth, $gutterWidth, $grid, $gutter-style) {
+    @if ($gutter-style=='opposite'){
+        @return ($columnWidth+$gutterWidth)*($grid - 1) + $columnWidth;
+    }
+    @else if($gutter-style=='split'){
+        @return ($columnWidth+$gutterWidth)*$grid;
+    }
+    @else {
+        @return 0;
+    }
+}
+
+@function column-span-static($span, $base, $grid:false, $gutter:false){
+    
+    $innerPrecent: column-span($span, 1, $grid, $gutter);  
+    @return $base*($innerPrecent/100%);
+}
+
+@function gutter-span-static($base, $gutter:false, $grid: false){
+    @return $base*(gutter-span($gutter, $grid)/100%);
+}
+
+@function grid-span-static($span, $base, $grid:false, $gutter:fals){
+    @return column-span-static($span, $base, $grid, $gutter)+gutter-span-static;
+}
+
+
+$mobile-first:false;
+$breakpoint-default-feature: max-width;
+
+$columnFixedWidth: 67.5px;
+$gutterFixedWidth: 30px;
+$columns: 12;
+$gutter-style: 'split';
+
+$gutter: $gutterFixedWidth/$columnFixedWidth;
+$gridWidth: getGridWidth($columnFixedWidth, $gutterFixedWidth, $columns, $gutter-style); 
+
+@include sgs-change('debug', true);
+@include sgs-change('output', 'float');
+@include add-grid($columns);
+@include add-gutter($gutter);
+@include add-gutter-style($gutter-style);
+
+
+
+/*@include layout(4, .25, 'float', 'split'){
+    .test {
+        height: 100px;
+        border: 1px solid black;
+        --width_gutter: gutter-span();
+        --width_column_1_1: column-span(1,1);
+        --width_column_1_2: column-span(1,2);
+        --width_column_1_4: column-span(1,4);
+        --width_column_2_4: column-span(2,4);
+        --width_column_2_1: column-span(2,1);
+        --width_column_2_2: column-span(2,2);
+        --width_column_2_3: column-span(2,3);
+        --width_grid_1_1: grid-span(1,1);
+        --width_grid_1_2: grid-span(1,2);
+        --width_grid_1_4: grid-span(1,4);
+        --width_grid_2_1: grid-span(2,1);
+        --width_grid_2_2: grid-span(2,2);
+        --width_grid_2_3: grid-span(2,3);
+        --width_grid_2_4: column-span(2,4);
+        @include background-grid();
+    }
+    .block:first-child {
+        @include grid-span(2);
+        height:inherit;
+        border:1px solid red;
+    }
+    .block:last-child {
+        height: inherit;
+        border:1px solid yellow;
+        @include float-span(2, 'last'); 
+    }
+}*/

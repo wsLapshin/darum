@@ -1,0 +1,118 @@
+$linkColor: #999999; //grey
+$activeLinkColor : #35a6e3; //blue link
+$accentColor: #35a6e3; //blue
+$accentOrange: #ff9c5e;
+$grey: #e6e6e6;
+
+* {
+    @include box-sizing(border-box);
+}
+
+::selection {
+  background: $accentOrange; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: $accentOrange; /* Gecko Browsers */
+}
+
+body {
+    line-height: 1;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    @include link-colors($linkColor, $activeLinkColor);
+}
+h1,h2,h3,h4,h5,h6 {
+    margin: 0px;
+}
+h1 {
+    font-size: 34px;
+    line-height: 1; 
+}
+
+h2 {
+    font-size: 26px;
+    line-height: (36px/26px);  
+}
+
+h3 {
+    font-size: 22px;
+    line-height: (30px/22px);  
+}
+
+h4, h5 {
+    font-size: 16px;
+    line-height: (24px/16px);
+    text-transform:uppercase;
+}
+
+h6 {
+    font-size: 14px;
+    line-height: (24px/14px);
+}
+
+p {
+    font-size: 16px;
+    line-height:(24/16);
+}
+
+b, strong {
+    font-weight: 500;
+}
+
+i, em {
+    font-style:italic;
+}
+
+sub, sup {
+    font-size: 11px;
+}
+
+sub {
+    vertical-align: sub;
+}
+
+sup {
+    vertical-align:super;
+}
+
+pre {
+    font-size: 14px;
+    letter-spacing: 4px;
+    font-weight: 200;
+}
+
+input, textarea {
+    outline: none;
+}
+
+textarea {
+    background: #f7f7f7;
+    border: none;
+    resize: none;
+    font:inherit;
+    font-style: italic;
+    padding: 10px;
+}
+
+
+.btn {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 48px;
+    padding: 0 36px;
+}
+
+.btn-default,
+.btn-primary:hover{
+    color: #1a1a1a;
+    background: $grey;
+}
+
+.btn-primary,
+.btn-default:hover{
+    color: #fff;
+    background: $accentOrange;
+}

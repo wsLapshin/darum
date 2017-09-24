@@ -1,0 +1,81 @@
+$socialWidgetHeight : 26px;
+
+.social {
+    position: relative;
+    height: $socialWidgetHeight;
+}
+
+.social-likes,
+.social-rss {
+    position: absolute;
+}
+
+.social-likes{
+    top: -7px;
+    width: 140px;
+    left: 0; 
+    height: inherit;
+}
+
+.social-likes>.heart {
+    display: inline-block;
+    width: 36px;
+    height: inherit;
+    border-right: 1px solid $grey; 
+    text-align: left;
+    padding: 8px 0 0 1px;
+}
+
+
+.social-likes>.social-karma {
+    display: inline-block;
+    width: 75px;
+    margin-left: 16px;
+    vertical-align: middle;
+}
+
+.social-karma>* {
+    margin-right: 10px;
+}
+
+.social-rss {
+    width: 180px;
+    right:0;
+    top: 2px;
+    text-align: right;
+    font-size: 14px;
+}
+
+.social-rss>* {
+    vertical-align:middle;
+}
+
+.social-rss>.fa-envelope {
+    margin-left: 13px;
+    font-size: 18px;
+}
+
+.social-share {
+    text-align:center;
+}
+
+.social-share>a{
+    vertical-align: middle;
+    font-size: 20px;
+    line-height: $socialWidgetHeight;
+    text-align: center;
+    padding: 0px 12px;
+    border-right: 1px solid $grey; 
+}
+.social-share>a:last-child {
+    border-right: none;
+}
+.social-share i.fa-vk {
+    color: #3a6d99;
+}
+.social-share i.fa-facebook {
+    color: #466db2;
+}
+.social-share i.fa-twitter{
+    color: #00adeb;
+}

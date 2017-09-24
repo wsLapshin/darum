@@ -1,0 +1,52 @@
+body {
+    padding-top: 21px;
+
+}
+
+.l-container
+{
+    max-width: $gridWidth; 
+    margin: auto;
+    /*@include background-grid();*/
+}
+
+.l-twocolumns{
+    /*padding-top: 36px;*/
+    @include clearfix();
+    /*@include background-grid();*/
+}
+
+.l-contentbar,
+article
+{
+    @include grid-span(8);
+    position: relative;
+}
+
+.l-contentbar:after,
+article:after {
+    content: '';
+    width: 1px;
+    height: 100%;
+    border-right: 1px solid $grey;
+    display:block;
+    position: absolute;
+    top: 0;
+    right: ( -1 * gutter-span() );
+}
+
+.l-contentbar-allarticles {
+    @include grid-span(9);
+}
+
+aside
+{
+    @include grid-span(4);
+}
+
+.l-aside-allarticles {
+    @include grid-span(3);
+}
+
+
+

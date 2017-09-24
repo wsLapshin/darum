@@ -1,0 +1,60 @@
+.header {
+    line-height: 32px;
+}
+
+.header:after {
+    content:'';
+    display:block;
+    clear:both;
+}
+
+.header>a {
+    @include grid-span(3);
+    padding-left: 39px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsSAAALEgHS3X78AAAC2UlEQVRYw8WXzU8TURTFf+9NGcGCNCl+sIAgrYkxAY1BIYbNhB26cGOiLvgfSCbBnexU0kT+BRcGFy5cKAsT0p0mxhjSJkYjhIRNFSV8VCyZtvNczLQptNM+obFn2XvnnvPuTO87V6AJJ5noBG4CFnAFOA90++EdYA1YBpLAG9Oyf+vUFRrEcWAGuAeENfXuAQvAE9OyV44kwEkm2oFZYBowdTt1uAwwDzw0LXtfW4CTTMSAl3itbgaWgTu1ulElwEkmrgKLwNkmkZfwA5g0LftToAD/fb8DTlc93t6N6IkjQu11WVRhH/VrBfZ3aoV/AjcqO1EW4CQTHcB74HJVmyL9GEO3EUab1lFVMU8x/Qq1vV4rnALGTMvOAYQqArO1yAFk3AIhKXx9i/v9M0IVaxMLA3nuEsaFCWTcovjxWa20YZ9rBkD6p4/hfe3VRQERjuJmUqhMOpAcQKgiKpPGzaQQ4SgquEnT/uv2BAAPgMD+CiFQ2Q2t9gOo7AZC1B0xbT4n0kkmuvCGTKOy2gI0c+86yUSXBCbRn3DNRBiYlMBEC8hLmJB4X2WrMCyBWAsFxCRwqoUCTsnj1zgeJLDbQv5dCay2UMCqxLscWoWUBJZaKGBJ4pmPvYapxgn9snq5f4BFaVp2FnjRKFv2DqFkYz+gZBuyd0hHwIJp2dmSH3gETFHnRpSdPYSuTXlup1gIOHkI0RNHdkQakeeBx+Bfx6ZlrwJPa2UKQOVznoiOCEbfCMbAGCI6CLiAi4gOYgyMYfSNlMlVPlfP88+XbFnlIJol4B/hZtLVP+a2cDfXcDfXILel94yHlM9VPmAZQaZUIZD915FnLiJC9VcEVXBwN77grn9AVPuCYFNaIeK/2vKqu8BPGKe5AyoFjB8mrynAF7ECjAJzeOvVUeH4NUaDdsR/WU7vAyc1iXPAc2DOtOxv9RIbCqgQ0gnc4uB6HvHD2xxcz1/rrud/AQzM4ShyPRaUAAAAAElFTkSuQmCC') center left no-repeat;
+    font-size:11px;
+    @include link-colors(#fabf8c, $activeLinkColor);
+}
+
+
+.header>.logo {
+    @include grid-span(6);
+    text-align: center;
+}
+
+.header>.logo>span {
+    display:block;
+}
+
+.header>.logo>.logo-head {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 24px;
+    padding-right: 4px;
+    position: relative;
+    z-index:2;
+}
+
+.header>.logo>.logo-intro {
+    text-align: center;
+    font-size: 69px;
+    letter-spacing: -1.8px;
+    line-height: 1;
+    text-transform: lowercase;
+    margin-top: -17px;
+}
+
+.header>.login {
+    @include grid-span(3);
+    text-align: right;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+}
+
+.header>.login>a {
+    font-size: inherit;
+    display:inline-block;
+    margin-left: 17px;
+    @include link-colors(#333333, $activeLinkColor);
+}
+

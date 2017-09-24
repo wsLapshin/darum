@@ -1,0 +1,86 @@
+$fa-font-path: "../fonts/FontAwesome";
+@import "fonts/fontawesome/font-awesome";
+
+@font-face {
+    font-family: 'bradobrei';
+    src: url('../fonts/Bradobrei/bradobrei-webfont.eot');
+    src: url('../fonts/Bradobrei/bradobrei-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Bradobrei/bradobrei-webfont.woff2') format('woff2'),
+         url('../fonts/Bradobrei/bradobrei-webfont.woff') format('woff'),
+         url('../fonts/Bradobrei/bradobrei-webfont.ttf') format('truetype'),
+         url('../fonts/Bradobrei/bradobrei-webfont.svg#bradobreiregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'open_sans';
+    src: url('../fonts/OpenSans/opensans-bold-webfont.eot');
+    src: url('../fonts/OpenSans/opensans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans/opensans-bold-webfont.woff2') format('woff2'),
+         url('../fonts/OpenSans/opensans-bold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans/opensans-bold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans/opensans-bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'open_sans';
+    src: url('../fonts/OpenSans/opensans-extrabold-webfont.eot');
+    src: url('../fonts/OpenSans/opensans-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans/opensans-extrabold-webfont.woff2') format('woff2'),
+         url('../fonts/OpenSans/opensans-extrabold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans/opensans-extrabold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans/opensans-extrabold-webfont.svg#open_sansextrabold') format('svg');
+    font-weight: 900;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sans';
+    src: url('../fonts/OpenSans/opensans-light-webfont.eot');
+    src: url('../fonts/OpenSans/opensans-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans/opensans-light-webfont.woff2') format('woff2'),
+         url('../fonts/OpenSans/opensans-light-webfont.woff') format('woff'),
+         url('../fonts/OpenSans/opensans-light-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans/opensans-light-webfont.svg#open_sanslight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sans';
+    src: url('../fonts/OpenSans/opensans-regular-webfont.eot');
+    src: url('../fonts/OpenSans/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans/opensans-regular-webfont.woff2') format('woff2'),
+         url('../fonts/OpenSans/opensans-regular-webfont.woff') format('woff'),
+         url('../fonts/OpenSans/opensans-regular-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans/opensans-regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'open_sans';
+    src: url('../fonts/OpenSans/opensans-semibold-webfont.eot');
+    src: url('../fonts/OpenSans/opensans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans/opensans-semibold-webfont.woff2') format('woff2'),
+         url('../fonts/OpenSans/opensans-semibold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans/opensans-semibold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans/opensans-semibold-webfont.svg#open_sanssemibold') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'fira';
+    src: url('../fonts/FiraSans/firasans-regular-webfont.eot');
+    src: url('../fonts/FiraSans/firasans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/FiraSans/firasans-regular-webfont.woff2') format('woff2'),
+         url('../fonts/FiraSans/firasans-regular-webfont.woff') format('woff'),
+         url('../fonts/FiraSans/firasans-regular-webfont.ttf') format('truetype'),
+         url('../fonts/FiraSans/firasans-regular-webfont.svg#fira_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

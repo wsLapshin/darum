@@ -1,0 +1,76 @@
+.comments {
+   margin-top: 37px; 
+}
+
+.comments>h3 {
+    text-align:center;
+}
+
+.comment-list {
+    /*margin-top: 37px;*/
+}
+
+.comment-list>ul {
+    margin-left: 72px;
+}
+
+.comment-list>li.comment-block {
+    margin-top: 25px;
+}
+
+.comment-block {
+    display: block;
+    position: relative;
+    padding: 24px 0 0 72px;
+}
+
+.comment-block>.avatar {
+    display:block;
+    width: 49px;
+    position: absolute;
+    top:0;
+    left:0;
+    @include border-radius(20px);
+}
+
+.comment-block .name {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.comment-block.comment-send .name{
+    text-transform: uppercase;
+}
+
+.comment-block .date {
+    font-size: 10px;
+    color: #b3b3b3;
+}
+
+.comment-block .social-karma {
+    float:right;
+}
+
+.comment-block>p {
+    margin-top:20px;
+}
+
+.comment-block>.comment-answer {
+    font-size: 14px;
+    margin-top: 14px;
+    display:inline-block;
+}
+
+.comment-send {
+    margin-top:17px;
+}
+
+.comment-send>textarea {
+    width: 100%;
+    margin-top: 9px;
+    height: 98px;
+}
+
+.comment-send>.btn {
+    margin-top: 10px;
+}

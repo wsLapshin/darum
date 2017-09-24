@@ -1,0 +1,152 @@
+article {
+    margin-top: 36px;
+}
+
+article>main {
+    padding:0 24px;
+}
+
+article .topimage {
+    position: relative;
+    text-align: center;
+    z-index: -1;
+}
+
+.ccm-edit-mode article .topimage {
+    z-index: 3;
+}
+
+.article-header {
+    width: column-span-static(6,$gridWidth);
+    margin: -144px auto 0;
+}
+
+.article-header>.social  {
+    margin-top: 17px;
+}
+
+/*Typo*/
+.article-text {
+    padding: 37px 0px 34px;
+    clear: left;
+
+    img {
+        max-width: 100%;
+    }
+
+    h1,h2,h3,h4,h5,h6,.title-thin {
+        margin: 32px auto 11px;
+
+    }
+
+    .title-caps,
+    .title-thin,
+    .title-caps-bold{
+        font-size: 16px;
+        line-height: 1.5;
+        text-transform: uppercase;
+    }
+
+    .title-caps-bold {
+        font-weight: 500;
+    }
+
+    .title-thin {
+        font-weight: 200;
+    }
+
+    p, ul, ol {
+        margin-bottom: 11px;
+    }
+
+    blockquote {
+        line-height: (36px/28px);
+        width: 84%;
+        font-size: 28px;
+        padding: 34px 5%;
+        margin: 25px auto;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        text-align: center;
+    }
+
+    address {
+        color: #ff8c46;
+    }
+
+    ul>li:before {
+        vertical-align: middle;
+        content: "\f107";
+        color: #35a6e3;
+        margin-right: 8px;
+    }
+
+    ol {
+        list-style: decimal inside;
+    }
+
+    li {
+        font-size: 14px;
+        line-height:(24/16);
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    table>caption {
+        text-transform: uppercase;
+        font-weight: 500;
+        margin: 10px 0;
+    }
+
+    table th {
+        font-weight: 500;
+    }
+
+    table th,
+    table td {
+        border: 1px solid $grey;
+        padding: 6px 12px;
+    }
+
+    table td {
+        font-weight: 200;
+    }
+
+    .image-caption {
+        font-style: italic;
+        font-size: 14px;
+    }
+
+    .content-editor-image-center {
+        text-align: center;
+    }
+
+    .content-editor-image-left {
+        float: left;
+    }
+
+    .content-editor-image-right {
+        float: right;
+    }
+}
+
+.article-links {
+    border-top: 1px solid $grey;
+    border-bottom: 1px solid $grey;
+    padding: 42px 0 45px;
+    margin: 25px 24px 0;
+    text-align: center;
+}
+
+.article-links>h6 {
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.article-links>ul>li {
+    display: block;
+    margin-top: 8px; 
+}
