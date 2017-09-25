@@ -6,7 +6,8 @@ $thumbWidth: 98px;
     /*border: $flexslider-border;*/
     position: relative;
     zoom: 1;
-    visibility: hidden;
+    /*visibility: hidden;*/
+    display:none;
 
     @include border-radius( $flexslider-border-radius );
     @include box-shadow( $flexslider-box-shadow-x-axis, $flexslider-box-shadow-y-axis, $flexslider-box-shadow-blur, $flexslider-box-shadow-color, $flexslider-box-shadow-inset);
