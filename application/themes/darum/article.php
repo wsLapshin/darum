@@ -596,7 +596,7 @@ use Concrete\Core\Localization\Service\Date ?>
     </div>
     <?php $this->inc('elements/common/js.php'); ?>
     <?php Loader::element('footer_required') ?>    
-    <script type="text/javascript" src="<?php echo $this->getThemePath() ?>/js/vendor/jquery.flexslider-min.js" ></script>
+    <!--<script type="text/javascript" src="<?php echo $this->getThemePath() ?>/js/vendor/jquery.flexslider-min.js" ></script>
     <script type="text/javascript">
         (function () {
 
@@ -640,6 +640,6 @@ use Concrete\Core\Localization\Service\Date ?>
                 flexslider.vars.maxItems = gridSize;
             });
         }());
-    </script>
+    </script>-->
 </body>
 <?php $this->inc('elements/common/doctype_bot.php'); ?>
