@@ -40,19 +40,6 @@
     display:block;
 }
 
-.allarticles-content-category,
-.allarticles-content-category a {
-    font-weight: 500;
-    font-size: 10px;
-    text-transform: uppercase;
-    color: $accentColor;
-    font-family:open_sans !important;
-}
-
-.allarticles-content-category a:hover {
-    color: #999999;
-}
-
 .allarticles-content-header {
     font-size: 18px;
     line-height: (24/18);
@@ -78,9 +65,4 @@
     overflow: hidden;
 }
 
-.intro-likes-allarticles {
-    color: $linkColor;
-    font-size: 9px;
-    margin-top: 10px;
-}
 

@@ -35,7 +35,7 @@
     margin-top: 19px;
     font-size: 14px;
 }
-
+/*LIKES**/
 .intro-likes {
     margin-top:25px;
 }
@@ -45,6 +45,16 @@
     margin-right: 2px;
     font-size:9px;
     display:inline-block;
+}
+
+.intro-likes>i:first-child {
+    margin-left:0;
+}
+
+.intro-likes-list {
+    color: $linkColor;
+    font-size: 9px;
+    margin-top: 10px;
 }
 
 

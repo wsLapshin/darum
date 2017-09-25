@@ -51,7 +51,7 @@
                                 <div class="allarticles-content">
 
                                         <?php $title = $pageUtils->getCategoryTitle($slug); ?> 
-                                        <h2 class="allarticles-content-category">
+                                        <h2 class="subcategory-header">
                                             <a class="<?=$title['css']?>" href="<?=$title['href']?>">
                                                  <?=$title['title']?>
                                             </a>
@@ -64,7 +64,7 @@
 
                                         <?= $p->getAttribute('introtext');?>
 
-                                    <span class="intro-likes intro-likes-allarticles">
+                                    <span class="intro-likes intro-likes-list">
                                         <?php 
                                             $dateService = new Date();
                                             $prettyDate = $dateService->formatPrettyDate( 

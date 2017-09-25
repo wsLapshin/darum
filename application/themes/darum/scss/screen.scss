@@ -6,6 +6,7 @@
 @import "fonts/fontface";
 @import "fonts/fonts";
 @import "compass/reset";
+@import "flexslider/main"; 
 @import "common";
 @import "layout";
 @import "module/header";
@@ -15,6 +16,10 @@
 @import "module/article";
 @import "module/comments";
 @import "module/allarticles";
+@import "module/aside-list";
+@import "module/aside-banner";
+@import "module/topadvice";
+@import "module/moreadvice";
 
 
 

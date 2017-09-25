@@ -1,0 +1,75 @@
+$imgWidth: 98px;
+
+.aside-list {
+    margin-top: 49px;
+}
+.aside-list-header {
+    text-align: center;
+}
+.aside-list-header>h3 {
+    display: inline-block;
+    font-size: 16px;
+    height: 18px;
+    line-height: 15px;
+    padding: 0 2px;
+    border-left: 1px solid $grey;
+    border-right: 1px solid $grey;
+    vertical-align: middle;
+}
+
+.aside-list-header>h3:before,
+.aside-list-header>h3:after {
+    content:'';
+    display:inline-block;
+    width:1px;
+    height: 100%;
+    border-left: 1px solid $grey;
+    vertical-align: middle;
+}
+
+.aside-list-header>h3:before {
+    margin-right: 12px;
+}
+
+.aside-list-header>h3:after {
+    margin-left: 12px;
+}
+
+.aside-list>ul {
+    margin-top:19px;
+}
+
+.aside-list-item {
+    box-sizing:content-box;
+    padding:22.5px 0;
+    height: $imgWidth; 
+    overflow:hidden;
+    border-bottom: 1px solid $grey;
+}
+
+.aside-list-item:first-child {
+    border-top:1px solid $grey;
+}
+
+.aside-list-item:after {
+    content:'';
+    display:block;
+    clear:both;
+}
+
+.aside-list-item>img {
+    width: $imgWidth; 
+    float: left;
+}
+
+.aside-list-item>.introtext {
+    margin-left:$imgWidth;
+    padding-left: 24px;
+}
+
+.aside-list-item>.introtext>p {
+    font-size: 14px;
+    line-height: (24/14);
+    position: relative;
+    top: -5px;
+}

@@ -11,32 +11,20 @@ body {
 }
 
 .l-twocolumns{
-    /*padding-top: 36px;*/
+    padding-top: 36px;
+    border-bottom: 1px solid $grey;
     @include clearfix();
-    /*@include background-grid();*/
+    clear:both; /*todo*/
+}
+
+.l-twocolumns-allarticles {
+    padding-top: 0;
 }
 
 .l-contentbar,
 article
 {
     @include grid-span(8);
-    position: relative;
-}
-
-.l-contentbar:after,
-article:after {
-    content: '';
-    width: 1px;
-    height: 100%;
-    border-right: 1px solid $grey;
-    display:block;
-    position: absolute;
-    top: 0;
-    right: ( -1 * gutter-span() );
-}
-
-.l-contentbar-allarticles {
-    @include grid-span(9);
 }
 
 aside
@@ -44,9 +32,15 @@ aside
     @include grid-span(4);
 }
 
+.l-contentbar-allarticles {
+    @include grid-span(9);
+}
+
 .l-aside-allarticles {
     @include grid-span(3);
 }
+
+
 
 
 

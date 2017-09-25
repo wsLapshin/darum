@@ -1,0 +1,19 @@
+.topadvice {
+    padding: 42px 0;
+    border-bottom: 1px solid $grey;
+}
+.topadvice:after{
+    content: '';
+    display:block;
+    clear:both;
+}
+.topadvice-inner{
+    @include grid-span(12);
+}
+.topadvice h2 {
+    @include grid-span(8);
+    text-align: center;
+    float: none;
+    margin:auto;
+}
+@import "flexslider/top10carousel.scss";

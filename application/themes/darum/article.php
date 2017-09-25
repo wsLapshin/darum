@@ -1,26 +1,33 @@
 <?php defined('C5_EXECUTE') or die("Access Denied."); ?>
 
-<?php use Application\Src\Page\DarumPageUtils; ?>
-<?php use Concrete\Core\Localization\Service\Date?>
+<?php
+
+use Application\Src\Page\DarumPageUtils; ?>
+<?php
+
+use Concrete\Core\Localization\Service\Date ?>
 <?php $this->inc('elements/common/doctype.php'); ?>
 <?php $this->inc('elements/common/head.php'); ?>
 <body>
     <?php $this->inc('elements/common/ie8_warn.php'); ?>
     <div class="<?= $c->getPageWrapperClass() ?>">
-        <?php $this->inc('elements/nav.php');?>
+        <?php $this->inc('elements/nav.php'); ?>
         <div class="l-container">
             <div class="l-twocolumns">
-                <article>
+                <article class="right-bordered">
                     <div class="topimage">
-                        <?php $a = new Area('MainImage'); $a->display($c);?>
+                        <?php
+                        $a = new Area('MainImage');
+                        $a->display($c);
+                        ?>
                     </div>
                     <header class="article-header">
                         <div class="intro intro-article">
-                            <?php $pageUtils = new DarumPageUtils($c);?>
+                            <?php $pageUtils = new DarumPageUtils($c); ?>
                             <?php $title = $pageUtils->getCategoryTitle(); ?> 
                             <h2 class="intro-category">
-                                <a class="<?=$title['css']?>" href="<?=$title['href']?>">
-                                     <?=$title['title']?>
+                                <a class="<?= $title['css'] ?>" href="<?= $title['href'] ?>">
+                                    <?= $title['title'] ?>
                                 </a>
                             </h2>
                             <h1 class="intro-header">
@@ -30,10 +37,11 @@
                                 Автор: Кравченко Полина
                             </span> 
                             <span class="intro-likes">
-                                <?php 
-                                            $dateService = new Date();
-                                            $prettyDate = $dateService->formatPrettyDate( $c->getCollectionDateAdded()); ?>
-                                 <?= $prettyDate ?><i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                <?php
+                                $dateService = new Date();
+                                $prettyDate = $dateService->formatPrettyDate($c->getCollectionDateAdded());
+                                ?>
+                                <?= $prettyDate ?><i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                             </span>
                         </div>
                         <div class="social">
@@ -52,7 +60,10 @@
                     </header>
                     <main role="main">
                         <div class="article-text">
-                            <?php $a = new Area('MainContent'); $a->display($c);?>
+                            <?php
+                            $a = new Area('MainContent');
+                            $a->display($c);
+                            ?>
                         </div>
                         <footer>
                             <div class="social">
@@ -200,18 +211,435 @@
                         </footer>
                     </main>
                 </article>
-                <aside></aside>
+                <aside>
+                    <img src="<?php echo $this->getThemePath() ?>/img/demo/garnier.jpg"/>
+                    <div class="aside-list">
+                        <div class="aside-list-header">
+                            <h3>Интересные статьи</h3> 
+                        </div>
+                        <ul>
+                            <li class="aside-list-item">
+                                <img src="<?php echo$this->getThemePath() ?>/img/demo/asidethumbnail1.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Жертвы тайминга: Екатерина Попова о том, зачем отличать свои желания от чужих
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="aside-list-item">
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail2.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Как правильно ссроиться? Рассказывает Михаил Лабковский
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="aside-list-item">
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail3.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            За что мы любим наших мам - откровения взрослых девочек.
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="aside-list-item">
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail4.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Уверенность в результате работы над ошибками Лабковский
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="aside-list-item">
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail5.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Как правильно ссориться? Рассказывает Михаил Лабковский
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <img class="aside-banner-middle" src="<?php echo $this->getThemePath() ?>/img/demo/makeup.jpg"/>
+
+                    <div class="aside-list">
+                        <div class="aside-list-header">
+                            <h3>Советы на все времена</h3> 
+                        </div>
+                        <ul>
+                            <li class="aside-list-item">
+                                <img src="<?php echo$this->getThemePath() ?>/img/demo/asidethumbnail1.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Жертвы тайминга: Екатерина Попова о том, зачем отличать свои желания от чужих
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="aside-list-item">
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail2.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Как правильно ссроиться? Рассказывает Михаил Лабковский
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="aside-list-item">
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail3.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            За что мы любим наших мам - откровения взрослых девочек.
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <img class="aside-banner-bottom" src="<?php echo $this->getThemePath() ?>/img/demo/divanru.jpg"/>
+                    <div class="aside-list">
+                        <div class="aside-list-header">
+                            <h3>Интересные советы</h3> 
+                        </div>
+                        <ul>
+                            <li class="aside-list-item">
+                                <img src="<?php echo$this->getThemePath() ?>/img/demo/asidethumbnail1.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Жертвы тайминга: Екатерина Попова о том, зачем отличать свои желания от чужих
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="aside-list-item">
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail2.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Как правильно ссроиться? Рассказывает Михаил Лабковский
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
             </div>
-            <div class="topadvice"></div>
-            <div class="l-twocolumns">
-                <div class="l-contentbar">
+            <div class="topadvice">
+                <div class="topadvice-inner">
+                    <h2>ТОП 10 полезных советов,<br/> которые стоит знать каждому родителю</h2>
+                    <div class="top10carousel">
+                        <ul class="slides">
+                            <li>
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/top10thumbnail1.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Как быстро остановить плач ребенка
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/top10thumbnail2.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Как научить ребенка выговаривать
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/top10thumbnail3.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Как оградить ребенка от опасности на улице
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/top10thumbnail4.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Учим цифры с помощью игр
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/top10thumbnail1.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Как быстро остановить плач ребенка
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/top10thumbnail2.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Как научить ребенка выговаривать
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/top10thumbnail3.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Как оградить ребенка от опасности на улице
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/top10thumbnail4.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Учим цифры с помощью игр
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                        </ul> 
+                    </div> 
                 </div>
-                <aside></aside>
+            </div>
+            <div class="l-moreadvice">
+                <h2>Еще советы родителям</h2>
+                <ul class="moreadvice-list">
+                    <li class="moreadvice-one moreadvice-listitem right-bordered">
+                        <img src="<?php echo $this->getThemePath() ?>/img/demo/moreadvice1.jpg"/>
+                        <h2 class="subcategory-header">
+                            <a class="blue" href="#">
+                                Советы родителям    
+                            </a>
+                        </h2>
+                        <h3 class="moreadvice-listitem-header">
+                            <a href="#" >
+                                ТОП-10 лучших советов, для тех, кто хочет влюбиться
+                            </a>
+                        </h3>
+                        <span class="intro-likes intro-likes-list">
+                            <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                        </span>
+                    </li>
+                    <li class="moreadvice-one moreadvice-listitem right-bordered">
+                        <img src="<?php echo $this->getThemePath() ?>/img/demo/moreadvice2.jpg"/>
+                        <h2 class="subcategory-header">
+                            <a class="blue" href="#">
+                                Советы родителям    
+                            </a>
+                        </h2>
+                        <h3 class="moreadvice-listitem-header">
+                            <a href="#" >
+                                ТОП-10 лучших советов, для тех, кто хочет влюбиться
+                            </a>
+                        </h3>
+                        <span class="intro-likes intro-likes-list">
+                            <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                        </span>
+                    </li>
+                    <li class="moreadvice-one moreadvice-listitem right-bordered third">
+                        <img src="<?php echo $this->getThemePath() ?>/img/demo/moreadvice3.jpg"/>
+                        <h2 class="subcategory-header">
+                            <a class="blue" href="#">
+                                Советы родителям    
+                            </a>
+                        </h2>
+                        <h3 class="moreadvice-listitem-header">
+                            <a href="#" >
+                                От учителя дефектолога (учим ребенка говорить!)
+                            </a>
+                        </h3>
+                        <span class="intro-likes intro-likes-list">
+                            <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                        </span>
+                    </li>
+                    <li class="moreadvice-one moreadvice-listitem right-bordered">
+                        <img src="<?php echo $this->getThemePath() ?>/img/demo/moreadvice4.jpg"/>
+                        <h2 class="subcategory-header">
+                            <a class="blue" href="#">
+                                Советы родителям    
+                            </a>
+                        </h2>
+                        <h3 class="moreadvice-listitem-header">
+                            <a href="#" >
+                                ТОП-10 лучших советов, для тех, кто хочет влюбиться
+                            </a>
+                        </h3>
+                        <span class="intro-likes intro-likes-list">
+                            <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                        </span>
+                    </li>
+                    <li class="moreadvice-one moreadvice-listitem right-bordered">
+                        <img src="<?php echo $this->getThemePath() ?>/img/demo/moreadvice5.jpg"/>
+                        <h2 class="subcategory-header">
+                            <a class="blue" href="#">
+                                Советы родителям    
+                            </a>
+                        </h2>
+                        <h3 class="moreadvice-listitem-header">
+                            <a href="#" >
+                                ТОП-10 лучших советов, для тех, кто хочет влюбиться
+                            </a>
+                        </h3>
+                        <span class="intro-likes intro-likes-list">
+                            <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                        </span>
+                    </li>
+                    <li class="moreadvice-one moreadvice-listitem right-bordered third">
+                        <img src="<?php echo $this->getThemePath() ?>/img/demo/moreadvice6.jpg"/>
+                        <h2 class="subcategory-header">
+                            <a class="blue" href="#">
+                                Советы родителям    
+                            </a>
+                        </h2>
+                        <h3 class="moreadvice-listitem-header">
+                            <a href="#" >
+                                От учителя дефектолога (учим ребенка говорить!)
+                            </a>
+                        </h3>
+                        <span class="intro-likes intro-likes-list">
+                            <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                        </span>
+                    </li>
+                </ul>
+                <ul class="moreadvice-banner">
+                    <li class="moreadvice-one">
+                        <img src="<?php echo $this->getThemePath()?>/img/demo/vk.jpg"
+                    </li>
+                    <li class="moreadvice-one">
+                        <img src="<?php echo $this->getThemePath()?>/img/demo/cklass.png"
+                    </li>
+                </ul> 
             </div>
         </div>
-        <?php $this->inc('elements/footer.php');?>
+        <?php $this->inc('elements/footer.php'); ?>
     </div>
-    <?php $this->inc('elements/common/js.php');?>
+    <?php $this->inc('elements/common/js.php'); ?>
     <?php Loader::element('footer_required') ?>    
+    <script type="text/javascript" src="<?php echo $this->getThemePath() ?>/js/vendor/jquery.flexslider-min.js" ></script>
+    <script type="text/javascript">
+        (function () {
+
+            // store the slider in a local variable
+            var $window = $(window),
+                    flexslider = {vars: {}};
+
+            // tiny helper function to add breakpoints
+            function getGridSize() {
+                return (window.innerWidth < 600) ? 2 :
+                        (window.innerWidth < 900) ? 3 : 4;
+            }
+
+            $(function () {
+                SyntaxHighlighter.all();
+            });
+
+            $window.load(function () {
+                $('.top10carousel').flexslider({
+                    controlNav: false,
+                    directionNav: true,
+                    prevText: "",
+                    nextText: "",
+                    animation: "slide",
+                    animationLoop: false,
+                    itemWidth: 263,
+                    itemMargin: 0,
+                    start: function(){
+                        $('.top10carousel').addClass('active');
+                    },
+                    minItems: getGridSize(), // use function to pull in initial value
+                    maxItems: getGridSize() // use function to pull in initial value
+                });
+            });
+
+            // check grid size on resize event
+            $window.resize(function () {
+                var gridSize = getGridSize();
+
+                flexslider.vars.minItems = gridSize;
+                flexslider.vars.maxItems = gridSize;
+            });
+        }());
+    </script>
 </body>
-<?php $this->inc('elements/common/doctype_bot.php');?>
+<?php $this->inc('elements/common/doctype_bot.php'); ?>

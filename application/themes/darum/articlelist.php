@@ -23,7 +23,7 @@
             <?php endif;?>
 
             <div class="l-twocolumns">
-                <div class="l-contentbar-allarticles">
+                <div class="l-contentbar-allarticles right-bordered">
                     <ul class="allarticles">
                         <?php foreach ($pages as $p):?> 
                             <?php $blocks = $p->getBlocks('MainImage');
@@ -51,7 +51,7 @@
                                 <div class="allarticles-content">
 
                                         <?php $title = $pageUtils->getCategoryTitle($slug); ?> 
-                                        <h2 class="allarticles-content-category">
+                                        <h2 class="subcategory-header">
                                             <a class="<?=$title['css']?>" href="<?=$title['href']?>">
                                                  <?=$title['title']?>
                                             </a>
@@ -64,7 +64,7 @@
 
                                         <?= $p->getAttribute('introtext');?>
 
-                                    <span class="intro-likes intro-likes-allarticles">
+                                    <span class="intro-likes intro-likes-list">
                                         <?php 
                                             $dateService = new Date();
                                             $prettyDate = $dateService->formatPrettyDate( 
@@ -81,7 +81,82 @@
                         <a href="#" class="btn btn-default">Показать еще</a>
                     </div>
                 </div>
-                <aside class="l-aside-allarticles"></aside>
+                <aside class="l-aside-allarticles">
+                   <img src="<?php echo $this->getThemePath() ?>/img/demo/vk.jpg"/>
+                    <div class="aside-list">
+                        <div class="aside-list-header">
+                            <h3>Интересные статьи</h3> 
+                        </div>
+                        <ul>
+                            <li class="aside-list-item">
+                                <img src="<?php echo$this->getThemePath() ?>/img/demo/asidethumbnail1.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Жертвы тайминга: Екатерина Попова о том, зачем отличать свои желания от чужих
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="aside-list-item">
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail2.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Как правильно ссроиться? Рассказывает Михаил Лабковский
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="aside-list-item">
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail3.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            За что мы любим наших мам - откровения взрослых девочек.
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="aside-list-item">
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail4.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Уверенность в результате работы над ошибками Лабковский
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="aside-list-item">
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail5.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Как правильно ссориться? Рассказывает Михаил Лабковский
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <img class="aside-banner-middle" src="<?php echo $this->getThemePath() ?>/img/demo/makeup.jpg"/>
+                </aside>
             </div>
         </div>
 

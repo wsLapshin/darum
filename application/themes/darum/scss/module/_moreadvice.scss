@@ -1,0 +1,84 @@
+.l-moreadvice {
+    margin-top:45px;
+}
+
+.l-moreadvice:after {
+    content:'';
+    display:block;
+    clear: both;
+}
+
+.l-moreadvice>h2 {
+    text-align:center;
+    font-size:28px;
+}
+
+
+.moreadvice-list, .moreadvice-banner {
+    margin-top: 16px;
+}
+
+.moreadvice-list {
+    @include grid-span(9);
+}
+
+.moreadvice-banner {
+    @include grid-span(3);
+}
+
+.moreadvice-one {
+    height: 288px;
+    margin-bottom: 36px;
+}
+
+.moreadvice-one:before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid $grey;
+    display:block;
+    position: absolute;
+    left: 0;
+    bottom: ( -0.5 * gutter-span($gutter, 3) );
+}
+
+.moreadvice-one.right-bordered:after {
+    right: ( -0.5 * gutter-span($gutter, 3) );
+}
+
+.moreadvice-one>img {
+    width: 100%;
+    display: block;
+}
+
+@include layout(9, $gutter-style:'opposite'){
+    .moreadvice-listitem {
+        @include float-span(3);
+    }
+
+    .moreadvice-listitem.third {
+        @include float-span(3, 'last');
+    }
+}
+
+.moreadvice-listitem>.subcategory-header{
+    margin-top: 14px;
+}
+
+.moreadvice-listitem-header {
+    font-size: 16px;
+    line-height: (24/16);
+    font-weight: 500;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+.moreadvice-listitem-header a {
+    font-family: open_sans !important;
+    text-decoration: none;
+    color: #1a1a1a;
+}
+
+.moreadvice-listitem-header a:hover {
+    color: $accentColor; 
+}
