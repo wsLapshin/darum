@@ -58,12 +58,16 @@ article .topimage {
     blockquote {
         line-height: (36px/28px);
         width: 84%;
-        font-size: 28px;
         padding: 34px 5%;
         margin: 25px auto;
         border-top: 1px solid #000;
         border-bottom: 1px solid #000;
         text-align: center;
+    }
+
+    blockquote p {
+        font-size: 18px;
+        color: rgba(0,0,0,0.87);
     }
 
     address {

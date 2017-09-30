@@ -12,13 +12,16 @@
         openSansSemiBold = new FontFaceObserver('open_sans', {weight:500}),
         firaSans = new FontFaceObserver('fira'),
         bradobrei = new FontFaceObserver('bradobrei'),
-        awesome = new FontFaceObserver('FontAwesome');
+        awesome = new FontFaceObserver('FontAwesome'),
+        vollkorn = new FontFaceObserver('Vollkorn');
+        //vollkornsemibold = new fontfaceobserver('Vollkorn Semibold', {weight: 600});
+//        vollkornbold = new fontfaceobserver('vollkorn', {weight: 700});
 
     Promise.all([openSans.load()]).then(function () {
         document.documentElement.className += " fonts-stage-1";
         console.log('stage1');
         Promise.all([openSansBold.load(), openSansExtraBold.load(), openSansLight.load(),
-                 openSansSemiBold.load(), firaSans.load(), bradobrei.load(), awesome.load()]).then(function() {
+                 openSansSemiBold.load(), firaSans.load(), bradobrei.load(), awesome.load(), vollkorn.load(), /*vollkornsemibold.load()*/]).then(function() {
              document.documentElement.className += " fonts-stage-2";
              //@todo make unvisible awesome visible
              

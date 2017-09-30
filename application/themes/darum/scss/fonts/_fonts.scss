@@ -2,6 +2,7 @@ $bradobrei-fallback: "Times New Roman", "Times", serif;
 $opensans-fallback: Tahoma, Geneva, sans-serif;
 $fira-fallback: Tahoma, Geneva, sans-serif;
 $monospace-fallback: Courier New, Courier New, Courier6, monospace;
+$vollkorn-fallback: serif;
 
 /*FallBacks*/
 body {
@@ -14,9 +15,12 @@ pre {
 
 h1, h2, h3, h4,
 .intro-header,
-.btn,
-blockquote {
+.btn {
     font-family: $bradobrei-fallback;
+}
+
+blockquote {
+    font-family: $vollkorn-fallback; 
 }
 
 /*FOUT implementation*/
@@ -28,10 +32,13 @@ blockquote {
 
 .fonts-stage-2 {
     h1, h2, h3, h4, 
-    blockquote,
     .btn,
     .intro-header {
         font-family: bradobrei;
+    }
+
+    blockquote p {
+        font-family: "Vollkorn";
     }
 }
 
