@@ -4860,71 +4860,72 @@ article .topimage {
 /* line 68, ../scss/module/_article.scss */
 .article-text blockquote p {
   font-size: 18px;
+  font-weight: 600;
   color: rgba(0, 0, 0, 0.87);
 }
-/* line 73, ../scss/module/_article.scss */
+/* line 74, ../scss/module/_article.scss */
 .article-text address {
   color: #ff8c46;
 }
-/* line 77, ../scss/module/_article.scss */
+/* line 78, ../scss/module/_article.scss */
 .article-text ul > li:before {
   vertical-align: middle;
   content: "\f107";
   color: #35a6e3;
   margin-right: 8px;
 }
-/* line 84, ../scss/module/_article.scss */
+/* line 85, ../scss/module/_article.scss */
 .article-text ol {
   list-style: decimal inside;
 }
-/* line 88, ../scss/module/_article.scss */
+/* line 89, ../scss/module/_article.scss */
 .article-text li {
   font-size: 14px;
   line-height: 1.5;
 }
-/* line 93, ../scss/module/_article.scss */
+/* line 94, ../scss/module/_article.scss */
 .article-text table {
   font-size: 14px;
 }
-/* line 97, ../scss/module/_article.scss */
+/* line 98, ../scss/module/_article.scss */
 .article-text table > caption {
   text-transform: uppercase;
   font-weight: 500;
   margin: 10px 0;
 }
-/* line 103, ../scss/module/_article.scss */
+/* line 104, ../scss/module/_article.scss */
 .article-text table th {
   font-weight: 500;
 }
-/* line 107, ../scss/module/_article.scss */
+/* line 108, ../scss/module/_article.scss */
 .article-text table th,
 .article-text table td {
   border: 1px solid #e6e6e6;
   padding: 6px 12px;
 }
-/* line 113, ../scss/module/_article.scss */
+/* line 114, ../scss/module/_article.scss */
 .article-text table td {
   font-weight: 200;
 }
-/* line 117, ../scss/module/_article.scss */
+/* line 118, ../scss/module/_article.scss */
 .article-text .image-caption {
   font-style: italic;
   font-size: 14px;
 }
-/* line 122, ../scss/module/_article.scss */
+/* line 123, ../scss/module/_article.scss */
 .article-text .content-editor-image-center {
   text-align: center;
 }
-/* line 126, ../scss/module/_article.scss */
+/* line 127, ../scss/module/_article.scss */
 .article-text .content-editor-image-left {
   float: left;
 }
-/* line 130, ../scss/module/_article.scss */
+/* line 131, ../scss/module/_article.scss */
 .article-text .content-editor-image-right {
   float: right;
 }
 
-/* line 135, ../scss/module/_article.scss */
+/* line 136, ../scss/module/_article.scss */
 .article-links {
   border-top: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
@@ -4933,14 +4934,14 @@ article .topimage {
   text-align: center;
 }
 
-/* line 143, ../scss/module/_article.scss */
+/* line 144, ../scss/module/_article.scss */
 .article-links > h6 {
   font-weight: 500;
   text-transform: uppercase;
   margin-bottom: 16px;
 }
 
-/* line 149, ../scss/module/_article.scss */
+/* line 150, ../scss/module/_article.scss */
 .article-links > ul > li {
   display: block;
   margin-top: 8px;
