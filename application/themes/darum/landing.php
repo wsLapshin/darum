@@ -49,7 +49,7 @@
              </div>  
               <div class="header__wrap">
                   <div class="header__wrap_text"><?php $a = new Area('TopBannerImageCategory2'); $a->display($c);?></div>
-                  <div class="header__wrap_header"><?php $a = new Area('TopBannerImageHeader3'); $a->display($c);?></div>
+                  <div class="header__wrap_header"><?php $a = new Area('TopBannerImageHeader2'); $a->display($c);?></div>
               </div>
             </div>
 
@@ -91,7 +91,7 @@
                 </div>
           
                 <div class="sect1__right">
-                  <h2 class="sect1__right_header"><?php $a = new Area('TopNoteHeader'); $a->display($c);?></h2>
+                  <span class="sect1__right_header"><?php $a = new Area('TopNoteHeader'); $a->display($c);?></span>
                   <div class="sect1__right_text"><?php $a = new Area('TopNoteText'); $a->display($c);?></div>
                 </div>
                </div>
@@ -140,7 +140,7 @@
           <section class="sect4">
             <div class="container">
               <div class="sect1__right order1">
-              <h2 class="sect1__right_header"><?php $a = new Area('MiddleNoteHeader'); $a->display($c);?></h2>
+              <span class="sect1__right_header"><?php $a = new Area('MiddleNoteHeader'); $a->display($c);?></span>
               <div class="sect1__right_text"><?php $a = new Area('MiddleNoteText'); $a->display($c);?></div>
             </div>
 
@@ -202,11 +202,24 @@
                   </div>
 
                   <div class="block__wrap">
-                    <div class="block__texts_text"><?php $a = new Area('DownNote2Image'); $a->display($c);?></div>
+                    <div><?php $a = new Area('DownNote2Image'); $a->display($c);?></div>
                   </div>
                 </div>
               </div>
             </section>
+
+          <section style="margin: 0 auto"  class="sect4 no-border">
+            <div class="container">
+              <div class="sect1__right order1">
+              <span class="sect1__right_header"><?php $a = new Area('ExplainNoteHeader'); $a->display($c);?></span>
+              <div class="sect1__right_text"><?php $a = new Area('ExplainNoteText'); $a->display($c);?></div>
+            </div>
+
+            <div class="sect1__left order2">
+              <?php $a = new Area('ExplaneNoteImage'); $a->display($c);?>
+            </div> 
+            </div>
+          </section>
 
              <section class="sect7">
                
