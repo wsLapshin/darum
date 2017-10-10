@@ -1,0 +1,14 @@
+.questionlist {
+    display:block;
+    width: 100%;
+    margin-top: 33px;
+}
+
+.questionlist-one{
+    display:inline-block;
+    list-style:none;
+    @include grid-span(3);
+    padding-bottom: 17px;
+    margin-bottom: 26px;
+    border-bottom: 1px solid $grey;
+}

@@ -1,18 +1,31 @@
 .intro {
-   background: $accentColor;
-   color: #fff;
-   padding: 27px 30px 23px;
-   text-align: left;
+    background: $accentColor;
+    color: #fff;
+    padding: 21px 30px 15px;
+    text-align: left;
+}
+
+.intro.grn {
+    background: #81b352;
+}
+
+.intro.pnk {
+    background: #f77e7e;
 }
 
 .intro>span {
     display:block;
 }
 
-.intro-category,
+.intro-category a,
 .intro-likes {
     font-size: 10px;
     font-weight: 500;
+    color: #fff;
+}
+
+.intro-category a:hover {
+    color: #999999;
 }
 
 .intro-category {
@@ -20,13 +33,13 @@
 }
 
 .intro-header {
-    margin-top:24px;
+    margin-top:9px;
     font-size: 34px;
     line-height: (36/34); 
 }
 
 .intro-text {
-    margin-top: 21px;
+    margin-top: 14px;
     font-size: 16px;
     line-height: (24/16);
 }
@@ -37,7 +50,7 @@
 }
 /*LIKES**/
 .intro-likes {
-    margin-top:25px;
+    margin-top:16px;
 }
 
 .intro-likes>i {
@@ -66,12 +79,7 @@
     .intro-category,
     .intro-category a {
         font-size: 14px;
-        color: #fff;
         font-family: open_sans;
-    }
-
-    .intro-category a:hover {
-        color: #999999;
     }
 
     .intro-header {

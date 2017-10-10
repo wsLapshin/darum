@@ -1,0 +1,37 @@
+.previewlist-one {
+    padding-bottom: 17px;
+    border-bottom:1px solid $grey;
+    margin-bottom: 26px;
+}
+
+.previewlist-one:last-child,
+.previewlist-one.cleardown {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.previewlist-one>img {
+    display:block;
+}
+
+.previewlist-content {
+    margin-top: 13px;
+}
+
+.previewlist-content-header {
+    font-size: 16px;
+    line-height: (24/16); 
+    font-weight: 500;
+    margin-top: 2px;
+    height: 48px;
+    overflow:hidden;
+    font-family: open_sans !important;
+}
+
+.intro-likes-previewlist {
+    margin-top: 12px;
+    color: #999999;
+    font-size: 9px;
+}
+
+

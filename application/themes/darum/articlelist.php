@@ -82,7 +82,7 @@
                     </div>
                 </div>
                 <aside class="l-aside-allarticles">
-                   <img src="<?php echo $this->getThemePath() ?>/img/demo/vk.jpg"/>
+                   <img style="margin-bottom:49px" src="<?php echo $this->getThemePath() ?>/img/demo/vk.jpg"/>
                     <div class="aside-list">
                         <div class="aside-list-header">
                             <h3>Интересные статьи</h3> 

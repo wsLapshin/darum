@@ -375,7 +375,7 @@ h2 {
   .carousel__ul_img>img{
     width: 100%; }
 
-.flipster__button {
+/*.flipster__button {
   top: 41%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -454,6 +454,7 @@ h2 {
     transform: translate(-50%, -50%) scale(-1, 1); }
   .flipster__button--next svg {
     display: none; }
+*/
 
 .flipster__item--past .flipster__item__content {
   -webkit-transform: rotateY(0deg) scale(0.8) !important;

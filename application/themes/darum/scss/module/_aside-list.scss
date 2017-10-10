@@ -1,7 +1,7 @@
 $imgWidth: 98px;
 
 .aside-list {
-    margin-top: 49px;
+    /*margin-top: 49px;*/
 }
 .aside-list-header {
     text-align: center;
@@ -57,9 +57,19 @@ $imgWidth: 98px;
     clear:both;
 }
 
+.aside-list-item.mini {
+    height: auto;
+    padding:19px 0;
+    overflow:hidden;
+}
+
 .aside-list-item>img {
     width: $imgWidth; 
     float: left;
+}
+
+.aside-list-item.mini>img {
+    width: 72px;
 }
 
 .aside-list-item>.introtext {
@@ -67,9 +77,19 @@ $imgWidth: 98px;
     padding-left: 24px;
 }
 
+.aside-list-item.mini>.introtext {
+    margin-left: 72px;
+    height: 62px;
+    overflow: hidden;
+}
+
 .aside-list-item>.introtext>p {
     font-size: 14px;
     line-height: (24/14);
     position: relative;
     top: -5px;
+}
+.aside-list-item.mini>.introtext>p {
+    top: 0;
+    line-height: 1.5;
 }

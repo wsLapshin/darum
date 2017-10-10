@@ -6,11 +6,13 @@
 @import "fonts/fontface";
 @import "fonts/fonts";
 @import "compass/reset";
-@import "flexslider/main"; 
+@import "flexslider/main";
+@import "module/flipster";
 @import "common";
 @import "layout";
 @import "module/header";
 @import "module/nav";
+@import "module/iconmenu";
 @import "module/intro";
 @import "module/social";
 @import "module/article";
@@ -18,8 +20,12 @@
 @import "module/allarticles";
 @import "module/aside-list";
 @import "module/aside-banner";
+@import "module/preview-list";
+@import "module/preview-main";
 @import "module/topadvice";
 @import "module/moreadvice";
+@import "module/mainbanner";
+@import "module/questionlist";
 
 
 

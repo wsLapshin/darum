@@ -1,0 +1,45 @@
+.mainbanner {
+    max-width: 1920px;
+    margin: 20px auto 0;
+    height: 338px;
+    position: relative;
+}
+
+.mainbanner-img {
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+}
+
+.mainbanner-img>img {
+    width: 100%;
+}
+
+.mainbanner-overlay {
+    background: #000;
+    opacity: .5;
+    position: absolute;
+    top: 91px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 43.70313%;
+    text-align: center;
+    padding: 26px 0 28px 0;
+}
+
+.mainbanner-overlay-header {
+    display:block;
+    color: #fff;
+    text-align: center;
+    font-size:28px;
+    line-height: (36/28);
+}
+
+.mainbanner-overlay-action {
+    color: #ff8c46;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 10px;
+    display:block;
+}

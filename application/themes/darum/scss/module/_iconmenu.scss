@@ -1,0 +1,51 @@
+.iconmenu {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid $grey;
+    border-bottom: 1px solid $grey;
+    height: 85px;
+}
+
+.iconmenu>li {
+    height: 100%;
+    list-style: none;
+    @include grid-span(3);
+}
+
+.iconmenu-item {
+    text-align:center;
+    display:block;  
+    height: 100%;
+}
+
+.iconmenu-item>*,
+.iconmenu-item:after {
+    display: inline-block;
+    vertical-align: middle; 
+}
+
+.iconmenu-item:after {
+    content: '';
+    height: 100%;
+}
+
+.iconmenu-item>img {
+    width: 60px;
+    height: 60px;
+    border-radius:30px;
+}
+
+.iconmenu-item>span {
+    margin-left: 14px;
+    font-size: 13px;
+    text-align: left;
+    font-weight: 300;
+    line-height: (18/13);
+    color: #1a1a1a;
+    max-width: 155px;
+}
+
+.iconmenu-item:hover>span {
+    color: $accentColor;
+}
+

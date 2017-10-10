@@ -17,7 +17,7 @@ class DarumPageUtils
     const ADVICE_STUDENTS_CATEGORY_CID = 201;
     const ADVICE_RELATIONS_CATEGORY_CID = 202;
 
-    /** Containers' ontology attribute names, при добавлении/удалении поправте метод getCateogoryTitle стр74 */
+    /** Containers' ontology attribute names, при добавлении/удалении поправте метод getCateogoryTitle стр74  Это аттрибут-селект, где выбираем онтологию*/
     const ARTICLE_PARENTS_ONTOLOGY_ATTR = 'parents_articles';
     const ARTICLE_STUDENTS_ONTOLOGY_ATTR = 'students_articles';
     const ARTICLE_RELATIONS_ONTOLOGY_ATTR = 'relationship_articles';

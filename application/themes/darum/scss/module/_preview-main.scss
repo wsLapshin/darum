@@ -1,0 +1,18 @@
+.preview-main-container {
+    @include grid-span(6);
+}
+
+.preview-main {
+}
+
+.preview-main>img {
+    display: block;
+    max-height: 420px;
+}
+
+.preview-main>.intro {
+    width: (450px*100%/557px);
+    margin: -120px auto 0;
+    position: relative;
+    z-index: 1;
+}

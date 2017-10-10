@@ -1,0 +1,107 @@
+.preview-main-container {
+    position: relative;
+    .flipster__button {
+        position: absolute;
+        display:block;
+        bottom: -13px;
+        z-index:2;
+        cursor:pointer;
+    }
+    .flipster__button--prev {
+        left: 0;
+    }
+    .flipster__button--next {
+        right: 0%;
+    }
+    .flipster__item--past {
+        display:none;
+    }
+}
+
+.flipster__button {
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    opacity: 1;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease; 
+}
+
+.flipster__button svg {
+    display:none;
+}
+
+.flipster__button:hover {
+    opacity: .5; 
+}
+
+.flipster__button--prev {
+    width: 66px;
+    height: 66px;
+    opacity: 0.57;
+    background-color: #e6e6e6;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute;
+    -webkit-border-radius: 10em;
+    border-radius: 10em;
+    opacity: .57;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease; 
+}
+
+.flipster__button--prev:hover {
+    opacity: 1; 
+}
+
+.flipster__button--prev::before {
+    content: '';
+    background-image: url(../img/arrow.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 42px;
+    height: 7px;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); 
+}
+
+.flipster__button--next {
+    width: 66px;
+    height: 66px;
+    opacity: 0.57;
+    background-color: #e6e6e6;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin-left: 140px;
+    position: absolute;
+    -webkit-border-radius: 10em;
+    border-radius: 10em;
+    opacity: .57;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease; 
+}
+
+.flipster__button--next:hover {
+    opacity: 1;
+}
+
+.flipster__button--next::before {
+    content: '';
+    background-image: url(../img/arrow.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 42px;
+    height: 7px;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%) scale(-1, 1);
+    -ms-transform: translate(-50%, -50%) scale(-1, 1);
+    transform: translate(-50%, -50%) scale(-1, 1); 
+}
