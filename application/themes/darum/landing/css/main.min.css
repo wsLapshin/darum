@@ -68,12 +68,11 @@ h2 {
   position: relative;
   background-size: cover;
   background-position: center;
-  height: 520px;
+  height: 469px;
   outline: none; }
   .header__imgs {
     max-width: 1920px;
     margin: 0px auto 0;
-    height: 444px;
     position: relative;
     overflow: hidden; }
     .header__imgs>img {
@@ -170,7 +169,7 @@ h2 {
     display: inline-block;
     vertical-align: middle;
     margin-left: 90px;
-    width: 430px; }
+    width: 520px; }
     .sect1__right_header {
       font-family: "OSB", sans-serif;
       font-size: 28px;
@@ -332,7 +331,7 @@ h2 {
     position: relative;
     top: 28px; }
   .sect4 .sect1__left {
-    margin-left: 190px;
+    margin-left: 119px;
     margin-top: 30px;
     width: 522px;
     height: 276px; }

@@ -65,12 +65,12 @@
                                         <?= $p->getAttribute('introtext');?>
 
                                     <span class="intro-likes intro-likes-list">
-                                        <?php 
+                                        <?php /* 
                                             $dateService = new Date();
                                             $prettyDate = $dateService->formatPrettyDate( 
                                                 $p->getCollectionDateAdded()); 
-                                        ?>
-                                        <?= $prettyDate ?>
+                                        */ ?>
+                                        <?php // $prettyDate ?>
                                         <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                                     </span>
                                 </div>
@@ -97,7 +97,7 @@
                                         </a>
                                     </p>
                                     <span class="intro-likes intro-likes-list">
-                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                                     </span>
                                 </div>
                             </li>
@@ -110,7 +110,7 @@
                                         </a>
                                     </p>
                                     <span class="intro-likes intro-likes-list">
-                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                                     </span>
                                 </div>
                             </li>
@@ -123,7 +123,7 @@
                                         </a>
                                     </p>
                                     <span class="intro-likes intro-likes-list">
-                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                                     </span>
                                 </div>
                             </li>
@@ -136,7 +136,7 @@
                                         </a>
                                     </p>
                                     <span class="intro-likes intro-likes-list">
-                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                                     </span>
                                 </div>
                             </li>
@@ -149,7 +149,7 @@
                                         </a>
                                     </p>
                                     <span class="intro-likes intro-likes-list">
-                                        16 июля <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                                     </span>
                                 </div>
                             </li>

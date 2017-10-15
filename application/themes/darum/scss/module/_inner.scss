@@ -1,0 +1,51 @@
+.inner-h1{
+    /*margin-top: 60px;*/
+    text-align: center;
+}
+.article-text-inner {
+    width: 80.4245%;
+    margin: 32px auto;
+    padding:0;
+}
+
+.article-text-inner blockquote {
+    font-size: 28px;
+    color: #fff;
+    width: 100%;
+    padding: 58px 11.0235%;
+    margin: 33px 0;
+    border-top: none;
+    border-bottom: none; 
+    text-align: center;
+    quotes: "\201c" "\201d";
+    background: $accentColor;
+    position: relative;
+} 
+
+.article-text-inner blockquote p {
+    line-height: inherit;
+    color:inherit; 
+    font-size: inherit;
+    font-family:inherit;
+    font-weight: 400;
+}
+
+.article-text-inner blockquote:before,
+.article-text-inner blockquote:after {
+    display:block;
+    position:absolute;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    left:0;
+    right: 0;
+    margin: auto;
+}
+.article-text-inner blockquote:before{
+    content: open-quote;
+    top: 27px;
+}
+.article-text-inner blockquote:after{
+    content: close-quote;
+    bottom: 33px;
+}

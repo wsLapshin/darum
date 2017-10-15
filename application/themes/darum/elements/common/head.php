@@ -5,8 +5,11 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link href="<?php echo $view->getThemePath() ?>/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="<?php echo $view->getThemePath() ?>/css/print.css" media="print" rel="stylesheet" type="text/css" />
-     <link rel="stylesheet" href="<?php echo $view->getThemePath()?>/landing/css/main.min.css" type="text/css"/>
 
+    <link rel="stylesheet" href="<?php echo $view->getThemePath()?>/landing/css/main.min.css" type="text/css"/>
+
+    <link rel="stylesheet" href="<?php echo $view->getThemePath()?>/js/vendor/jqueryui/jquery-ui.min.css" type="text/css"/>
+    <link rel="stylesheet" href="<?php echo $view->getThemePath()?>/js/vendor/jqueryui/jquery-ui.theme.min.css" type="text/css"/>
 
     <!--[if IE]>
         <link href="/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />

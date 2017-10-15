@@ -65,12 +65,12 @@
                                         <?= $p->getAttribute('introtext');?>
 
                                     <span class="intro-likes intro-likes-list">
-                                        <?php 
+                                        <?php /* 
                                             $dateService = new Date();
                                             $prettyDate = $dateService->formatPrettyDate( 
                                                 $p->getCollectionDateAdded()); 
-                                        ?>
-                                        <?= $prettyDate ?>
+                                        */?>
+                                        <?php /* $prettyDate*/ ?>
                                         <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                                     </span>
                                 </div>
@@ -81,7 +81,83 @@
                         <a href="#" class="btn btn-default">Показать еще</a>
                     </div>
                 </div>
-                <aside class="l-aside-allarticles"></aside>
+                <aside class="l-aside-allarticles">
+                   <img style="margin-bottom:49px" src="<?php echo $this->getThemePath() ?>/img/demo/vk.jpg"/>
+                    <div class="aside-list">
+                        <div class="aside-list-header">
+                            <h3>Интересные статьи</h3> 
+                        </div>
+                        <ul>
+                            <li class="mini aside-list-item">
+                                <img src="<?php echo$this->getThemePath() ?>/img/demo/asidethumbnail1.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Жертвы тайминга: Екатерина Попова о том, зачем отличать свои желания от чужих
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="mini aside-list-item">
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail2.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Как правильно ссроиться? Рассказывает Михаил Лабковский
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="mini aside-list-item">
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail3.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            За что мы любим наших мам - откровения взрослых девочек.
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="mini aside-list-item">
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail4.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Уверенность в результате работы над ошибками Лабковский
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="mini aside-list-item">
+                                <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail5.jpg"/>
+                                <div class="introtext">
+                                    <p>
+                                        <a href="#">
+                                            Как правильно ссориться? Рассказывает Михаил Лабковский
+                                        </a>
+                                    </p>
+                                    <span class="intro-likes intro-likes-list">
+                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <img class="aside-banner-middle" src="<?php echo $this->getThemePath() ?>/img/demo/makeup.jpg"/>
+                </aside>
+
             </div>
         </div>
 

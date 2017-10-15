@@ -3881,32 +3881,33 @@ blockquote {
 /* line 34, ../scss/fonts/_fonts.scss */
 .fonts-stage-2 h1, .fonts-stage-2 h2, .fonts-stage-2 h3, .fonts-stage-2 h4,
 .fonts-stage-2 .btn, .fonts-stage-2 .mainbanner-overlay-header,
-.fonts-stage-2 .intro-header {
+.fonts-stage-2 .intro-header,
+.fonts-stage-2 .article-text-inner blockquote {
   font-family: bradobrei;
 }
-/* line 40, ../scss/fonts/_fonts.scss */
+/* line 41, ../scss/fonts/_fonts.scss */
 .fonts-stage-2 blockquote p {
   font-family: "Vollkorn";
 }
 
 /*FOIT implementation only for logo and fontawesome*/
-/* line 46, ../scss/fonts/_fonts.scss */
+/* line 47, ../scss/fonts/_fonts.scss */
 .logo-intro {
   font-family: bradobrei;
 }
 
-/* line 49, ../scss/fonts/_fonts.scss */
+/* line 50, ../scss/fonts/_fonts.scss */
 .article-text ul > li:before {
   font-family: FontAwesome;
 }
 
 /*@todo .fa*/
-/* line 54, ../scss/fonts/_fonts.scss */
+/* line 55, ../scss/fonts/_fonts.scss */
 #logo, .fa.todo {
   visibility: hidden;
 }
 
-/* line 57, ../scss/fonts/_fonts.scss */
+/* line 58, ../scss/fonts/_fonts.scss */
 #logo.visible, .fa.visible {
   visibility: visible;
 }
@@ -4406,6 +4407,11 @@ body {
 }
 
 /* line 24, ../scss/_layout.scss */
+.l-twocolumns-inner {
+  margin-top: 22px;
+}
+
+/* line 28, ../scss/_layout.scss */
 .l-contentbar,
 article {
   -sgs-span-settings: ("span": 8, "location": 1, "grid": 12, "gutter": 0.44444, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": (null: null));
@@ -4416,7 +4422,7 @@ article {
   margin-right: 1.28205%;
 }
 
-/* line 30, ../scss/_layout.scss */
+/* line 34, ../scss/_layout.scss */
 aside {
   -sgs-span-settings: ("span": 4, "location": 1, "grid": 12, "gutter": 0.44444, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": (null: null));
   width: 30.76923%;
@@ -4426,7 +4432,7 @@ aside {
   margin-right: 1.28205%;
 }
 
-/* line 35, ../scss/_layout.scss */
+/* line 39, ../scss/_layout.scss */
 .l-contentbar-allarticles {
   -sgs-span-settings: ("span": 9, "location": 1, "grid": 12, "gutter": 0.44444, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": (null: null));
   width: 72.4359%;
@@ -4436,7 +4442,7 @@ aside {
   margin-right: 1.28205%;
 }
 
-/* line 39, ../scss/_layout.scss */
+/* line 43, ../scss/_layout.scss */
 .l-aside-allarticles {
   -sgs-span-settings: ("span": 3, "location": 1, "grid": 12, "gutter": 0.44444, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": (null: null));
   width: 22.4359%;
@@ -4446,18 +4452,18 @@ aside {
   margin-right: 1.28205%;
 }
 
-/* line 43, ../scss/_layout.scss */
+/* line 47, ../scss/_layout.scss */
 .allarticles-h1-maintop {
   margin-top: 25px;
 }
 
-/* line 47, ../scss/_layout.scss */
+/* line 51, ../scss/_layout.scss */
 .allarticles-h1-mainarticles,
 .allarticles-h1-mainadvices {
   margin-top: 25px !important;
 }
 
-/* line 52, ../scss/_layout.scss */
+/* line 56, ../scss/_layout.scss */
 .l-maintop {
   margin-top: 12px;
   border-bottom: 1px solid #e6e6e6;
@@ -4465,7 +4471,7 @@ aside {
   *zoom: 1;
 }
 
-/* line 58, ../scss/_layout.scss */
+/* line 62, ../scss/_layout.scss */
 .l-maintop .previewlist {
   -sgs-span-settings: ("span": 3, "location": 1, "grid": 12, "gutter": 0.44444, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": (null: null));
   width: 22.4359%;
@@ -4475,7 +4481,7 @@ aside {
   margin-right: 1.28205%;
 }
 
-/* line 62, ../scss/_layout.scss */
+/* line 66, ../scss/_layout.scss */
 .l-mainarticles, .l-mainadvices {
   margin-top: 11px;
   border-bottom: 1px solid #e6e6e6;
@@ -4483,7 +4489,7 @@ aside {
   *zoom: 1;
 }
 
-/* line 67, ../scss/_layout.scss */
+/* line 71, ../scss/_layout.scss */
 .l-mainarticles .previewlist,
 .l-mainadvices .previewlist {
   -sgs-span-settings: ("span": 6, "location": 1, "grid": 12, "gutter": 0.44444, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": (null: null));
@@ -4493,7 +4499,7 @@ aside {
   margin-left: 1.28205%;
   margin-right: 1.28205%;
 }
-/* line 70, ../scss/_layout.scss */
+/* line 74, ../scss/_layout.scss */
 .l-mainarticles .previewlist .previewlist-one,
 .l-mainadvices .previewlist .previewlist-one {
   -sgs-span-settings: ("span": 3, "location": 1, "grid": 6, "gutter": 0.44444, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": (null: null));
@@ -4504,7 +4510,7 @@ aside {
   margin-right: 2.5641%;
 }
 
-/* line 75, ../scss/_layout.scss */
+/* line 79, ../scss/_layout.scss */
 .allarticles-h1-mainquestion {
   line-height: 1.28571 !important;
   margin-top: 42px !important;
@@ -4722,6 +4728,7 @@ nav ul > li > a {
 
 /* line 101, ../scss/module/_nav.scss */
 .menu-submenu > ul > li {
+  position: relative;
   border-left: 1px solid #e6e6e6;
   border-right: 1px solid #e6e6e6;
   padding: 0 19px;
@@ -4729,12 +4736,12 @@ nav ul > li > a {
   vertical-align: middle;
 }
 
-/* line 109, ../scss/module/_nav.scss */
+/* line 110, ../scss/module/_nav.scss */
 .menu-submenu > ul > li:last-child {
   margin-right: 0;
 }
 
-/* line 113, ../scss/module/_nav.scss */
+/* line 114, ../scss/module/_nav.scss */
 .menu-submenu > ul > li > a {
   font-weight: 500;
   color: false;
@@ -4749,41 +4756,47 @@ nav ul > li > a {
   color: #1a1a1a;
 }
 
-/* line 119, ../scss/module/_nav.scss */
+/* line 120, ../scss/module/_nav.scss */
 .menu-submenu > ul > li > a.active {
   color: #1a1a1a;
 }
 
 /*Todo vertical alginment*/
-/* line 124, ../scss/module/_nav.scss */
+/* line 125, ../scss/module/_nav.scss */
 .third-level-cont {
+  position: absolute;
+  left: 19px;
+  bottom: -34px;
+  padding-top: 4px;
   overflow: hidden;
-  width: 0px;
+  /*width: 0px;*/
+  height: 0px;
   display: inline-block;
   vertical-align: middle;
-  height: 100%;
-  -webkit-transition: all width 0.6s ease-out 0s ease;
-  -moz-transition: all width 0.6s ease-out 0s ease;
-  -ms-transition: all width 0.6s ease-out 0s ease;
-  -o-transition: all width 0.6s ease-out 0s ease;
-  transition: all width 0.6s ease-out 0s ease;
+  /*height: 100%;*/
+  text-align: left;
+  --webkit-transition: height 0.6s ease-out 0s;
+  -moz-transition: height 0.6s ease-out 0s;
+  -o-transition: height 0.6s ease-out 0s;
+  transition: height 0.6s ease-out 0s;
 }
 
-/* line 133, ../scss/module/_nav.scss */
-.third-level-cont > div {
-  width: 130px;
+/*.third-level-cont>div {
+    width: 130px;
+}*/
+/* line 148, ../scss/module/_nav.scss */
+.menu-submenu > ul > li:hover .third-level-cont,
+.third-level-cont:hover {
+  /*width: 130px;*/
+  height: 36px;
 }
 
-/* line 137, ../scss/module/_nav.scss */
-.menu-submenu > ul > li:hover .third-level-cont {
-  width: 130px;
-}
-
-/* line 141, ../scss/module/_nav.scss */
+/* line 154, ../scss/module/_nav.scss */
 .menu-submenu > ul > li a.third-level {
+  display: block;
   text-transform: lowercase;
   font-size: 12px;
-  margin-left: 5px;
+  /*margin-left: 5px;*/
 }
 
 /* line 1, ../scss/module/_iconmenu.scss */
@@ -5195,8 +5208,12 @@ article .topimage {
 .article-text .content-editor-image-right {
   float: right;
 }
+/* line 135, ../scss/module/_article.scss */
+.article-text b, .article-text strong {
+  font-weight: 700;
+}
 
-/* line 136, ../scss/module/_article.scss */
+/* line 140, ../scss/module/_article.scss */
 .article-links {
   border-top: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
@@ -5205,14 +5222,14 @@ article .topimage {
   text-align: center;
 }
 
-/* line 144, ../scss/module/_article.scss */
+/* line 148, ../scss/module/_article.scss */
 .article-links > h6 {
   font-weight: 500;
   text-transform: uppercase;
   margin-bottom: 16px;
 }
 
-/* line 150, ../scss/module/_article.scss */
+/* line 154, ../scss/module/_article.scss */
 .article-links > ul > li {
   display: block;
   margin-top: 8px;
@@ -6063,7 +6080,69 @@ article .topimage {
   float: left;
   margin-left: 1.28205%;
   margin-right: 1.28205%;
-  padding-bottom: 21px;
-  margin-bottom: 28px;
+  padding-bottom: 17px;
+  margin-bottom: 26px;
   border-bottom: 1px solid #e6e6e6;
+}
+
+/* line 1, ../scss/module/_inner.scss */
+.inner-h1 {
+  /*margin-top: 60px;*/
+  text-align: center;
+}
+
+/* line 5, ../scss/module/_inner.scss */
+.article-text-inner {
+  width: 80.4245%;
+  margin: 32px auto;
+  padding: 0;
+}
+
+/* line 11, ../scss/module/_inner.scss */
+.article-text-inner blockquote {
+  font-size: 28px;
+  color: #fff;
+  width: 100%;
+  padding: 58px 11.0235%;
+  margin: 33px 0;
+  border-top: none;
+  border-bottom: none;
+  text-align: center;
+  quotes: "\201c" "\201d";
+  background: #35a6e3;
+  position: relative;
+}
+
+/* line 25, ../scss/module/_inner.scss */
+.article-text-inner blockquote p {
+  line-height: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: 400;
+}
+
+/* line 33, ../scss/module/_inner.scss */
+.article-text-inner blockquote:before,
+.article-text-inner blockquote:after {
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/* line 44, ../scss/module/_inner.scss */
+.article-text-inner blockquote:before {
+  content: open-quote;
+  top: 27px;
+}
+
+/* line 48, ../scss/module/_inner.scss */
+.article-text-inner blockquote:after {
+  content: close-quote;
+  bottom: 33px;
 }

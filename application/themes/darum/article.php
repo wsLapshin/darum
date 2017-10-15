@@ -37,11 +37,11 @@ use Concrete\Core\Localization\Service\Date ?>
                                 Автор: Кравченко Полина
                             </span> 
                             <span class="intro-likes">
-                                <?php
+                                <?php/*
                                 $dateService = new Date();
                                 $prettyDate = $dateService->formatPrettyDate($c->getCollectionDateAdded());
-                                ?>
-                                <?= $prettyDate ?><i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                */?>
+                                <?php// $prettyDate ?><i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                             </span>
                         </div>
                         <div class="social">
@@ -68,7 +68,7 @@ use Concrete\Core\Localization\Service\Date ?>
                         <footer>
                             <div class="social">
                                 <div class="social-likes">
-                                    <a class="heart" href="#">
+                                    <a rel="sidebar" class="addFav heart" href="">
                                         <i class="fa fa-heart"></i></a><!--
                                     --><span class="social-karma">
                                         <a href="#">
@@ -218,7 +218,7 @@ use Concrete\Core\Localization\Service\Date ?>
                             <h3>Интересные статьи</h3> 
                         </div>
                         <ul>
-                            <li class="aside-list-item">
+                            <li class="aside-list-item mini">
                                 <img src="<?php echo$this->getThemePath() ?>/img/demo/asidethumbnail1.jpg"/>
                                 <div class="introtext">
                                     <p>
@@ -231,7 +231,7 @@ use Concrete\Core\Localization\Service\Date ?>
                                     </span>
                                 </div>
                             </li>
-                            <li class="aside-list-item">
+                            <li class="aside-list-item mini">
                                 <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail2.jpg"/>
                                 <div class="introtext">
                                     <p>
@@ -244,7 +244,7 @@ use Concrete\Core\Localization\Service\Date ?>
                                     </span>
                                 </div>
                             </li>
-                            <li class="aside-list-item">
+                            <li class="mini aside-list-item">
                                 <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail3.jpg"/>
                                 <div class="introtext">
                                     <p>
@@ -257,7 +257,7 @@ use Concrete\Core\Localization\Service\Date ?>
                                     </span>
                                 </div>
                             </li>
-                            <li class="aside-list-item">
+                            <li class="mini aside-list-item">
                                 <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail4.jpg"/>
                                 <div class="introtext">
                                     <p>
@@ -270,7 +270,7 @@ use Concrete\Core\Localization\Service\Date ?>
                                     </span>
                                 </div>
                             </li>
-                            <li class="aside-list-item">
+                            <li class="mini aside-list-item">
                                 <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail5.jpg"/>
                                 <div class="introtext">
                                     <p>

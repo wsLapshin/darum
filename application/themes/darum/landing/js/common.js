@@ -14,6 +14,8 @@ $(function() {
 	
 
 	$(".carousel").flipster({
+        itemContainer: "ul.carousel__ul",
+        itemSelector: "li.carousel__ul_li",
         style: 'carousel',
         spacing: 0,
         buttons:   true,

@@ -173,6 +173,20 @@
                         <?php $a = new Area('MiddleSliderImage3'); $a->display($c);?>
                        </div>
                    </li>
+
+                   <li class="carousel__ul_li">
+                     <div class="carousel__ul_img">
+                        <?php $a = new Area('MiddleSliderImage4'); $a->display($c);?>
+                       </div>
+                   </li>
+
+                   
+                   <li class="carousel__ul_li">
+                     <div class="carousel__ul_img">
+                        <?php $a = new Area('MiddleSliderImage5'); $a->display($c);?>
+                       </div>
+                   </li>
+
                  </ul>
                </div>
              </div>

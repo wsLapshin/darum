@@ -23,22 +23,22 @@
         <div class="container">
             <div class="footer__bottom_left">
                 <div class="footer__bottom_header">дарум</div>
-                <div class="footer__bottom_text">Дарум - портал, посвященный психологической помощи. Здесь психологи консультируют и отвечают на вопросы, читатели спрашивают о наболевшем. Интересные публикации на тему дети-родители, студентам. отношения а также полезные советы. проверенные временем. Чат он-лайн с психологами и форум с готовыми ответами на вопросы.</div>
+                <div class="footer__bottom_text">Дарум - это медиа бренд, включающий в себя: интернет журнал, форум, приложение и сервис по развитию отношений на любом этапе жизни.</div>
                 <div class="footer__bottom_copy">&copy; 2017. Все права защищены</div>
             </div>
 
             <div class="footer__bottom_middle">
                 <div class="footer__bottom_list">
-                    <a href="/index.php/roditelyam" class="footer__bottom_li">РОДИТЕЛЯМ</a>
-                    <a href="/index.php/studentam" class="footer__bottom_li">СТУДЕНТАМ</a>
-                    <a href="/index.php/otnosheniya" class="footer__bottom_li">ОТНОШЕНИЯ</a>
+                    <a href="/roditelyam" class="footer__bottom_li">РОДИТЕЛЯМ</a>
+                    <a href="/studentam" class="footer__bottom_li">СТУДЕНТАМ</a>
+                    <a href="/otnosheniya" class="footer__bottom_li">ОТНОШЕНИЯ</a>
                 </div>
                 <div class="footer__bottom_list">
-                    <a href="#" class="footer__bottom_li">О ЦЕНТРЕ ДАРУМ</a>
-                    <a href="#" class="footer__bottom_li">СМИ О НАС</a>
-                    <a href="#" class="footer__bottom_li">ПРОГРАММА ПРИВИЛЕГИЙ</a>
-                    <a href="#" class="footer__bottom_li">ПАРТНЕРАМ</a>
-                    <a href="#" class="footer__bottom_li">О РАЗМЕЩЕНИИ РЕКЛАМЫ</a>
+                    <a href="/o-centre-darum" class="footer__bottom_li">О ЦЕНТРЕ ДАРУМ</a>
+                    <a href="/smi-o-nas" class="footer__bottom_li">СМИ О НАС</a>
+                    <a href="/programma-privelegij" class="footer__bottom_li">ПРОГРАММА ПРИВИЛЕГИЙ</a>
+                    <a href="/partneram" class="footer__bottom_li">ПАРТНЕРАМ</a>
+                    <a href="/o-razmeshenii-reklamy" class="footer__bottom_li">О РАЗМЕЩЕНИИ РЕКЛАМЫ</a>
                 </div>
             </div>
 
@@ -63,3 +63,10 @@
         </div>
     </div>
 </footer>
+<div id="dialog" title="Basic dialog" style="display:none">
+  <p>
+    Мобильное приложение будет доступно для скачивания позднее    
+  </p>
+</div>
+<div style="display:none" id="AddFavViaSheens">
+</div>

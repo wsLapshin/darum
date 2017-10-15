@@ -1,11 +1,11 @@
 <div class="l-container">
     <div class="header">
-        <a href="#">Скачайте приложение</a>
+        <a href="#" id="downloadmobile">Скачайте приложение</a>
         <div class="logo">
-            <span class="logo-head">Когда нужна помощь</span>
+            <span class="logo-head">Центр развития</span>
             <span id="logo" class="logo-intro">дарум</span>
         </div>
-        <div class="login">
+        <div class="login" style="display:none">
             <a href="#">Вход</a>
             <a href="#">Регистрация</a>
         </div>
