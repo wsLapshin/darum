@@ -1,5 +1,5 @@
 <?php
-namespace Concrete\Core\Html;
+namespace Application\Src\Html;
 
 use Concrete\Core\Foundation\Service\Provider as ServiceProvider;
 
@@ -18,6 +18,7 @@ class HtmlServiceProvider extends ServiceProvider
             $this->app->singleton($key, $value);
         }
 
-        $this->app->bind('html/image', '\Concrete\Core\Html\Image');
+        //changed vs core ...
+        $this->app->bind('html/image', '\Application\Src\Html\Image');
     }
 }

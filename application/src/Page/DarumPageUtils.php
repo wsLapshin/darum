@@ -171,9 +171,13 @@ class DarumPageUtils
         return $stmt->fetch()['value'];
     }
 
+    /**
+     * Материалы верхнего уровня,скрытые от показа в меню ( вн. страницы)
+     * @return array
+     */
     public static function getCIDHiddenFromMainMenu()
     {
-	return array(423,424,425,426,427);
+        return array(423,424,425,426,427);
     }
 
     /**

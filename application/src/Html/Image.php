@@ -1,33 +1,23 @@
 <?php
-namespace Concrete\Core\Html;
+namespace Application\Src\Html;
 
+use Concrete\Core\Html\Image as CoreImage;
 use Concrete\Core\Entity\File\File;
 use PageTheme;
 
-class Image
+class Image extends CoreImage
 {
     protected $usePictureTag = false;
     protected $tag;
 
     protected $theme;
 
-    protected function loadPictureSettingsFromTheme()
-    {
-        $c = \Page::getCurrentPage();
-        if (is_object($c)) {
-            $th = PageTheme::getByHandle($c->getPageController()->getTheme());
-            if (is_object($th)) {
-                $this->theme = $th;
-                $this->usePictureTag = count($th->getThemeResponsiveImageMap()) > 0;
-            }
-        }
-    }
-
     /**
      * @param \File $f
      * @param null $usePictureTag
+     * @param $isResponsive -  width:100%, height не указывается
      */
-    public function __construct(File $f = null, $usePictureTag = null)
+    public function __construct(File $f = null, $usePictureTag = null, $isResponsive=true )
     {
         if (!is_object($f)) {
             return false;
@@ -67,16 +57,13 @@ class Image
                 $path = $f->getURL();
             }
             $this->tag = \HtmlObject\Image::create($path);
-            $this->tag->width((string) $f->getAttribute('width'));
-            $this->tag->height((string) $f->getAttribute('height'));
+            if($isResponsive){
+                $this->tag->width("100%"); 
+            } else {
+                $this->tag->width((string) $f->getAttribute('width'));
+                $this->tag->height((string) $f->getAttribute('height'));
+            }   
         }
     }
 
-    /**
-     * @return \HTMLObject\Element\Tag
-     */
-    public function getTag()
-    {
-        return $this->tag;
-    }
 }
