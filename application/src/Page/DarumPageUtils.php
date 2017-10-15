@@ -171,6 +171,11 @@ class DarumPageUtils
         return $stmt->fetch()['value'];
     }
 
+    public static function getCIDHiddenFromMainMenu()
+    {
+	return array(423,424,425,426,427);
+    }
+
     /**
      * Проверяет, является ли страница контейнером статей 
      * @return boolean 

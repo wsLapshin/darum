@@ -1,5 +1,7 @@
 
 <?php
+use Application\Src\Page\DarumPageUtils as PageUtils;
+
 defined('C5_EXECUTE') or die("Access Denied.");
 
 $navItems = $controller->getNavItems();
@@ -112,11 +114,13 @@ foreach ($navItems as $ni) {
     <div class="menu-mainmenu">
         <ul>
             <?php foreach ($navItems as $ni) : ?>
-                <li>
-                    <a class="<?php echo $ni->classes ?>" href="<?php echo $ni->url ?>">
-                        <?php echo $ni->name ?>
-                    </a>
-                </li>
+		<?php if( !in_array($ni->cID, PageUtils::getCIDHiddenFromMainMenu())):?>	
+			<li>
+			    <a class="<?php echo $ni->classes ?>" href="<?php echo $ni->url ?>">
+				<?php echo $ni->name ?>
+			    </a>
+			</li>
+		<?php endif; ?>
             <?php endforeach; ?>
         </ul>
         <div class="magnifier">
