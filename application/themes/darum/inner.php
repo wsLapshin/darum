@@ -128,7 +128,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <img class="aside-banner-middle" src="<?php echo $this->getThemePath() ?>/img/demo/makeup.jpg"/>
+                        <img style="display:none" class="aside-banner-middle" src="<?php echo $this->getThemePath() ?>/img/demo/makeup.jpg"/>
                     </aside>
             </div>
         </div>

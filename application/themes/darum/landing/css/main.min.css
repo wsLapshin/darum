@@ -78,7 +78,7 @@ h2 {
     .header__imgs>img {
       width: 100%; }
   .header__wrap {
-    width: 555px;
+    width: 680px;
     background-color: #35a6e3;
     position: absolute;
     left: 50%;
@@ -266,7 +266,7 @@ h2 {
     font-size: 34px;
     line-height: 1.125em;
     color: #fff;
-    width: 540px;
+    width: 800px;
     font-weight: 400;
     margin: 0px auto 0; }
   .sect3__text {
