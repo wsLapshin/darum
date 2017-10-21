@@ -26,28 +26,12 @@
                 <div class="l-contentbar-allarticles right-bordered">
                     <ul class="allarticles">
                         <?php foreach ($pages as $p):?> 
-                            <?php $blocks = $p->getBlocks('MainImage');
-                                  $mainImage = null;
-                                  foreach( $blocks as $block ) {
-                                    if ($block->getBlockTypeID() == 32 ) { //image type
-                                        $mainImage = $block;
-                                        break;
-                                    }
-                                  }
-                              ?>
                             <li class="allarticles-one">
-
-                                <?php //thumbnail ?>
-                                <?php if ( null !== $mainImage ):?>
-                                    <?php   $ih = Core::make('helper/image');
-                                            $thumb = $mainImage->getInstance();
-                                            $alt =  $thumb->getAltText();
-                                            $ih->outputThumbnail($thumb->getFileObject(), 
-                                                300, 193, $alt, false, true); //return false, crop true 
-                                     ?>
-                                <?php endif; ?>
-
                                 <?php $pageUtils = new DarumPageUtils($p);?>
+                                <?php if( !empty($p->mainImage)) :?>
+                                    <?php echo $pageUtils->cropImage($p->mainImage, 300, 193, $p->altMainImage); ?>
+                                <?php endif;?>
+
                                 <div class="allarticles-content">
 
                                         <?php $title = $pageUtils->getCategoryTitle($slug); ?> 
@@ -83,76 +67,27 @@
                 </div>
                 <aside class="l-aside-allarticles">
                    <img style="margin-bottom:49px" src="<?php echo $this->getThemePath() ?>/img/demo/vk.jpg"/>
+                   
                     <div class="aside-list">
                         <div class="aside-list-header">
-                            <h3>Интересные статьи</h3> 
+                            <h3>Интересные советы</h3> 
                         </div>
-                        <ul>
-                            <li class="aside-list-item">
-                                <img src="<?php echo$this->getThemePath() ?>/img/demo/asidethumbnail1.jpg"/>
-                                <div class="introtext">
-                                    <p>
-                                        <a href="#">
-                                            Жертвы тайминга: Екатерина Попова о том, зачем отличать свои желания от чужих
-                                        </a>
-                                    </p>
-                                    <span class="intro-likes intro-likes-list">
-                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
-                                    </span>
-                                </div>
-                            </li>
-                            <li class="aside-list-item">
-                                <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail2.jpg"/>
-                                <div class="introtext">
-                                    <p>
-                                        <a href="#">
-                                            Как правильно ссроиться? Рассказывает Михаил Лабковский
-                                        </a>
-                                    </p>
-                                    <span class="intro-likes intro-likes-list">
-                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
-                                    </span>
-                                </div>
-                            </li>
-                            <li class="aside-list-item">
-                                <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail3.jpg"/>
-                                <div class="introtext">
-                                    <p>
-                                        <a href="#">
-                                            За что мы любим наших мам - откровения взрослых девочек.
-                                        </a>
-                                    </p>
-                                    <span class="intro-likes intro-likes-list">
-                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
-                                    </span>
-                                </div>
-                            </li>
-                            <li class="aside-list-item">
-                                <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail4.jpg"/>
-                                <div class="introtext">
-                                    <p>
-                                        <a href="#">
-                                            Уверенность в результате работы над ошибками Лабковский
-                                        </a>
-                                    </p>
-                                    <span class="intro-likes intro-likes-list">
-                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
-                                    </span>
-                                </div>
-                            </li>
-                            <li class="aside-list-item">
-                                <img src="<?php echo $this->getThemePath() ?>/img/demo/asidethumbnail5.jpg"/>
-                                <div class="introtext">
-                                    <p>
-                                        <a href="#">
-                                            Как правильно ссориться? Рассказывает Михаил Лабковский
-                                        </a>
-                                    </p>
-                                    <span class="intro-likes intro-likes-list">
-                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
-                                    </span>
-                                </div>
-                            </li>
+                         <ul>
+                                <?php foreach( $advices as $p ):?>
+                                <?php $pageUtils = new DarumPageUtils($p);?>
+                                <li class="aside-list-item">
+                                    <?php if( !empty($p->mainImage)) :?>
+                                        <?php echo $pageUtils->cropImage($p->mainImage, 98, 98, $p->altMainImage); ?>
+                                    <?php endif;?>
+                                    <div class="introtext">
+                                        <p>
+                                            <a href="<?= $p->getCollectionPath()?>">
+                                                <?php echo mb_substr($p->getAttribute('introtext'), 0, 60) . '...';?>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </li>
+                                <?php endforeach;?>
                         </ul>
                     </div>
                     <img class="aside-banner-middle" src="<?php echo $this->getThemePath() ?>/img/demo/makeup.jpg"/>
