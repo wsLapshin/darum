@@ -1,4 +1,6 @@
 <?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php use Application\Src\Page\DarumPageUtils; ?>
+<?php $leadColor = DarumPageUtils::getCategoryColor($c->getCollectionID);?>
 <?php $landingDir = $this->getThemePath() . '/landing'; ?>
 <?php $this->inc('elements/common/doctype.php'); ?>
 <?php $this->inc('elements/common/head.php'); ?>
@@ -8,8 +10,24 @@
     <div class="<?= $c->getPageWrapperClass() ?>">
         <?php $this->inc('elements/nav.php'); ?>
         <div class="l-container">
-         <!--*1-->
-            <h1 class="allarticles-h1 allarticles-h1-maintop">Советы проверенные временем</h1>
+         <!--*1 New-->
+
+            <?php if ($c->getCollectionID() == DarumPageUtils::ADVICE_PARENTS_CATEGORY_CID):?>
+                <h1 class="allarticles-h1 allarticles-h1-maintop">Новые советы родителям</h1>
+            <?php elseif($c->getCollectionID() == DarumPageUtils::ADVICE_STUDENTS_CATEGORY_CID):?>
+                <h1 class="allarticles-h1 allarticles-h1-maintop">Новые советы студентам</h1>
+            <?php elseif($c->getCollectionID() == DarumPageUtils::ADVICE_RELATIONS_CATEGORY_CID):?>
+                <h1 class="allarticles-h1 allarticles-h1-maintop">Новые советы по отношениям</h1>
+            <?php elseif ($c->getCollectionID() == DarumPageUtils::ARTICLE_PARENTS_CATEGORY_CID):?>
+                <h1 class="allarticles-h1 allarticles-h1-maintop">Новые статьи родителям</h1>
+            <?php elseif($c->getCollectionID() == DarumPageUtils::ARTICLE_STUDENTS_CATEGORY_CID):?>
+                <h1 class="allarticles-h1 allarticles-h1-maintop">Новые статьи студентам</h1>
+            <?php elseif($c->getCollectionID() == DarumPageUtils::ARTICLE_RELATIONS_CATEGORY_CID):?>
+                <h1 class="allarticles-h1 allarticles-h1-maintop">Новые статьи по отношениям</h1>
+            <?php else:?>
+                <h1 class="allarticles-h1 allarticles-h1-maintop">Раздел не опеределен (ошибка)</h1>
+            <?php endif;?>
+
             <div class="l-maintop">
                 <div class="l-aside-allarticles">
                     <div class="aside-list" style="margin-top:17px;">
@@ -17,237 +35,149 @@
                             <h3>Рекомендуем</h3> 
                         </div>
                         <ul>
+                            <?php foreach( $newPages as $p ):?>
+                            <?php $pageUtils = new DarumPageUtils($p);?>
                             <li class="aside-list-item mini">
-                                <img src="/application/themes/darum/img/demo/asidethumbnail1.jpg">
+                                <?php if( !empty($p->mainImage)) :?>
+                                    <?php echo $pageUtils->cropImage($p->mainImage, 72, 72, $p->altMainImage); ?>
+                                <?php endif;?>
                                 <div class="introtext">
                                     <p>
-                                        <a href="#">
-                                            Жертвы тайминга: Екатерина Попова о том, зачем отличать
+                                        <a href="<?= $p->getCollectionPath()?>">
+                                            <?php echo mb_substr($p->getAttribute('introtext'), 0, 50) . '...';?>
                                         </a>
                                     </p>
                                 </div>
                             </li>
-                            <li class="aside-list-item mini">
-                                <img src="/application/themes/darum/img/demo/asidethumbnail2.jpg">
-                                <div class="introtext">
-                                    <p>
-                                        <a href="#">
-                                            Как правильно ссроиться? Рассказывает Михаил Лабковский
-                                        </a>
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="aside-list-item mini">
-                                <img src="/application/themes/darum/img/demo/asidethumbnail3.jpg">
-                                <div class="introtext">
-                                    <p>
-                                        <a href="#">
-                                            За что мы любим наших мам - откровения взрослых девочек.
-                                        </a>
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="aside-list-item mini">
-                                <img src="/application/themes/darum/img/demo/asidethumbnail4.jpg">
-                                <div class="introtext">
-                                    <p>
-                                        <a href="#">
-                                            Уверенность в результате работы над ошибками Лабковский
-                                        </a>
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="aside-list-item mini">
-                                <img src="/application/themes/darum/img/demo/asidethumbnail5.jpg">
-                                <div class="introtext">
-                                    <p>
-                                        <a href="#">
-                                            Как правильно ссориться? Рассказывает Михаил Лабковский
-                                        </a>
-                                    </p>
-                                </div>
-                            </li>
+                            <?php endforeach;?>
                         </ul>
                     </div>
                 </div>
                 <div class="preview-main-container">
                     <ul class="flipster__container">
+                        <?php foreach( $mainNewPage as $p ):?>
+                        <?php $pageUtils = new DarumPageUtils($p);?>
                         <li>
                             <div class="preview-main">
-                                <img alt="" src="<?php echo $this->getThemePath() ?>/img/demo/previewlist/previewmain10.jpg"/> 
+                                <?php if( !empty($p->mainImage)) :?>
+                                    <?php echo $pageUtils->cropImage($p->mainImage, 555, 420, $p->altMainImage); ?>
+                                <?php endif;?>
 
-                                <div class="intro pnk">
+                                <?php $title = $pageUtils->getCategoryTitle()?>
+                                <div class="intro <?= $title['css'] ?>">
 
                                     <span class="intro-category">
-                                        <a class="blue" href="/roditelyam/stati/spisok/detam-do-treh-let">
-                                            Статьи отношения 
+                                        <a href="<?= $title['href']?>">
+                                            <?= $title['title']?> 
                                         </a>
                                     </span>
                                     <h1 class="intro-header">
-                                        Как за лето научить малыша разговаривать
+                                        <a style="color:#fff" href="<?= $p->getCollectionPath()?>">
+                                            <?= $p->getAttribute('meta_title')?>
+                                        </a>
                                     </h1>
                                     <p class="intro-text">
-                                        Жертвы тайминга: Екатерина Попова о том,зачем отличать сови желания от чужих. Жертвы тайминга: Екатерина Попова, зачем ...
+                                         <?php echo mb_substr($p->getAttribute('introtext'), 0, 100) . '...';?>
                                     </p>
 <!--                                    <span class="intro-author">
                                         Автор: Кравченко Полина
                                     </span> -->
                                     <span class="intro-likes">
-                                        19.09.2017<i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                                     </span>
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="preview-main">
-                                <img alt="" src="<?php echo $this->getThemePath() ?>/img/demo/previewlist/previewmain2.jpg"/> 
-
-                                <div class="intro">
-
-                                    <span class="intro-category">
-                                        <a class="blue" href="/roditelyam/stati/spisok/detam-do-treh-let">
-                                            Статьи родителям
-                                        </a>
-                                    </span>
-                                    <h1 class="intro-header">
-                                        Как правильно готовиться к экзаменам
-                                    </h1>
-                                    <p class="intro-text">
-                                        Жертвы тайминга: Екатерина Попова о том,зачем отличать сови желания от чужих. Жертвы тайминга: Екатерина Попова, зачем ...
-                                    </p>
-<!--                                    <span class="intro-author">
-                                        Автор: Кравченко Полина
-                                    </span> -->
-                                    <span class="intro-likes">
-                                        19.09.2017<i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
+                        <?php endforeach;?>
                     </ul>
                 </div>
-                <aside>
-                    <img class="aside-banner-bottom" src="/application/themes/darum/img/demo/divanru.jpg">
+                <aside class="l-aside-allarticles">
+                    <img class="banner aside-banner-bottom" src="/application/themes/darum/img/demo/divanru.jpg">
                 </aside>
             </div>
 
             <!--*2-->
-            <h1 class="allarticles-h1 allarticles-h1-mainarticles">Статьи</h1>
+            <?php if ($c->getCollectionID() == DarumPageUtils::ADVICE_PARENTS_CATEGORY_CID):?>
+                <h1 class="allarticles-h1 allarticles-h1-mainarticles">Популярные советы родителям</h1>
+            <?php elseif($c->getCollectionID() == DarumPageUtils::ADVICE_STUDENTS_CATEGORY_CID):?>
+                <h1 class="allarticles-h1 allarticles-h1-mainarticles">Популярные советы студентам</h1>
+            <?php elseif($c->getCollectionID() == DarumPageUtils::ADVICE_RELATIONS_CATEGORY_CID):?>
+                <h1 class="allarticles-h1 allarticles-h1-mainarticles">Популярные советы по отношениям</h1>
+            <?php elseif ($c->getCollectionID() == DarumPageUtils::ARTICLE_PARENTS_CATEGORY_CID):?>
+                <h1 class="allarticles-h1 allarticles-h1-mainarticles">Популярные статьи родителям</h1>
+            <?php elseif($c->getCollectionID() == DarumPageUtils::ARTICLE_STUDENTS_CATEGORY_CID):?>
+                <h1 class="allarticles-h1 allarticles-h1-mainarticles">Популярные статьи студентам</h1>
+            <?php elseif($c->getCollectionID() == DarumPageUtils::ARTICLE_RELATIONS_CATEGORY_CID):?>
+                <h1 class="allarticles-h1 allarticles-h1-mainarticles">Популярные статьи по отношениям</h1>
+            <?php else:?>
+                <h1 class="allarticles-h1 allarticles-h1-mainarticles">Раздел не опеределен (ошибка)</h1>
+            <?php endif;?>
+                
             <div class="l-mainarticles">
                 <div class="preview-main-container">
                     <ul class="flipster__container">
+                        <?php foreach( $mainPopularPage as $p ):?>
+                        <?php $pageUtils = new DarumPageUtils($p);?>
                         <li>
                             <div class="preview-main">
-                                <img alt="" src="<?php echo $this->getThemePath() ?>/img/demo/previewlist/previewmain1.jpg"/> 
+                                <?php if( !empty($p->mainImage)) :?>
+                                    <?php echo $pageUtils->cropImage($p->mainImage, 555, 420, $p->altMainImage); ?>
+                                <?php endif;?>
 
-                                <div class="intro ">
+                                <?php $title = $pageUtils->getCategoryTitle(); ?>
+                                <div class="intro <?= $title['css'] ?>">
 
                                     <span class="intro-category">
-                                        <a class="blue" href="/roditelyam/stati/spisok/detam-do-treh-let">
-                                            Статьи родителям
+                                        <a  href="<?= $title['href']?>">
+                                            <?= $title['title']?> 
                                         </a>
                                     </span>
                                     <h1 class="intro-header">
-                                        Как за лето научить малыша разговаривать
+                                        <a style="color:#fff" href="<?= $p->getCollectionPath()?>">
+                                            <?= $p->getAttribute('meta_title')?>
+                                        </a>
                                     </h1>
                                     <p class="intro-text">
-                                        Жертвы тайминга: Екатерина Попова о том,зачем отличать сови желания от чужих. Жертвы тайминга: Екатерина Попова, зачем ...
+                                         <?php echo mb_substr($p->getAttribute('introtext'), 0, 100) . '...';?>
                                     </p>
 <!--                                    <span class="intro-author">
                                         Автор: Кравченко Полина
                                     </span> -->
                                     <span class="intro-likes">
-                                        19.09.2017<i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                                     </span>
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="preview-main">
-                                <img alt="" src="<?php echo $this->getThemePath() ?>/img/demo/previewlist/previewmain2.jpg"/> 
-
-                                <div class="intro grn">
-
-                                    <span class="intro-category">
-                                        <a class="blue" href="/roditelyam/stati/spisok/detam-do-treh-let">
-                                            Статьи студентам 
-                                        </a>
-                                    </span>
-                                    <h1 class="intro-header">
-                                        Как правильно готовиться к экзаменам
-                                    </h1>
-                                    <p class="intro-text">
-                                        Жертвы тайминга: Екатерина Попова о том,зачем отличать сови желания от чужих. Жертвы тайминга: Екатерина Попова, зачем ...
-                                    </p>
-<!--                                    <span class="intro-author">
-                                        Автор: Кравченко Полина
-                                    </span> -->
-                                    <span class="intro-likes">
-                                        19.09.2017<i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
+                        <?php endforeach;?>
                     </ul>
                 </div>
                 <ul class="previewlist">
+                    <?php foreach( $popularPages as $p ):?>
+                    <?php $pageUtils = new DarumPageUtils($p);?>
                     <li class="previewlist-one">
-                        <img alt="" src="<?php echo $this->getThemePath() ?>/img/demo/previewlist/3.jpg">                                
+                        <?php if( !empty($p->mainImage)) :?>
+                                    <?php echo $pageUtils->cropImage($p->mainImage, 263, 180, $p->altMainImage); ?>                          
+                        <?php endif;?>
                         <div class="previewlist-content">
                             <h2 class="subcategory-header">
-                                <a class="pink" href="/index.php/otnosheniya/stati/spisok">
-                                    Статьи отношения
+                                <?php $title = $pageUtils->getCategoryTitle()?>
+                                <a class="<?= $leadColor?>" href="<?= $title['href']?>">
+                                    <?= $title['title']?>
                                 </a>
                             </h2>
                             <h3 class="previewlist-content-header">
-                                <a href="/roditelyam/stati/psihika-rebenka">
-                                    Топ 10 советов, для тех, кто хочет влюбиться
+                                <a href="<?= $p->getCollectionPath()?>">
+                                    <?= $p->getAttribute('meta_title')?>
                                 </a>
                             </h3>
 
                             <span class="intro-likes intro-likes-previewlist">
-                                19.09.2017                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                             </span>
                         </div>
                     </li>
-                    <li class="previewlist-one">
-                        <img alt="" src="<?php echo $this->getThemePath() ?>/img/demo/previewlist/4.jpg">                                
-                        <div class="previewlist-content">
-                            <h2 class="subcategory-header">
-                                <a class="green" href="/index.php/studenty/stati/spisok">
-                                    Статьи студентам 
-                                </a>
-                            </h2>
-                            <h3 class="previewlist-content-header">
-                                <a href="/roditelyam/stati/psihika-rebenka">
-                                    Быстро запоминаем 25 страниц печатного текста
-                                </a>
-                            </h3>
-
-                            <span class="intro-likes intro-likes-previewlist">
-                                19.09.2017                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
-                            </span>
-                        </div>
-                    </li>
-                    <li class="previewlist-one cleardown">
-                        <img alt="" src="<?php echo $this->getThemePath() ?>/img/demo/previewlist/5.jpg">                                
-                        <div class="previewlist-content">
-                            <h2 class="subcategory-header">
-                                <a class="pink" href="/index.php/otnosheniya/stati/spisok">
-                                    Статьи отношения
-                                </a>
-                            </h2>
-                            <h3 class="previewlist-content-header">
-                                <a href="/roditelyam/stati/psihika-rebenka">
-                                    Топ 10 советов, для тех, кто хочет влюбиться
-                                </a>
-                            </h3>
-
-                            <span class="intro-likes intro-likes-previewlist">
-                                19.09.2017                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
-                            </span>
-                        </div>
-                    </li>
+                    <?php endforeach;?>
                     <li class="previewlist-one">
                         <img alt="" src="<?php echo $this->getThemePath() ?>/img/demo/cklass.png">                                
                     </li>
@@ -255,66 +185,49 @@
             </div>
 
             <!--*3-->
-            <h1 class="allarticles-h1 allarticles-h1-mainadvices">Советы</h1>
+            <?php if ($c->getCollectionID() == DarumPageUtils::ADVICE_PARENTS_CATEGORY_CID):?>
+                <h1 class="allarticles-h1 allarticles-h1-mainadvices">Самые обсуждаемые советы</h1>
+            <?php elseif($c->getCollectionID() == DarumPageUtils::ADVICE_STUDENTS_CATEGORY_CID):?>
+                <h1 class="allarticles-h1 allarticles-h1-mainadvices">Самые обсуждаемые советы</h1>
+            <?php elseif($c->getCollectionID() == DarumPageUtils::ADVICE_RELATIONS_CATEGORY_CID):?>
+                <h1 class="allarticles-h1 allarticles-h1-mainadvices">Самые обсуждаемые советы</h1>
+            <?php elseif ($c->getCollectionID() == DarumPageUtils::ARTICLE_PARENTS_CATEGORY_CID):?>
+                <h1 class="allarticles-h1 allarticles-h1-mainadvices">Самые обсуждаемые статьи</h1>
+            <?php elseif($c->getCollectionID() == DarumPageUtils::ARTICLE_STUDENTS_CATEGORY_CID):?>
+                <h1 class="allarticles-h1 allarticles-h1-mainadvices">Самые обсуждаемые статьи</h1>
+            <?php elseif($c->getCollectionID() == DarumPageUtils::ARTICLE_RELATIONS_CATEGORY_CID):?>
+                <h1 class="allarticles-h1 allarticles-h1-mainadvices">Самые обсуждаемые статьи</h1>
+            <?php else:?>
+                <h1 class="allarticles-h1 allarticles-h1-mainadvices">Раздел не опеределен (ошибка)</h1>
+            <?php endif;?>
+                
             <div class="l-mainadvices">
                 <ul class="previewlist">
+                    <?php foreach( $commentedPages as $p ):?>
+                    <?php $pageUtils = new DarumPageUtils($p);?>
                     <li class="previewlist-one">
-                        <img alt="" src="<?php echo $this->getThemePath() ?>/img/demo/previewlist/3.jpg">                                
+                        <?php if( !empty($p->mainImage)) :?>
+                                    <?php echo $pageUtils->cropImage($p->mainImage, 263, 180, $p->altMainImage); ?>                          
+                        <?php endif;?>
                         <div class="previewlist-content">
                             <h2 class="subcategory-header">
-                                <a class="pink" href="/index.php/otnosheniya/stati/spisok">
-                                    Статьи отношения
+                                <?php $title = $pageUtils->getCategoryTitle()?>
+                                <a class="<?= $leadColor?>" href="<?= $title['href']?>">
+                                    <?= $title['title']?>
                                 </a>
                             </h2>
                             <h3 class="previewlist-content-header">
-                                <a href="/roditelyam/stati/psihika-rebenka">
-                                    Топ 10 советов, для тех, кто хочет влюбиться
+                                <a href="<?= $p->getCollectionPath()?>">
+                                    <?= $p->getAttribute('meta_title')?>
                                 </a>
                             </h3>
 
                             <span class="intro-likes intro-likes-previewlist">
-                                19.09.2017                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                             </span>
                         </div>
                     </li>
-                    <li class="previewlist-one">
-                        <img alt="" src="<?php echo $this->getThemePath() ?>/img/demo/previewlist/4.jpg">                                
-                        <div class="previewlist-content">
-                            <h2 class="subcategory-header">
-                                <a class="green" href="/index.php/studenty/stati/spisok">
-                                    Статьи студентам 
-                                </a>
-                            </h2>
-                            <h3 class="previewlist-content-header">
-                                <a href="/roditelyam/stati/psihika-rebenka">
-                                    Быстро запоминаем 25 страниц печатного текста
-                                </a>
-                            </h3>
-
-                            <span class="intro-likes intro-likes-previewlist">
-                                19.09.2017                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
-                            </span>
-                        </div>
-                    </li>
-                    <li class="previewlist-one">
-                        <img alt="" src="<?php echo $this->getThemePath() ?>/img/demo/previewlist/5.jpg">                                
-                        <div class="previewlist-content">
-                            <h2 class="subcategory-header">
-                                <a class="pink" href="/index.php/otnosheniya/stati/spisok">
-                                    Статьи отношения
-                                </a>
-                            </h2>
-                            <h3 class="previewlist-content-header">
-                                <a href="/roditelyam/stati/psihika-rebenka">
-                                    Топ 10 советов, для тех, кто хочет влюбиться
-                                </a>
-                            </h3>
-
-                            <span class="intro-likes intro-likes-previewlist">
-                                19.09.2017                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
-                            </span>
-                        </div>
-                    </li>
+                    <?php endforeach;?>
                     <li class="previewlist-one">
                         <img alt="" src="<?php echo $this->getThemePath() ?>/img/demo/cklass.png">                                
                     </li>
@@ -322,58 +235,39 @@
 
                 <div class="preview-main-container">
                     <ul class="flipster__container">
+                        <?php foreach( $mainCommentedPage as $p ):?>
+                        <?php $pageUtils = new DarumPageUtils($p);?>
                         <li>
                             <div class="preview-main">
-                                <img alt="" src="<?php echo $this->getThemePath() ?>/img/demo/previewlist/previewmain1.jpg"/> 
+                                <?php if( !empty($p->mainImage)) :?>
+                                    <?php echo $pageUtils->cropImage($p->mainImage, 555, 420, $p->altMainImage); ?>
+                                <?php endif;?>
 
-                                <div class="intro ">
-
+                                <?php $title = $pageUtils->getCategoryTitle();?>
+                                <div class="intro <?= $title['css'] ?>">
                                     <span class="intro-category">
-                                        <a class="blue" href="/roditelyam/stati/spisok/detam-do-treh-let">
-                                            Статьи родителям
+                                        <a  href="<?= $title['href']?>">
+                                            <?= $title['title']?> 
                                         </a>
                                     </span>
                                     <h1 class="intro-header">
-                                        Как за лето научить малыша разговаривать
+                                        <a style="color:#fff" href="<?= $p->getCollectionPath()?>">
+                                            <?= $p->getAttribute('meta_title')?>
+                                        </a>
                                     </h1>
                                     <p class="intro-text">
-                                        Жертвы тайминга: Екатерина Попова о том,зачем отличать сови желания от чужих. Жертвы тайминга: Екатерина Попова, зачем ...
+                                         <?php echo mb_substr($p->getAttribute('introtext'), 0, 100) . '...';?>
                                     </p>
 <!--                                    <span class="intro-author">
                                         Автор: Кравченко Полина
                                     </span> -->
                                     <span class="intro-likes">
-                                        19.09.2017<i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                        <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                                     </span>
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="preview-main">
-                                <img alt="" src="<?php echo $this->getThemePath() ?>/img/demo/previewlist/previewmain2.jpg"/> 
-
-                                <div class="intro grn">
-
-                                    <span class="intro-category">
-                                        <a class="blue" href="/roditelyam/stati/spisok/detam-do-treh-let">
-                                            Статьи студентам 
-                                        </a>
-                                    </span>
-                                    <h1 class="intro-header">
-                                        Как правильно готовиться к экзаменам
-                                    </h1>
-                                    <p class="intro-text">
-                                        Жертвы тайминга: Екатерина Попова о том,зачем отличать сови желания от чужих. Жертвы тайминга: Екатерина Попова, зачем ...
-                                    </p>
-<!--                                    <span class="intro-author">
-                                        Автор: Кравченко Полина
-                                    </span> -->
-                                    <span class="intro-likes">
-                                        19.09.2017<i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
+                        <?php endforeach;?>
                     </ul>
                 </div>
             </div>
@@ -388,8 +282,8 @@
             </div>
         </div>
         <div class="l-container">
-            <h1 class="allarticles-h1 allarticles-h1-mainquestion">Самые обсуждаемые<br/>Вопросы-Ответы</h1>
-            <ul class="questionlist">
+            <!--<h1 class="allarticles-h1 allarticles-h1-mainquestion">Самые обсуждаемые<br/>Вопросы-Ответы</h1>-->
+            <!--<ul class="questionlist">
                 <li class="questionlist-one">
                     <h2 class="subcategory-header">
                         <a href="/index.php/otnosheniya/stati/spisok">
@@ -510,113 +404,40 @@
                         <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                     </span>
                 </li>
-            </ul>
+            </ul>-->
             <div class="l-moreadvice">
                 <h2>Интересно почитать</h2>
                 <ul class="moreadvice-list">
+                    <?php foreach ( $interestingPages as $p):?>
+                    <?php $pageUtils = new DarumPageUtils($p);?>
                     <li class="moreadvice-one moreadvice-listitem right-bordered">
-                        <img src="/application/themes/darum/img/demo/moreadvice1.jpg">
+                        <?php if( !empty($p->mainImage)) :?>
+                            <?php echo $pageUtils->cropImage($p->mainImage, 262, 179, $p->altMainImage); ?>
+                        <?php endif;?>
+                        <?php $title = $pageUtils->getCategoryTitle();?>
                         <h2 class="subcategory-header">
-                            <a class="blue" href="#">
-                                Советы родителям    
+                            <a class="<?=$title['css']?>" href="<?=$title['href']?>">
+                                <?=$title['title']?>
                             </a>
                         </h2>
                         <h3 class="moreadvice-listitem-header">
-                            <a href="#">
-                                ТОП-10 лучших советов, для тех, кто хочет влюбиться
+                            <a href="<?= $p->getCollectionPath()?>">
+                                <?= $p->getAttribute('meta_title')?>
                             </a>
                         </h3>
                         <span class="intro-likes intro-likes-list">
                             <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                         </span>
                     </li>
-                    <li class="moreadvice-one moreadvice-listitem right-bordered">
-                        <img src="/application/themes/darum/img/demo/moreadvice2.jpg">
-                        <h2 class="subcategory-header">
-                            <a class="blue" href="#">
-                                Советы родителям    
-                            </a>
-                        </h2>
-                        <h3 class="moreadvice-listitem-header">
-                            <a href="#">
-                                ТОП-10 лучших советов, для тех, кто хочет влюбиться
-                            </a>
-                        </h3>
-                        <span class="intro-likes intro-likes-list">
-                            <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
-                        </span>
-                    </li>
-                    <li class="moreadvice-one moreadvice-listitem right-bordered third">
-                        <img src="/application/themes/darum/img/demo/moreadvice3.jpg">
-                        <h2 class="subcategory-header">
-                            <a class="blue" href="#">
-                                Советы родителям    
-                            </a>
-                        </h2>
-                        <h3 class="moreadvice-listitem-header">
-                            <a href="#">
-                                От учителя дефектолога (учим ребенка говорить!)
-                            </a>
-                        </h3>
-                        <span class="intro-likes intro-likes-list">
-                            <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
-                        </span>
-                    </li>
-                    <li class="moreadvice-one moreadvice-listitem right-bordered">
-                        <img src="/application/themes/darum/img/demo/moreadvice4.jpg">
-                        <h2 class="subcategory-header">
-                            <a class="blue" href="#">
-                                Советы родителям    
-                            </a>
-                        </h2>
-                        <h3 class="moreadvice-listitem-header">
-                            <a href="#">
-                                ТОП-10 лучших советов, для тех, кто хочет влюбиться
-                            </a>
-                        </h3>
-                        <span class="intro-likes intro-likes-list">
-                            <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
-                        </span>
-                    </li>
-                    <li class="moreadvice-one moreadvice-listitem right-bordered">
-                        <img src="/application/themes/darum/img/demo/moreadvice5.jpg">
-                        <h2 class="subcategory-header">
-                            <a class="blue" href="#">
-                                Советы родителям    
-                            </a>
-                        </h2>
-                        <h3 class="moreadvice-listitem-header">
-                            <a href="#">
-                                ТОП-10 лучших советов, для тех, кто хочет влюбиться
-                            </a>
-                        </h3>
-                        <span class="intro-likes intro-likes-list">
-                            <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
-                        </span>
-                    </li>
-                    <li class="moreadvice-one moreadvice-listitem right-bordered third">
-                        <img src="/application/themes/darum/img/demo/moreadvice6.jpg">
-                        <h2 class="subcategory-header">
-                            <a class="blue" href="#">
-                                Советы родителям    
-                            </a>
-                        </h2>
-                        <h3 class="moreadvice-listitem-header">
-                            <a href="#">
-                                От учителя дефектолога (учим ребенка говорить!)
-                            </a>
-                        </h3>
-                        <span class="intro-likes intro-likes-list">
-                            <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
-                        </span>
-                    </li>
+                    <?php endforeach;?>
                 </ul>
                 <ul class="moreadvice-banner">
                     <li class="moreadvice-one">
                         <img src="/application/themes/darum/img/demo/vk.jpg" <="" li="">
                     </li><li class="moreadvice-one">
                         <img src="/application/themes/darum/img/demo/cklass.png" <="" li="">
-                    </li></ul> 
+                    </li>
+                </ul> 
             </div>
         </div>
         <?php $this->inc('elements/footer.php'); ?>
@@ -630,7 +451,7 @@
                 style: 'flat',
                 spacing: 0,
                 loop: true,
-                autoplay: 3000,
+                autoplay: 5000,
                 keyboard: false,
                 buttons: true
             });

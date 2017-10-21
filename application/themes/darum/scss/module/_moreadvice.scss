@@ -57,7 +57,7 @@
         @include float-span(3);
     }
 
-    .moreadvice-listitem.third {
+    .moreadvice-listitem:nth-child(3n) {
         @include float-span(3, 'last');
     }
 }

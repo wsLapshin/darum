@@ -5,12 +5,20 @@
     text-align: left;
 }
 
-.intro.grn {
+.intro.green {
     background: #81b352;
 }
 
-.intro.pnk {
+.intro.pink {
     background: #f77e7e;
+}
+
+.intro.green {
+    background: #81b352;
+}
+
+.intro.blue {
+    background: $accentColor;
 }
 
 .intro>span {
