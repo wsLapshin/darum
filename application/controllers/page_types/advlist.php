@@ -44,15 +44,24 @@ class Advlist extends PageTypeController
             }
         }
 
+        $pLArticles = new PageList();
+    
         if( $cParentID == DarumPageUtils::ADVICE_PARENTS_CATEGORY_CID ) {
-            $this->set('whom', 'родителям');
+            $pLArticles->filterByParentId(DarumPageUtils::ARTICLE_PARENTS_CATEGORY_CID);
         } elseif ($cParentID == DarumPageUtils::ADVICE_STUDENTS_CATEGORY_CID ) {
-            $this->set('whom', 'студентам');
+            $pLArticles->filterByParentId(DarumPageUtils::ARTICLE_STUDENTS_CATEGORY_CID);
         } elseif ($cParentID == DarumPageUtils::ADVICE_RELATIONS_CATEGORY_CID ) {
-            $this->set('whom', 'про отношения');
+            $pLArticles->filterByParentId(DarumPageUtils::ARTICLE_RELATIONS_CATEGORY_CID);
         }
+        $pLArticles->getQueryObject()->orderBy('RAND ()');
+        $pLArticles->getQueryObject()->setMaxResults(7);
+        $articles = $pLArticles->getResults(); 
+        DarumPageUtils::extendPages($articles);
+        $this->set('articles', $articles);
 
-        $this->set('pages', $pL->getResults());
+        $pages = $pL->getResults();
+        DarumPageUtils::extendPages($pages);
+        $this->set('pages', $pages);
         $this->set('slug', $queryStringArg);
     }
 }

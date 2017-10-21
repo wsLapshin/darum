@@ -4,6 +4,7 @@ namespace Application\Src\Page;
 
 use Concrete\Core\Page\Page;
 use Concrete\Core\Support\Facade\Application;
+use Concrete\Core\Page\PageList;
 
 class DarumPageUtils
 {
@@ -12,12 +13,12 @@ class DarumPageUtils
     const ARTICLE_PARENTS_CATEGORY_CID = 203;
     const ARTICLE_STUDENTS_CATEGORY_CID = 204;
     const ARTICLE_RELATIONS_CATEGORY_CID = 205;
-
     const ADVICE_PARENTS_CATEGORY_CID = 200;
     const ADVICE_STUDENTS_CATEGORY_CID = 201;
     const ADVICE_RELATIONS_CATEGORY_CID = 202;
+    const GLOBAL_EXCLUDED_CIDS = [1, 412, 200, 201, 202, 203, 204, 205, 207,211, 413, 208, 414, 209, 423,424,425, 426,427, 428 ];
 
-    /** Containers' ontology attribute names, при добавлении/удалении поправте метод getCateogoryTitle стр74  Это аттрибут-селект, где выбираем онтологию*/
+    /** Containers' ontology attribute names, при добавлении/удалении поправте метод getCateogoryTitle стр74  Это аттрибут-селект, где выбираем онтологию */
     const ARTICLE_PARENTS_ONTOLOGY_ATTR = 'parents_articles';
     const ARTICLE_STUDENTS_ONTOLOGY_ATTR = 'students_articles';
     const ARTICLE_RELATIONS_ONTOLOGY_ATTR = 'relationship_articles';
@@ -43,13 +44,15 @@ class DarumPageUtils
     const DEFAULT_TITLE = "Darum, когда нужна помощь";
     const DEFAULT_CSS_CLASS = "blue";
 
-
-    /** new and popular slugs*/
+    /** new and popular slugs */
     const NEW_SLUG = "new";
     const POPULAR_SLUG = "populyarnie";
 
-    /** common slug for lists*/
+    /** common slug for lists */
     const LIST_SLUG = "spisok";
+
+    /** Name of the block of article(or advice) where the main image is stored */
+    const MAIN_IMAGE_AREA_NAME_IN_ARTICLE = 'MainImage';
 
     private $page;
 
@@ -126,36 +129,61 @@ class DarumPageUtils
         switch ($cParentID) {
             case static::ARTICLE_PARENTS_CATEGORY_CID:
                 $result['title'] = static::ARTICLE_PARENTS_CATEGORY_TITLE;
-                $result['css'] = static::ARTICLE_PARENTS_CATEGORY_TITLE_CSS_CLASS;
                 break;
             case static::ARTICLE_STUDENTS_CATEGORY_CID:
                 $result['title'] = static::ARTICLE_STUDENTS_CATEGORY_TITLE;
-                $result['css'] = static::ARTICLE_STUDENTS_CATEGORY_TITLE_CSS_CLASS;
                 break;
             case static::ARTICLE_RELATIONS_CATEGORY_CID:
                 $result['title'] = static::ARTICLE_RELATIONS_CATEGORY_TITLE;
-                $result['css'] = static::ARTICLE_RELATIONS_CATEGORY_TITLE_CSS_CLASS;
                 break;
             case static::ADVICE_PARENTS_CATEGORY_CID:
                 $result['title'] = static::ADVICE_PARENTS_CATEGORY_TITLE;
-                $result['css'] = static::ADVICE_PARENTS_CATEGORY_TITLE_CSS_CLASS;
                 break;
             case static::ADVICE_STUDENTS_CATEGORY_CID:
                 $result['title'] = static::ADVICE_STUDENTS_CATEGORY_TITLE;
-                $result['css'] = static::ADVICE_STUDENTS_CATEGORY_TITLE_CSS_CLASS;
                 break;
             case static::ADVICE_RELATIONS_CATEGORY_CID:
                 $result['title'] = static::ADVICE_RELATIONS_CATEGORY_TITLE;
-                $result['css'] = static::ADVICE_RELATIONS_CATEGORY_TITLE_CSS_CLASS;
                 break;
             default:
                 $result['title'] = static::DEFAULT_TITLE;
-                $result['css'] = static::DEFAULT_CSS_CLASS;
         }
-
+        $result['css'] = DarumPageUtils::getCategoryColor($cParentID); 
         $result['href'] = Page::getCollectionPathFromID($cParentID);
 
         return $result;
+    }
+
+    public static function getCategoryColor($categoryID)
+    {
+        $colors = [
+            static::ARTICLE_PARENTS_CATEGORY_CID => static::ARTICLE_PARENTS_CATEGORY_TITLE_CSS_CLASS,
+            static::ARTICLE_STUDENTS_CATEGORY_CID => static::ARTICLE_STUDENTS_CATEGORY_TITLE_CSS_CLASS,
+            static::ARTICLE_RELATIONS_CATEGORY_CID => static::ARTICLE_RELATIONS_CATEGORY_TITLE_CSS_CLASS,
+            static::ADVICE_PARENTS_CATEGORY_CID => static::ADVICE_PARENTS_CATEGORY_TITLE_CSS_CLASS,
+            static::ADVICE_STUDENTS_CATEGORY_CID => static::ADVICE_STUDENTS_CATEGORY_TITLE_CSS_CLASS,
+            static::ADVICE_RELATIONS_CATEGORY_CID => static::ADVICE_RELATIONS_CATEGORY_TITLE_CSS_CLASS,
+        ];
+
+        if( isset($colors[$categoryID]) ) {
+            return $colors[$categoryID];
+        } else {
+            return static::DEFAULT_CSS_CLASS;
+        }
+    }
+
+
+    /**
+     * Обрезка фото 
+     * @param \Concrete\Core\Entity\File\File $image
+     * @param int $width
+     * @param height  $height 300 193
+     */
+    public function cropImage($image, $width, $height, $alt='')
+    {
+        $ih = \Core::make('helper/image');
+        $crop = true;
+        return $ih->outputThumbnail($image, $width, $height, $alt, true, $crop); 
     }
 
     /**
@@ -167,7 +195,7 @@ class DarumPageUtils
         $em = \Database::get()->getEntityManager();
         $query = "select `value` from atSelectOptions where slug = :slug";
         $stmt = $em->getConnection()->prepare($query);
-        $stmt->execute(array(':slug'=>$slug));
+        $stmt->execute(array(':slug' => $slug));
         return $stmt->fetch()['value'];
     }
 
@@ -177,7 +205,39 @@ class DarumPageUtils
      */
     public static function getCIDHiddenFromMainMenu()
     {
-        return array(423,424,425,426,427);
+        return array(423, 424, 425, 426, 427);
+    }
+
+    /**
+     * Дополняет страницы параметрами,для удобства использования во вьюхах
+     * @param $pagesAr - массив страниц
+     */
+    public static function extendPages(&$pagesAr)
+    {
+        //main image
+        foreach ($pagesAr as &$p) {
+            $blocks = $p->getBlocks('MainImage');
+            $mainImage = null;
+            $mainImageAlt = null;
+            foreach ($blocks as $block) {
+                if ($block->getBlockTypeID() == 32) { //image type
+                    $mainImage = $block->getInstance()->getFileObject();
+                    $mainImageAlt = $block->getInstance()->getAltText();
+                    break;
+                }
+            }
+            $p->mainImage = $mainImage;
+            $p->altMainImage = $mainImageAlt;
+        }
+    }
+
+    /**
+     * Исключает глобальные(системные) странички, которых никогда не должно быть в списках 
+     * @param PageList $pL
+     */
+    public static function excludeGlobal(&$query)
+    {
+        $query->andWhere( 'p.cID not in (' . implode(',', self::GLOBAL_EXCLUDED_CIDS) . ')');
     }
 
     /**
@@ -187,9 +247,9 @@ class DarumPageUtils
     public function isArticlesContainer()
     {
         return in_array($this->page->getCollectionID(), array(
-             static::ARTICLE_PARENTS_CATEGORY_CID,
-             static::ARTICLE_STUDENTS_CATEGORY_CID,
-             static::ARTICLE_RELATIONS_CATEGORY_CID,
+            static::ARTICLE_PARENTS_CATEGORY_CID,
+            static::ARTICLE_STUDENTS_CATEGORY_CID,
+            static::ARTICLE_RELATIONS_CATEGORY_CID,
         ));
     }
 
@@ -200,9 +260,9 @@ class DarumPageUtils
     public function isAdvicesContainer()
     {
         return in_array($this->page->getCollectionID(), array(
-             static::ADVICE_PARENTS_CATEGORY_CID,
-             static::ADVICE_STUDENTS_CATEGORY_CID,
-             static::ADVICE_RELATIONS_CATEGORY_CID,
+            static::ADVICE_PARENTS_CATEGORY_CID,
+            static::ADVICE_STUDENTS_CATEGORY_CID,
+            static::ADVICE_RELATIONS_CATEGORY_CID,
         ));
     }
 
@@ -219,6 +279,5 @@ class DarumPageUtils
         $stmt->execute(array(':pageId' => $pageId, ':pageVersionId' => $pageVersionId));
         return $stmt->fetchAll();
     }
-
 
 }
