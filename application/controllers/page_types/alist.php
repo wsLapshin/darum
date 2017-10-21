@@ -19,9 +19,26 @@ class Alist extends PageTypeController
         $c = Page::getCurrentPage();
         $cParentID = $c->getCollectionParentID();
 
-        //фильтруем по разделу
+        //фильтруем по текущему разделу
         $pL->filterByParentID($cParentID);
         $pL->sortByPublicDateDescending();
+
+        //add advices to aside and make right text in headers
+        $pLAdvices = new PageList();
+        if( $cParentID == DarumPageUtils::ARTICLE_PARENTS_CATEGORY_CID ) {
+            $pLAdvices->filterByParentId(DarumPageUtils::ADVICE_PARENTS_CATEGORY_CID);
+        } elseif ($cParentID == DarumPageUtils::ARTICLE_STUDENTS_CATEGORY_CID ) {
+            $pLAdvices->filterByParentId(DarumPageUtils::ADVICE_STUDENTS_CATEGORY_CID);
+        } elseif ($cParentID == DarumPageUtils::ARTICLE_RELATIONS_CATEGORY_CID ) {
+            $pLAdvices->filterByParentId(DarumPageUtils::ADVICE_RELATIONS_CATEGORY_CID);
+        }
+        $pLAdvices->getQueryObject()->orderBy('RAND ()');
+        $pLAdvices->getQueryObject()->setMaxResults(7);
+        $advices = $pLAdvices->getResults(); 
+        DarumPageUtils::extendPages($advices);
+        $this->set('advices', $advices);
+
+        
         if( null !== $queryStringArg ) {
             switch ($queryStringArg) {
                 case DarumPageUtils::POPULAR_SLUG; 
@@ -43,16 +60,10 @@ class Alist extends PageTypeController
                     }
             }
         }
-
-        if( $cParentID == DarumPageUtils::ARTICLE_PARENTS_CATEGORY_CID ) {
-            $this->set('whom', 'родителям');
-        } elseif ($cParentID == DarumPageUtils::ARTICLE_STUDENTS_CATEGORY_CID ) {
-            $this->set('whom', 'студентам');
-        } elseif ($cParentID == DarumPageUtils::ARTICLE_RELATIONS_CATEGORY_CID ) {
-            $this->set('whom', 'про отношения');
-        }
-
-        $this->set('pages', $pL->getResults());
+        
+        $pages = $pL->getResults();
+        DarumPageUtils::extendPages($pages);
+        $this->set('pages', $pages);
         $this->set('slug', $queryStringArg);
     }
 }

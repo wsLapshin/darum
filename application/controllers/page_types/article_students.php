@@ -1,12 +1,21 @@
 <?php
-namespace Application\Controller\Article;
+namespace Application\Controller\PageType;
 
-use Concrete\Core\Page\Controller\PageTypeController;
+use Application\Src\Page\DarumPageUtils;
+use Concrete\Core\Page\Page;
 
-class Article extends PageTypeController
+use Application\Controller\PageType\AbstractArticle;
+
+class ArticleStudents extends AbstractArticle 
 {
-    public function view()
+    const MAX_MORE_RESULTS  = 5; //сайдбар, еще из того же раздела
+    const MAX_NEIGHBOUR_RESULTS = 3; //сайдбар из соседнего раздела (например советы, если сейчас в статье)
+    const MAX_INTERESTING_RESULTS  = 6;
+
+    public function __construct(Page $p)
     {
-        
+       parent::__construct($p);
+       $this->neighbourCategoryCID = DarumPageUtils::ADVICE_STUDENTS_CATEGORY_CID; 
     }
+    
 }
