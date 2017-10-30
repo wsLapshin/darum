@@ -3,6 +3,14 @@
 <?php $landingDir = $this->getThemePath() . '/landing'; ?>
 <?php $this->inc('elements/common/doctype.php'); ?>
 <?php $this->inc('elements/common/head.php'); ?>
+<style>
+    .tmp {
+        text-align: center;
+        font-size: 28px;
+        display: block;
+        font-family: bradobrei;
+    }
+</style>
 <body>
     <?php $this->inc('elements/common/ie8_warn.php'); ?>
 
@@ -44,7 +52,7 @@
                 </li>
             </ul>
             <!--*1-->
-            <span class="allarticles-h1 allarticles-h1-maintop">Ново></span>
+            <span class="allarticles-h1 allarticles-h1-maintop tmp">Новое</span>
             <div class="l-maintop">
                 <ul class="previewlist">
                     <?php foreach( $newPages as $p ):?>
@@ -138,7 +146,7 @@
             </div>
 
             <!--*2-->
-            <span class="allarticles-h1 allarticles-h1-mainarticles">Популярные Стат� </span>
+            <span class="allarticles-h1 allarticles-h1-mainarticles tmp">Популярные Статьи </span>
             <div class="l-mainarticles">
                 <div class="preview-main-container">
                     <ul class="flipster__container">
@@ -209,7 +217,7 @@
             </div>
 
             <!--*3-->
-            <span class="allarticles-h1 allarticles-h1-mainadvices">Советы</span>
+            <span class="allarticles-h1 allarticles-h1-mainadvices tmp">Советы</span>
             <div class="l-mainadvices">
                 <ul class="previewlist">
                     <?php foreach( $popularAdvicePages as $p ):?>
@@ -415,7 +423,7 @@
             </ul>-->
 
             <div class="l-moreadvice">
-                <h2>Интересно почитать</h2>
+                <span class="tmp">Интересно почитать</span>
                 <ul class="moreadvice-list">
                     <?php foreach ( $interestingPages as $p):?>
                     <?php $pageUtils = new DarumPageUtils($p);?>
@@ -424,16 +432,16 @@
                             <?php echo $pageUtils->cropImage($p->mainImage, 262, 179, $p->altMainImage); ?>
                         <?php endif;?>
                         <?php $title = $pageUtils->getCategoryTitle();?>
-                        <h2 class="subcategory-header">
+                        <h3 class="subcategory-header">
                             <a class="<?=$title['css']?>" href="<?=$title['href']?>">
                                 <?=$title['title']?>
                             </a>
-                        </h2>
-                        <h3 class="moreadvice-listitem-header">
+                        </h3>
+                        <h2 class="moreadvice-listitem-header">
                             <a href="<?= $p->getCollectionPath()?>">
                                 <?= $p->getAttribute('meta_title')?>
                             </a>
-                        </h3>
+                        </h2>
                         <span class="intro-likes intro-likes-list">
                             <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                         </span>
