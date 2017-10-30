@@ -44,7 +44,7 @@
                 </li>
             </ul>
             <!--*1-->
-            <h1 class="allarticles-h1 allarticles-h1-maintop">Новое</h1>
+            <span class="allarticles-h1 allarticles-h1-maintop">Ново></span>
             <div class="l-maintop">
                 <ul class="previewlist">
                     <?php foreach( $newPages as $p ):?>
@@ -55,16 +55,16 @@
                         <?php endif;?>                              
                         <div class="previewlist-content">
                             <?php $title = $pageUtils->getCategoryTitle()?>
-                            <h2 class="subcategory-header">
+                            <h3 class="subcategory-header">
                                 <a class="<?=$title['css']?>" href="<?=$title['href']?>">
                                     <?= $title['title']?> 
                                 </a>
-                            </h2>
-                            <h3 class="previewlist-content-header">
+                            </h3>
+                            <h2 class="previewlist-content-header">
                                 <a href="<?= $p->getCollectionPath()?>">
                                     <?= $p->getAttribute('meta_title')?>
                                 </a>
-                            </h3>
+                            </h2>
 
                             <span class="intro-likes intro-likes-previewlist">
                                 <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
@@ -86,16 +86,16 @@
                                 <?php $title = $pageUtils->getCategoryTitle();?>
                                 <div class="intro <?= $title['css'] ?>">
 
-                                    <span class="intro-category">
+                                    <h3 class="intro-category">
                                         <a href="<?= $title['href']?>">
                                             <?= $title['title']?> 
                                         </a>
-                                    </span>
-                                    <h1 class="intro-header">
+                                    </h3>
+                                    <h2 class="intro-header">
                                         <a style="color:#fff" href="<?= $p->getCollectionPath()?>">
                                             <?= $p->getAttribute('meta_title')?>
                                         </a>
-                                    </h1>
+                                    </h2>
                                     <p class="intro-text">
                                        <?php echo mb_substr($p->getAttribute('introtext'), 0, 100) . '...';?>
                                     </p>
@@ -138,7 +138,7 @@
             </div>
 
             <!--*2-->
-            <h1 class="allarticles-h1 allarticles-h1-mainarticles">Популярные Статьи</h1>
+            <span class="allarticles-h1 allarticles-h1-mainarticles">Популярные Стат� </span>
             <div class="l-mainarticles">
                 <div class="preview-main-container">
                     <ul class="flipster__container">
@@ -151,16 +151,16 @@
                                 <?php endif;?>
                                 <?php $title = $pageUtils->getCategoryTitle();?>
                                 <div class="intro <?= $title['css'] ?>">
-                                    <span class="intro-category">
+                                    <h3 class="intro-category">
                                         <a href="<?= $title['href']?>">
                                             <?= $title['title']?> 
                                         </a>
-                                    </span>
-                                    <h1 class="intro-header">
+                                    </h3>
+                                    <h2 class="intro-header">
                                         <a style="color:#fff" href="<?= $p->getCollectionPath()?>">
                                             <?= $p->getAttribute('meta_title')?>
                                         </a>
-                                    </h1>
+                                    </h2>
                                     <p class="intro-text">
                                          <?php echo mb_substr($p->getAttribute('introtext'), 0, 100) . '...';?>
                                     </p>
@@ -185,16 +185,16 @@
                         <?php endif;?>                              
                         <div class="previewlist-content">
                             <?php $title = $pageUtils->getCategoryTitle()?>
-                            <h2 class="subcategory-header">
+                            <h3 class="subcategory-header">
                                 <a class="<?=$title['css']?>" href="<?=$title['href']?>">
                                     <?= $title['title']?> 
                                 </a>
-                            </h2>
-                            <h3 class="previewlist-content-header">
+                            </h3>
+                            <h2 class="previewlist-content-header">
                                 <a href="<?= $p->getCollectionPath()?>">
                                     <?= $p->getAttribute('meta_title')?>
                                 </a>
-                            </h3>
+                            </h2>
 
                             <span class="intro-likes intro-likes-previewlist">
                                 <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
@@ -209,7 +209,7 @@
             </div>
 
             <!--*3-->
-            <h1 class="allarticles-h1 allarticles-h1-mainadvices">Советы</h1>
+            <span class="allarticles-h1 allarticles-h1-mainadvices">Советы</span>
             <div class="l-mainadvices">
                 <ul class="previewlist">
                     <?php foreach( $popularAdvicePages as $p ):?>
@@ -220,16 +220,16 @@
                         <?php endif;?>                              
                         <div class="previewlist-content">
                             <?php $title = $pageUtils->getCategoryTitle()?>
-                            <h2 class="subcategory-header">
+                            <h3 class="subcategory-header">
                                 <a class="<?=$title['css']?>" href="<?=$title['href']?>">
                                     <?= $title['title']?> 
                                 </a>
-                            </h2>
-                            <h3 class="previewlist-content-header">
+                            </h3>
+                            <h2 class="previewlist-content-header">
                                 <a href="<?= $p->getCollectionPath()?>">
                                     <?= $p->getAttribute('meta_title')?>
                                 </a>
-                            </h3>
+                            </h2>
 
                             <span class="intro-likes intro-likes-previewlist">
                                 <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
@@ -253,16 +253,16 @@
                                 <?php endif;?>
                                 <?php $title = $pageUtils->getCategoryTitle();?>
                                 <div class="intro <?= $title['css'] ?>">
-                                    <span class="intro-category">
+                                    <h3 class="intro-category">
                                         <a href="<?= $title['href']?>">
                                             <?= $title['title']?> 
                                         </a>
-                                    </span>
-                                    <h1 class="intro-header">
+                                    </h3>
+                                    <h2 class="intro-header">
                                         <a style="color:#fff" href="<?= $p->getCollectionPath()?>">
                                             <?= $p->getAttribute('meta_title')?>
                                         </a>
-                                    </h1>
+                                    </h2>
                                     <p class="intro-text">
                                          <?php echo mb_substr($p->getAttribute('introtext'), 0, 100) . '...';?>
                                     </p>
@@ -293,101 +293,101 @@
             <!--<h1 class="allarticles-h1 allarticles-h1-mainquestion">Самые обсуждаемые<br/>Вопросы-Ответы</h1>
             <ul class="questionlist">
                 <li class="questionlist-one">
-                    <h2 class="subcategory-header">
+                    <h3 class="subcategory-header">
                         <a href="/index.php/otnosheniya/stati/spisok">
                             Родителям
                         </a>
-                    </h2>
-                    <h3 class="previewlist-content-header">
+                    </h3>
+                    <h2 class="previewlist-content-header">
                         <a href="/roditelyam/stati/psihika-rebenka">
                             За что мы любим наших мам, откровения взрослых девочек. 
                         </a>
-                    </h3>
+                    </h2>
                     <span class="intro-likes intro-likes-previewlist">
                         <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                     </span>
                 </li>
                 <li class="questionlist-one">
-                    <h2 class="subcategory-header">
+                    <h3 class="subcategory-header">
                         <a class="green" href="/index.php/otnosheniya/stati/spisok">
                             Студентам
                         </a>
-                    </h2>
-                    <h3 class="previewlist-content-header">
+                    </h3>
+                    <h2 class="previewlist-content-header">
                         <a href="/roditelyam/stati/psihika-rebenka">
                             Уверенность в результате работы над ошибками
                         </a>
-                    </h3>
+                    </h2>
                     <span class="intro-likes intro-likes-previewlist">
                         <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                     </span>
                 </li>
                 <li class="questionlist-one">
-                    <h2 class="subcategory-header">
+                    <h3 class="subcategory-header">
                         <a class="pink" href="/index.php/otnosheniya/stati/spisok">
                             Отношения
                         </a>
-                    </h2>
-                    <h3 class="previewlist-content-header">
+                    </h3>
+                    <h2 class="previewlist-content-header">
                         <a href="/roditelyam/stati/psihika-rebenka">
                             Топ 10 советов, для тех, кто хочет влюбиться
                         </a>
-                    </h3>
+                    </h2>
                     <span class="intro-likes intro-likes-previewlist">
                         <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                     </span>
                 </li>
                 <li class="questionlist-one">
-                    <h2 class="subcategory-header">
+                    <h3 class="subcategory-header">
                         <a class="pink" href="/index.php/otnosheniya/stati/spisok">
                             Отношения
                         </a>
-                    </h2>
-                    <h3 class="previewlist-content-header">
+                    </h3>
+                    <h2 class="previewlist-content-header">
                         <a href="/roditelyam/stati/psihika-rebenka">
                             Топ 10 советов, для тех, кто хочет влюбиться
                         </a>
-                    </h3>
+                    </h2>
                     <span class="intro-likes intro-likes-previewlist">
                         <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                     </span>
                 </li>
                 <li class="questionlist-one">
-                    <h2 class="subcategory-header">
+                    <h3 class="subcategory-header">
                         <a class="pink" href="/index.php/otnosheniya/stati/spisok">
                             Отношения
                         </a>
-                    </h2>
-                    <h3 class="previewlist-content-header">
+                    </h3>
+                    <h2 class="previewlist-content-header">
                         <a href="/roditelyam/stati/psihika-rebenka">
                             Топ 10 советов, для тех, кто хочет влюбиться
                         </a>
-                    </h3>
+                    </h2>
                     <span class="intro-likes intro-likes-previewlist">
                         <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                     </span>
                 </li>
                 <li class="questionlist-one">
-                    <h2 class="subcategory-header">
+                    <h3 class="subcategory-header">
                         <a href="/index.php/otnosheniya/stati/spisok">
                             Родителям
                         </a>
-                    </h2>
-                    <h3 class="previewlist-content-header">
+                    </h3>
+                    <h2 class="previewlist-content-header">
                         <a href="/roditelyam/stati/psihika-rebenka">
                             За что мы любим наших мам, откровения взрослых девочек. 
                         </a>
-                    </h3>
+                    </h2>
                     <span class="intro-likes intro-likes-previewlist">
                         <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
                     </span>
                 </li>
                 <li class="questionlist-one">
-                    <h2 class="subcategory-header">
+                    <h3 class="subcategory-header">
                         <a class="green" href="/index.php/otnosheniya/stati/spisok">
                             Студентам
                         </a>
-                    </h2>
+                    </h3>
                     <h3 class="previewlist-content-header">
                         <a href="/roditelyam/stati/psihika-rebenka">
                             Уверенность в результате работы над ошибками
