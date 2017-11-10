@@ -16,6 +16,7 @@ class DarumPageUtils
     const ADVICE_PARENTS_CATEGORY_CID = 200;
     const ADVICE_STUDENTS_CATEGORY_CID = 201;
     const ADVICE_RELATIONS_CATEGORY_CID = 202;
+    //@todo захаркодены idшники которые не выводятся в листингах
     const GLOBAL_EXCLUDED_CIDS = [1, 412, 200, 201, 202, 203, 204, 205, 207,211, 413, 208, 414, 209, 423,424,425, 426,427, 428 ];
 
     /** Containers' ontology attribute names, при добавлении/удалении поправте метод getCateogoryTitle стр74  Это аттрибут-селект, где выбираем онтологию */
@@ -25,6 +26,14 @@ class DarumPageUtils
     const ADVICE_PARENTS_ONTOLOGY_ATTR = 'parents_advices';
     const ADVICE_STUDENTS_ONTOLOGY_ATTR = 'students_advices';
     const ADVICE_RELATIONS_ONTOLOGY_ATTR = 'relationship_advices';
+
+    /** Type Handlers of article pages **/
+    const ARTICLE_PARENTS_TYPE_HANDLER = 'article_parents';
+    const ARTICLE_STUDENTS_TYPE_HANDLER = 'article_students';
+    const ARTICLE_RELATIONS_TYPE_HANDLER = 'article_relationships';
+    const ADVICE_PARENTS_TYPE_HANDLER = 'advice_parents';
+    const ADVICE_STUDENTS_TYPE_HANDLER = 'advice_students';
+    const ADVICE_RELATIONS_TYPE_HANDLER = 'advice_relationships';
 
     /** Default Titles @todo multilingual */
     const ARTICLE_PARENTS_CATEGORY_TITLE = "Статьи родителям";
@@ -179,7 +188,7 @@ class DarumPageUtils
      * @param int $width
      * @param height  $height 300 193
      */
-    public function cropImage($image, $width, $height, $alt='')
+    public static function cropImage($image, $width, $height, $alt='')
     {
         $ih = \Core::make('helper/image');
         $crop = true;
@@ -210,11 +219,17 @@ class DarumPageUtils
 
     /**
      * Дополняет страницы параметрами,для удобства использования во вьюхах
-     * @param $pagesAr - массив страниц
+     * @param $pagesAr | Page - массив страниц
      */
     public static function extendPages(&$pagesAr)
     {
-        //main image
+        if( !is_array( $pagesAr ) ) {
+            $pagesAr = [ $pagesAr ];
+            $isOnePage = true;
+        } else {
+            $isOnePage = false;
+        }
+
         foreach ($pagesAr as &$p) {
             $blocks = $p->getBlocks('MainImage');
             $mainImage = null;
@@ -228,6 +243,10 @@ class DarumPageUtils
             }
             $p->mainImage = $mainImage;
             $p->altMainImage = $mainImageAlt;
+        }
+
+        if ($isOnePage) {
+            $pagesAr = $pagesAr[0];
         }
     }
 

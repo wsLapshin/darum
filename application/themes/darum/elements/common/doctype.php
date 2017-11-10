@@ -4,4 +4,4 @@
 <!--[if gt IE 8]>
 <!-->
 <!doctype html>
-<html class="no-js" lang=""> <!--<![endif]-->
+<html prefix="og: http://ogp.me/ns#" class="no-js" lang=""> <!--<![endif]-->
