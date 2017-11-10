@@ -5,6 +5,25 @@
 <?php $this->inc('elements/common/doctype.php'); ?>
 <?php $this->inc('elements/common/head.php'); ?>
 <body>
+<style>
+	.in-block-banner {
+		text-align:center;
+	}
+	.in-block-banner>a {
+		width: 100%;
+		display:inline-block;
+	}
+	.in-block-banner>a>img {
+		width:100%;
+	}
+.moreadvice-one > a {
+    display: block;
+    width: 100%;
+}
+.moreadvice-one > a > img {
+    width: 100%;
+}
+</style>
     <?php $this->inc('elements/common/ie8_warn.php'); ?>
 
     <div class="<?= $c->getPageWrapperClass() ?>">
@@ -91,8 +110,10 @@
                         <?php endforeach;?>
                     </ul>
                 </div>
-                <aside class="l-aside-allarticles">
-                    <img class="banner aside-banner-bottom" src="/application/themes/darum/img/demo/divanru.jpg">
+                <aside class="in-block-banner l-aside-allarticles">
+		    <a target="_blank" href="goo.gl/E8hQ3k">
+                    <img style="width:100%;max-height:420px" src="/application/themes/darum/img/CPA/advices/1.gif">
+		    </a>
                 </aside>
             </div>
 
@@ -178,8 +199,10 @@
                         </div>
                     </li>
                     <?php endforeach;?>
-                    <li class="previewlist-one">
-                        <img alt="" src="<?php echo $this->getThemePath() ?>/img/demo/cklass.png">                                
+                    <li class="in-block-banner previewlist-one">
+			<a href="goo.gl/d6Am5B" target="_blank">
+                        <img alt="" src="<?php echo $this->getThemePath() ?>/img/CPA/advices/2.jpg">                                
+			</a>
                     </li>
                 </ul>
             </div>
@@ -228,8 +251,10 @@
                         </div>
                     </li>
                     <?php endforeach;?>
-                    <li class="previewlist-one">
-                        <img alt="" src="<?php echo $this->getThemePath() ?>/img/demo/cklass.png">                                
+                    <li class="in-block-banner previewlist-one">
+			<a href="http://kshop2.biz/NmNHDQ/" target="_blank">
+                        <img alt="" src="<?php echo $this->getThemePath() ?>/img/CPA/advices/3.jpeg">                                
+			</a>
                     </li>
                 </ul>
 
@@ -435,7 +460,9 @@
                     <li class="moreadvice-one">
                         <img src="/application/themes/darum/img/demo/vk.jpg" <="" li="">
                     </li><li class="moreadvice-one">
-                        <img src="/application/themes/darum/img/demo/cklass.png" <="" li="">
+			<a href="http://kshop2.biz/e9Eu9s/" target="_blank">
+				<img src="/application/themes/darum/img/CPA/advices/4.jpg" <="" li="">
+			</a>
                     </li>
                 </ul> 
             </div>

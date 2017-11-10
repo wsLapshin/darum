@@ -5,6 +5,19 @@
 <?php $this->inc('elements/common/doctype.php'); ?>
 <?php $this->inc('elements/common/head.php'); ?>
 <body>
+    <style>
+	.aside-banner-middle {
+		border:none;
+	}
+        .aside-banner > a {
+                display:block;
+        }
+        .aside-banner > a > img {
+                display:inline-block;
+                text-align:center;
+                max-width: 100%;
+        }
+    </style>
     <?php $this->inc('elements/common/ie8_warn.php'); ?>
     <div class="<?= $c->getPageWrapperClass() ?>">
         <?php $this->inc('elements/nav.php'); ?>
@@ -90,7 +103,18 @@
                                 <?php endforeach;?>
                         </ul>
                     </div>
-                    <img class="aside-banner-middle" src="<?php echo $this->getThemePath() ?>/img/demo/makeup.jpg"/>
+		    <div class="aside-banner aside-banner-middle">
+		    <a href="http://goo.gl/E8hQ3k" target="_blank">
+                    <img class="aside-banner aside-banner-middle" 
+                         src="<?php echo $this->getThemePath() ?>/img/CPA/ladvices/1.gif"/>
+		    </a>
+		    </div>
+		    <div class="aside-banner">
+		    <a href="http://kshop2.biz/e9Eu9s/" target="_blank">
+                    <img  
+                         src="<?php echo $this->getThemePath() ?>/img/CPA/ladvices/4.jpg"/>
+		    </a>
+		    </div>
                 </aside>
             </div>
         </div>

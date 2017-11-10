@@ -9,6 +9,21 @@ use Concrete\Core\Localization\Service\Date ?>
 <?php $this->inc('elements/common/doctype.php'); ?>
 <?php $this->inc('elements/common/head.php'); ?>
 <body>
+    <style>
+	.aside-banner > a,
+	.in-block-banner > a {
+           display: block;
+        }
+        .aside-banner > a > img,
+        .in-block-banner > a > img {
+            display: inline-block;
+            text-align: center;
+            max-width: 100%;
+        }
+	.aside-banner-middle {
+            border: none;
+        }
+    </style>
     <?php $this->inc('elements/common/ie8_warn.php'); ?>
     <div class="<?= $c->getPageWrapperClass() ?>">
         <?php $this->inc('elements/nav.php'); ?>
@@ -212,7 +227,11 @@ use Concrete\Core\Localization\Service\Date ?>
                     </main>
                 </article>
                 <aside>
-                    <img src="<?php echo $this->getThemePath() ?>/img/demo/garnier.jpg"/>
+		    <div class="aside-banner">
+		    <a href="http://goo.gl/E8hQ3k" target="_blank">
+                    <img style="max-width:100%" src="<?php echo $this->getThemePath() ?>/img/CPA/oadvice/1.gif"/>
+		    </a>
+		    </div>
                     <div class="aside-list">
                         <div class="aside-list-header">
                              <?php if (in_array($categoryCID, [
@@ -249,7 +268,11 @@ use Concrete\Core\Localization\Service\Date ?>
                             <?php endforeach;?>
                         </ul>
                     </div>
-                    <img class="aside-banner-middle" src="<?php echo $this->getThemePath() ?>/img/demo/makeup.jpg"/>
+		    <div class="aside-banner-middle">
+		    <a target="_blank" href="http://goo.gl/d6Am5B">
+                    <img class="aside-banner-middle" src="<?php echo $this->getThemePath() ?>/img/CPA/oadvice/2.gif"/>
+		    </a>
+		    </div>
 
                     <div class="aside-list">
                         <div class="aside-list-header">
@@ -290,7 +313,11 @@ use Concrete\Core\Localization\Service\Date ?>
                             <?php endforeach;?>
                         </ul>
                     </div>
-                    <!--<img class="aside-banner-bottom" src="<?php echo $this->getThemePath() ?>/img/demo/divanru.jpg"/>-->
+		    <div class="aside-banner-middle">
+		    <a target="_blank" href="http://kshop2.biz/e9Eu9s/">
+                    <img class="aside-banner-middle" src="<?php echo $this->getThemePath() ?>/img/CPA/oadvice/4.jpg"/>
+		    </a>
+		    </div>
                     <!--<div class="aside-list">
                         <div class="aside-list-header">
                             <h3>Интересные советы</h3> 
@@ -468,8 +495,11 @@ use Concrete\Core\Localization\Service\Date ?>
                 <ul class="moreadvice-banner">
                     <li class="moreadvice-one">
                         <img src="/application/themes/darum/img/demo/vk.jpg" <="" li="">
-                    </li><li class="moreadvice-one">
-                        <img src="/application/themes/darum/img/demo/cklass.png" <="" li="">
+                    </li>
+                    <li class="in-block-banner moreadvice-one">
+			<a target="_blank" href="http://kshop2.biz/NmNHDQ/">
+                        <img src="/application/themes/darum/img/CPA/oadvice/3.jpeg" />
+			</a>
                     </li>
                 </ul> 
             </div>

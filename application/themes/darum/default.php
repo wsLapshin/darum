@@ -10,6 +10,30 @@
         display: block;
         font-family: bradobrei;
     }
+    .priviewlist-one > a {
+	display:block;
+	width: 100%;
+    }
+    .previewlist-one > a > img {
+	width: 100%;
+    }
+    .moreadvice-one > a {
+	display:block;
+	width: 100%;
+    }
+    .moreadvice-one > a > img {
+	width: 100%;
+    }
+    .in-block-banner {
+        text-align:center;
+    }
+    .in-block-banner>a {
+	display:inline-block;
+	max-width:100%;
+    }
+    .in-block-banner>a>img {
+	width: 100%;
+    }
 </style>
 <body>
     <?php $this->inc('elements/common/ie8_warn.php'); ?>
@@ -210,8 +234,10 @@
                         </div>
                     </li>
                     <?php endforeach;?>
-                    <li class="previewlist-one">
-                        <img alt="" src="<?php echo $this->getThemePath() ?>/img/demo/cklass.png">
+                    <li class="in-block-banner previewlist-one">
+			<a target="_blank" href="http://goo.gl/E8hQ3k">
+                        <img alt="" src="<?php echo $this->getThemePath() ?>/img/CPA/main/1.gif">
+			</a>
                     </li>
                 </ul>
             </div>
@@ -246,7 +272,9 @@
                     </li>
                     <?php endforeach;?>
                     <li class="previewlist-one">
-                        <img alt="" src="<?php echo $this->getThemePath() ?>/img/demo/cklass.png">                                
+			<a href="http://goo.gl/d6Am5B" target="_blank">
+                        <img alt="" src="<?php echo $this->getThemePath() ?>/img/CPA/main/2.jpg">                                
+			</a>
                     </li>
                 </ul>
 
@@ -452,7 +480,9 @@
                     <li class="moreadvice-one">
                         <img src="/application/themes/darum/img/demo/vk.jpg" <="" li="">
                     </li><li class="moreadvice-one">
-                        <img src="/application/themes/darum/img/demo/cklass.png" <="" li="">
+			<a target="_blank" href="http://kshop2.biz/NmNHDQ/">
+                        <img src="/application/themes/darum/img/CPA/main/3.jpeg" <="" li="">
+			</a>
                     </li></ul> 
             </div>
         </div>
