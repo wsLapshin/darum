@@ -47,7 +47,7 @@
     <meta property="og:type" content="<?=$ogType?>" />
     <meta property="og:title" content="<?= $ogTitle?>" />
     <meta property="og:description" content="<?= $ogDescription?>" />
-    <meta property="og:image" content="http://centr-razvitiy-darum.ru<?php echo $this->getThemePath() ?>/img/logo.png" />
+    <meta property="og:image" content="http://centr-razvitiy-darum.ru<?php echo $this->getThemePath() ?>/img/logo_social2.png" />
     <!--<meta property="og:image:width" content="<?= $ogImageWidth?>" />
     <meta property="og:image:height" content="<?= $ogImageHeight?>" />-->
     <!--<meta property="og:url" content="http://www.websiteaddress.com/article/" />-->
