@@ -1,0 +1,143 @@
+$menuHeight: 66px;
+$subMenuHeight: 56px;
+$itemHeight: 16px;
+
+.menu__list
+{
+    list-style: none;
+    margin:0;
+    padding: 0;
+    text-align: center;
+}
+
+.menu__item
+{
+    display: inline-block;
+    padding: 0 12.5px;    
+    font-size: 13px;
+    line-height: $menuHeight;
+}
+
+.menu__link
+{
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #111;
+}
+
+.menu__link_w
+{
+    color: #fff;
+}
+
+
+/*VERTICAL MENU*/
+.menu__list_v 
+{
+    .menu__item {
+        display: block;
+        padding: 0;
+        text-align: left;
+        margin-bottom: 7px;
+        line-height: $itemHeight; 
+    }
+
+    .menu__item:last-child
+        {
+        margin-bottom: 0px;
+    }
+
+    .menu__link {
+        display:block;
+        font-size: 10px;
+    }
+}
+
+/*BORDER EFFECT*/
+.menu_bordered
+{
+    border-top: 1px solid $grey2;
+    border-bottom: 1px solid $grey2;
+}
+
+/*SUBMENU*/
+.menu_submenu
+{
+    /*@extend .menu;*/
+    line-height: $subMenuHeight;
+
+
+    .menu__list:before,
+        .menu__list:after
+        {
+        content:"\00a0";
+        display: inline-block;
+        width:1px;
+        height: $itemHeight;
+        vertical-align:middle;
+    }
+
+    .menu__list:before
+        {
+        border-left: 1px solid $grey2;
+    }
+
+    .menu__list:after
+        {
+        border-right: 1px solid $grey2; 
+    }
+
+    .menu__item 
+    {
+        font-size: 11px;
+        border-left: 1px solid $grey2;
+        border-right: 1px solid $grey2;
+        padding: 0 19px;
+        line-height: $itemHeight;
+    }
+
+    .menu__link
+    {
+        font-weight: 500; 
+    } 
+}
+
+@media screen and (max-width:480px) {
+    .menu__item
+    {
+        font-size:11px;
+        line-height: 40px ;
+        padding: 0 5.5px;
+    }
+
+    .menu_submenu 
+    {
+        display: none;
+    }
+
+    /*
+        .menu_submenu 
+        {
+            margin-top: 5px;
+            padding: 5px 0;
+            
+            .menu__list
+            {
+                line-height: $subMenuHeight/2;  
+            }
+    
+             .menu__list:before,
+             .menu__list:after
+            {
+                display:none;
+            }
+    
+             .menu__item
+            {
+                border: none;
+            }
+        }
+    */
+}
+
+

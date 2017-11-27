@@ -1,0 +1,66 @@
+.link-block__normlink,
+.link-block__brghtlink
+{
+    cursor:pointer;
+    text-decoration: none;
+}
+
+.link-block__brghtlink,
+.link-block__normlink.active,
+.link-block__normlink:hover,
+.link-block__normlink:active
+{
+   color: $leadGreen;
+}
+
+.link-block__brghtlink.active,
+.link-block__brghtlink:hover,
+.link-block__brghtlink:active
+{
+    color: $grey !important;
+}
+
+.link-block_green
+{
+    .link-block__brghtlink,
+    .link-block__normlink.active,
+    .link-block__normlink:hover,
+    .link-block__normlink:active
+    {
+       color: $green; 
+    }
+}
+
+.link-block_pink
+{
+    .link-block__brghtlink,
+    .link-block__normlink.active,
+    .link-block__normlink:hover,
+    .link-block__normlink:active
+    {
+       color: $pink; 
+    }
+}
+
+.link-block_blue
+{
+    .link-block__brghtlink,
+    .link-block__normlink.active,
+    .link-block__normlink:hover,
+    .link-block__normlink:active
+    {
+        color: $blue;
+    } 
+}
+
+.link-block_white
+{
+    .link-block__brghtlink,
+    .link-block__normlink.active,
+    .link-block__normlink:hover,
+    .link-block__normlink:active
+    {
+        color: #fff;
+    } 
+}
+

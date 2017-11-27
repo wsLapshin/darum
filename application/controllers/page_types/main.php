@@ -8,10 +8,10 @@ use Application\Src\Page\DarumPageUtils;
 class Main extends PageTypeController
 {
     const MAX_NEW_ARTICLE_RESULTS = 4;
-    const MAX_NEW_ADVICE_RESULTS = 5;
+    const MAX_NEW_ADVICE_RESULTS = 20;
     const MAX_POPULAR_ARTICLES = 5;
     const MAX_POPULAR_ADVICES = 5;
-    const MAX_INTERESTING_RESULTS = 6;
+    const MAX_INTERESTING_RESULTS = 9;
 
     protected $fetchedIDs = array();
     protected $categoryCID;

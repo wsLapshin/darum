@@ -3,38 +3,7 @@
 <?php $landingDir = $this->getThemePath() . '/landing'; ?>
 <?php $this->inc('elements/common/doctype.php'); ?>
 <?php $this->inc('elements/common/head.php'); ?>
-<style>
-    .tmp {
-        text-align: center;
-        font-size: 28px;
-        display: block;
-        font-family: bradobrei;
-    }
-    .priviewlist-one > a {
-	display:block;
-	width: 100%;
-    }
-    .previewlist-one > a > img {
-	width: 100%;
-    }
-    .moreadvice-one > a {
-	display:block;
-	width: 100%;
-    }
-    .moreadvice-one > a > img {
-	width: 100%;
-    }
-    .in-block-banner {
-        text-align:center;
-    }
-    .in-block-banner>a {
-	display:inline-block;
-	max-width:100%;
-    }
-    .in-block-banner>a>img {
-	width: 100%;
-    }
-</style>
+
 <body>
     <?php $this->inc('elements/common/ie8_warn.php'); ?>
 

@@ -1,0 +1,46 @@
+.mainnav
+{
+    position:relative;
+}
+
+.mainnav__magnifier-ico,
+.mainnav__login-ico
+{
+    position: absolute;
+    top: 20px;
+}
+
+.mainnav__magnifier-ico {
+    right: 0;
+}
+
+.mainnav__login-ico
+{
+    right: 40px;
+    display:none;
+}
+
+.mainnav_collapsed .mainnav__login-ico {
+    display:block;
+}
+
+@media screen and (max-width:480px)
+{
+    .mainnav__magnifier-ico,
+    .mainnav__login-ico
+    {
+        top: 8px;
+        display:block;
+    }
+
+    .mainnav__magnifier-ico {
+        left: 0;
+    }
+
+    .mainnav_collapsed .mainnav__login-ico,
+    .mainnav__login-ico
+    {
+        right: 0px;
+        display:block;
+    }
+}

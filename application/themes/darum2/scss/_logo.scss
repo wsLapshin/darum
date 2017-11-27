@@ -1,0 +1,63 @@
+.logo
+{
+    text-align: center;
+    width: 225px;
+}
+
+.logo__head
+{
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 24px;
+}
+
+/*Deprecated, for text based logo*/
+.logo__intro
+{
+    text-align: center;
+    font-size: 69px;
+    letter-spacing: -1.8px;
+    line-height: 1;
+    text-transform: lowercase;
+    margin-top: -17px;
+}
+
+.logo__image 
+{
+    display:block;
+    margin-top: 10px;
+}
+
+.logo__image>img 
+{
+    width:100%;
+}
+
+@media screen and (max-width: 650px) {
+
+    .logo 
+    {
+        width: 196px;
+    }
+
+    .logo__head 
+    {
+        font-size: 13px;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        width: 150px;
+    }
+    .logo__head
+    {
+        display:none;
+    }
+
+}
+
+
+
+

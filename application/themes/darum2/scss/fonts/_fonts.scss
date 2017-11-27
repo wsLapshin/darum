@@ -1,0 +1,70 @@
+$bradobrei-fallback: "Times New Roman", "Times", serif;
+$opensans-fallback: Tahoma, Geneva, sans-serif;
+$fira-fallback: Tahoma, Geneva, sans-serif;
+$monospace-fallback: Courier New, Courier New, Courier6, monospace;
+$vollkorn-fallback: serif;
+
+/*FallBacks*/
+body {
+    font-family: $opensans-fallback;
+}
+
+pre {
+    font-family: $monospace-fallback;
+}
+
+h1, h2, h3, h4,
+.intro-header,
+.btn {
+    font-family: $bradobrei-fallback;
+}
+
+blockquote {
+    font-family: $vollkorn-fallback; 
+}
+
+/*FOUT implementation*/
+.fonts-stage-1 {
+    body {
+        font-family: open_sans;
+    }
+}
+
+.fonts-stage-2 {
+    /*h1, h2, h3, h4, 
+    .btn, .mainbanner-overlay-header,
+    .intro-header,
+    .article-text-inner blockquote {
+        font-family: bradobrei;
+    }*/
+    
+    .intro__header,
+    .intro__category,
+    .aside-list__header-inner,
+    .footer__headers {
+        font-family:bradobrei;
+    }
+
+    blockquote p {
+        font-family: "Vollkorn";
+    }
+}
+
+/*FOIT implementation only for logo and fontawesome*/
+.logo-intro {
+    font-family: bradobrei; 
+}
+.article-text ul>li:before {
+    font-family: FontAwesome; 
+}
+
+/*@todo .fa*/
+#logo, .fa.todo {
+    visibility: hidden;
+}
+#logo.visible, .fa.visible {
+    visibility: visible;
+}
+
+
+

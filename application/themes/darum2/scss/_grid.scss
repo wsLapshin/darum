@@ -1,0 +1,16 @@
+$mobile-first:false;
+$breakpoint-default-feature: max-width;
+
+$columnFixedWidth: 67.5px;
+$gutterFixedWidth: 30px;
+$columns: 12;
+$gutter-style: 'opposite';
+
+$gutter: $gutterFixedWidth/$columnFixedWidth;
+
+@include sgs-change('debug', false);
+@include sgs-change('output', 'float');
+@include add-grid($columns);
+@include add-gutter($gutter);
+@include add-gutter-style($gutter-style);
+

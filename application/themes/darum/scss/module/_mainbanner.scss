@@ -9,6 +9,8 @@
     width: 100%;
     height: 100%;
     overflow:hidden;
+    font-size: 0;
+    line-height: 0;
 }
 
 .mainbanner-img>img {
@@ -19,11 +21,12 @@
     background: #000;
     opacity: .5;
     position: absolute;
-    top: 91px;
+    top: 0;
     left: 0;
     right: 0;
     margin: auto;
-    width: 43.70313%;
+    width: 100%;
+    max-width: 548px;
     text-align: center;
     padding: 26px 0 28px 0;
 }
@@ -42,4 +45,8 @@
     font-weight: 400;
     margin-top: 10px;
     display:block;
+}
+
+@media screen and (max-width:548px) {
+    
 }

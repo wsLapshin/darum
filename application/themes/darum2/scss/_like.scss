@@ -1,0 +1,19 @@
+.like {
+    display:inline-block;
+}
+
+.like__item {
+    font-size: 9px;
+    font-weight: 500;
+    display:inline-block;
+    margin-left: 2px;
+    color: $grey;
+}
+
+.like__item_intro {
+    margin-left: 9px;
+}
+
+.like__item:first-child {
+    margin-left: 0;
+}

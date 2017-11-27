@@ -1,0 +1,168 @@
+.ccm-page {
+    position:relative;
+}
+
+/*Обычный контейнер с отступами*/
+.page__container
+{
+    width: 100%;
+    max-width: $containerWidth;
+    margin: auto;
+    padding: 0 gutter-span()/2;
+}
+
+
+.page__container:after,
+.page__block:after
+{
+    content:'';
+    display:block;
+    clear:both;
+}
+
+/*Блок с заголовком,нижней границей*/
+.page__block
+{
+    margin-top: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page__block:before {
+    content: '';
+    width: 100%; 
+    height: 1px;
+    border-top: 1px solid $grey2;
+    display: block;
+    position: absolute;
+    bottom: 12px;
+}
+
+.page__header
+{
+    text-align: center;
+    font-size: 28px;
+    display: block;
+    font-family: bradobrei;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+/*Дополнительные стили оформления блоков с превью статьи*/
+.page__preview
+{
+    position: relative;
+    margin-bottom: 26px;
+}
+
+.page__preview:after {
+    content: '';
+    width: 100%; 
+    height: 1px;
+    border-top: 1px solid $grey2;
+    display: block;
+    position: absolute;
+}
+
+.page__preview:before {
+    content: '';
+    width: 1px;
+    height: 100%;
+    border-right: 1px solid $grey2;
+    display: block;
+    position: absolute;
+}
+
+.page__preview:before {
+    right: -1 * gutter-span($gutter, 3)/2;  
+}
+
+.page__preview:after {
+    bottom: -14px;
+}
+
+/*Грида*/
+.page__column-3,
+{
+    @include grid-span(3);
+}
+
+.page__column-6
+{
+    @include grid-span(6);
+    .page__preview{
+        @include grid-span(3,1,6);
+    }
+    .page__preview:nth-child(2n) {
+        margin-right: 0;
+    }
+}
+
+.page__column-9
+{
+    @include grid-span(9);
+    .page__preview {
+        @include grid-span(3,1,9);
+    }
+    .page__preview:nth-child(3n) {
+        margin-right: 0;
+    }
+}
+
+.page__last {
+    margin-right: 0 !important;
+}
+
+@media screen and (max-width:700px){
+    .page__header {
+        font-size: 20px;
+    }
+    .page__block:before {
+        display: none;
+    }
+    
+    /*Адаптика превьюшек по две*/
+    .page__preview-container {
+        margin-top:15px;
+
+        @include grid-span(12);
+
+        .page__preview {
+            @include grid-span(6);
+        }
+        
+        .page__preview:nth-child(2n) {
+            margin-right: 0;
+        }
+        .page__preview:before {
+            right: -2.85%
+        }
+    }
+
+    .page__column-9 {
+       .page__preview:nth-child(3n)
+        {
+            display:none;
+        }
+        .page__preview:nth-child(4)
+        {
+            margin-right: 2.63158%;
+        }
+        .page__preview:nth-child(2),
+        .page__preview:nth-child(5),
+        .page__preview:nth-child(8)
+        {
+            margin-right: 0;
+        } 
+    }
+}
+
+/* Старый стиль для бэкграунда хедера
+.page__bg
+{
+    background: url(../img/grey-white-background.jpeg) center -547px no-repeat transparent;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height:400px;
+}*/

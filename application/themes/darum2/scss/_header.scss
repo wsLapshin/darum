@@ -1,0 +1,44 @@
+.header
+{
+    @include background-grid();
+}
+
+.header:after
+{
+    content:'';
+    display:block;
+    clear:both;
+}
+
+.header__top {
+    padding-top: 21px;
+}
+
+.header__download
+{
+   float:left;
+}
+
+.header__login
+{
+   float:right;
+}
+
+.header__logo
+{
+   margin: auto;
+}
+
+
+@media screen and (max-width:480px)
+{
+    .header__top {
+        padding-top: 0;
+    }
+
+    .header__login {
+        display:none;
+    }
+
+}
+

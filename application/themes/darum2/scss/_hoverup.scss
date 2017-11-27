@@ -1,0 +1,123 @@
+$hoverUpPadding: 5px;
+$hoverUpColor: #000;
+$hoverUpOpacity: 0.8;
+$pointerDimensH: 7.5px;
+$pointerDimensW: 15px;
+
+.hoverup
+{
+    position: relative;
+}
+
+.hoverup__layer
+{
+    position:absolute;
+    left: -23px;
+    padding-top: $hoverUpPadding; 
+    height: 0px;
+    overflow:hidden;
+
+    transition: height 0.5s ease-out 0s;
+}
+
+.hoverup:hover .hoverup__layer,
+.hoverup.active .hoverup__layer
+{
+    height: 100%
+}
+
+/*layer in main menu with fixed height*/
+.hoverup__layer_m
+{
+    transition: height 0.5s ease-out 0s;
+    top: 40px;
+}
+
+.hoverup:hover .hoverup__layer_m,
+.hoverup.active .hoverup__layer_m
+{
+    height: 160px;
+}
+
+/*layer in login ico menu*/
+.hoverup__layer_i
+{
+    top: 18px;
+}
+
+.hoverup:hover .hoverup__layer_i,
+.hoverup.active .hoverup__layer_i
+{
+    height: 82px;
+}
+
+
+.hoverup__pointer
+{
+    position:relative;
+    left: 48px;
+    width:0px;
+    border-left: $pointerDimensW/2 solid transparent;	
+    border-right: $pointerDimensW/2 solid transparent;
+    border-bottom: $pointerDimensH solid $hoverUpColor;
+}
+
+.hoverup_ico .hoverup__pointer{
+    left: 84px;
+}
+
+.hoverup__pointer,
+.hoverup__bg
+{
+  @include opacity($hoverUpOpacity);
+  z-index:1;
+}
+
+.hoverup__container
+{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+}
+
+.hoverup_ico .hoverup__layer {
+    left: auto;
+    right:0;
+}
+
+/*container in main menu with fixed width*/
+.hoverup__container_m
+{
+    width: 160px;
+}
+
+.hoverup__bg
+{
+    display:block;
+    position:absolute;
+    background: $hoverUpColor;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+
+.hoverup__content
+{
+    padding: 15px;
+    position:relative;
+    z-index:2;
+}
+
+@media screen and (max-width:480px) {
+    .hoverup__layer_m
+    {
+        top: 22px;
+    }
+    .hoverup__container_m
+    {
+        width: 152px;
+    }
+}
+
+

@@ -1,0 +1,21 @@
+.slick-preview {
+    position: relative;
+    visibility: hidden;
+}
+
+
+
+.page__preview-container
+{
+   .slick-preview:before {
+        content: '';
+        width: 1px;
+        height: 100%;
+        border-right: 1px solid $grey2;
+        display: block;
+        position: absolute;
+    }
+   .slick-preview:before {
+       right: -1 * gutter-span($gutter, 6)/2;  
+   }
+}

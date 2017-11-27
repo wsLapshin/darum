@@ -10,20 +10,20 @@ foreach ($navItems as $ni) {
 
     if ($ni->isCurrent) {
         //class for the page currently being viewed
-        $classes[] = 'active';
+        $classes[] = 'link_active';
     }
     $ni->classes = implode(" ", $classes);
 }
 ?>
 
 <?php if (count($navItems) > 0) : ?>
-    <div class="menu-submenu">
-        <ul>
+        <div class="menu menu_submenu menu_bordered">
+        <ul class="menu__list">
         <?php $totalItems = count($navItems);?>
         <?php for($i=0; $i<$totalItems; $i++): ?>
             <?php $ni = $navItems[$i];?>
-            <li>
-                <a class="<?php echo $ni->classes ?>" href="<?php echo $ni->url ?>">
+            <li class="menu__item">
+                <a class="menu__link <?php echo $ni->classes ?>" href="<?php echo $ni->url ?>">
                     <?php echo $ni->name ?>
                 </a>
 
@@ -36,14 +36,14 @@ foreach ($navItems as $ni) {
                         $urlPopular = $containerURL . '/' . PageUtils::LIST_SLUG . '/' . PageUtils::POPULAR_SLUG;
                 ?>
                     <div class="third-level-cont">
-                        <div>
+                        <!--<div>
                             <a href="<?php echo $urlNew?>"  class="third-level">
                                 Новые
                             </a>
                             <a href="<?php echo $urlPopular ?>"  class="third-level">
                                 Популярные
                             </a>
-                        </div>
+                        </div>-->
                     </div>
                 <?php endif;?>
                 
@@ -69,7 +69,7 @@ foreach ($navItems as $ni) {
             </li>
         <?php endfor; ?>
         </ul>
-    </div>
+        </div>
 <?php elseif (is_object($c) && $c->isEditMode()) : ?>
     <div class="ccm-edit-mode-disabled-item"><?php echo t('Empty Auto-Nav Block.') ?></div>
 <?php endif; ?>

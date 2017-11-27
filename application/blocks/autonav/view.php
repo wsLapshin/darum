@@ -111,23 +111,45 @@ foreach ($navItems as $ni) {
 <?php //*** Step 2 of 2: Output menu HTML ***/ ?>
 
 <?php if (count($navItems) > 0) : ?>
-    <div class="menu-mainmenu">
-        <ul>
-            <?php foreach ($navItems as $ni) : ?>
-		<?php if( !in_array($ni->cID, PageUtils::getCIDHiddenFromMainMenu())):?>	
-			<li>
-			    <a class="<?php echo $ni->classes ?>" href="<?php echo $ni->url ?>">
-				<?php echo $ni->name ?>
-			    </a>
-			</li>
-		<?php endif; ?>
-            <?php endforeach; ?>
-        </ul>
-        <div class="magnifier">
-            <!--<input type="text" placeholder="поиск"/>-->
-            <a href=""></a>
+        <div class="menu">
+            <ul class="menu__list">
+                <?php foreach ($navItems as $ni) : ?>
+            <?php if( !in_array($ni->cID, PageUtils::getCIDHiddenFromMainMenu())):?>	
+                <li class="hoverup menu__item <?=$ni->attrClass?>">
+                    <a class="menu__link link-block__normlink <?php echo $ni->classes ?>" 
+                       href="<?php echo $ni->url ?>">
+                        <?php echo $ni->name ?>
+                    </a>
+                    <div class="hoverup__layer hoverup__layer_m">
+                            <div class="hoverup__pointer"></div>
+                            <div class="hoverup__container_m hoverup__container">
+                                <div class="hoverup__bg"></div>
+                                <div class="hoverup__content">
+                                    <ul class="menu__list menu__list_v">
+                                        <li class="menu__item">
+                                            <a class="menu__link menu__link_w link-block__normlink" href="#1">Помощь родителям</a>
+                                        </li>
+                                        <li class="menu__item">
+                                            <a class="menu__link menu__link_w link-block__normlink" href="#2">Советы</a>
+                                        </li>
+                                        <li class="menu__item">
+                                            <a class="menu__link menu__link_w link-block__normlink" href="#2">Статьи</a>
+                                        </li>
+                                        <li class="menu__item">
+                                            <a class="menu__link menu__link_w link-block__normlink" href="#2">Вопрос-Ответ</a>
+                                        </li>
+                                        <li class="menu__item">
+                                            <a class="menu__link menu__link_w link-block__normlink" href="#2">Помощь психолога</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> 
+                </li>
+            <?php endif; ?>
+                <?php endforeach; ?>
+            </ul>
         </div>
-    </div>
 <?php elseif (is_object($c) && $c->isEditMode()) : ?>
     <div class="ccm-edit-mode-disabled-item"><?php echo t('Empty Auto-Nav Block.') ?></div>
 <?php endif;

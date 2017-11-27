@@ -214,7 +214,7 @@ class DarumPageUtils
      */
     public static function getCIDHiddenFromMainMenu()
     {
-        return array(423, 424, 425, 426, 427);
+        return array(1, 423, 424, 425, 426, 427);
     }
 
     /**

@@ -7,7 +7,7 @@ body {
 {
     max-width: $gridWidth; 
     margin: auto;
-    /*@include background-grid();*/
+    @include background-grid();
 }
 
 .l-twocolumns{

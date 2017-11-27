@@ -1,0 +1,29 @@
+.login
+{
+    text-align: right;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+}
+
+.login__item
+{
+    font-size: inherit;
+    display:inline-block;
+    margin-left: 17px;
+    color: $grey3;
+}
+
+@media screen and (max-width:450px) {
+     .login
+    {
+        width: 97px;
+        text-align: left;
+        line-height: 2;
+        padding-left: 25px; 
+    }
+
+    .login__item 
+    {
+        margin-left:5px;
+    } 
+}
