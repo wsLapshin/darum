@@ -157,6 +157,7 @@ $(window).on('load', function () {
     /*Слайдер страниц разобрать*/
     var darumPager = new window.DarumPager();
     $('.page').on('dpager_initialized', function(){console.log('page slider inited');});
+    
     darumPager.init();
     
 });

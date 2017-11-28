@@ -8,7 +8,7 @@
 <script src="<?php echo $view->getThemePath()?>/js/vendor/modernizr.js"></script>
 <script src="<?php echo $view->getThemePath()?>/js/vendor/jquery-1.11.2.min.js"></script>
 <script src="<?php echo $view->getThemePath()?>/js/vendor/jqueryui/jquery-ui.min.js"></script>
-<script src="<?php echo $view->getThemePath()?>/js/vendor/jquery.mobile-1.4.5.min.js"></script>
+<!--<script src="<?php echo $view->getThemePath()?>/js/vendor/jquery.mobile-1.4.5.min.js"></script>-->
 <script src="<?php echo $view->getThemePath()?>/js/vendor/mousewheel.js"></script>
 <script src="<?php echo $view->getThemePath()?>/js/vendor/slick.min.js"></script>
 <script src="<?php echo $view->getThemePath()?>/js/vendor/smoothscroll.js" ></script>
