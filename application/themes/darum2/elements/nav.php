@@ -1,4 +1,5 @@
-<div class="page__container">
+<div class="slide__nav">
+    <div class="page__container">
     <nav class="mainnav">
 
         <?php
@@ -44,72 +45,5 @@
             <a href="#" class="download-mobile download-mobile_responsive link-block__brghtlink" data-action="downloadmobile">Скачайте приложение</a>
         </div>
     </nav>
-    <div class="menu-slick menu_bordered">
-        <div class="slick-menu">
-            <div class="link-block">
-                <a class="avatar link-block__normlink" href="#">
-                    <img class="avatar__photo slick-menu__avatar-photo" src="<?php echo $this->getThemePath(); ?>/img/demo/iconmenu1.png" />
-                    <span class="avatar__text slick-menu__avatar-text">
-                        Изучайте советы при типовых ситуациях
-                    </span>
-                </a>
-            </div>
-            <div class=" link-block">
-                <a class="avatar link-block__normlink" href="#">
-                    <img class="avatar__photo slick-menu__avatar-photo"  src="<?php echo $this->getThemePath(); ?>/img/demo/iconmenu2.png" />
-                    <span class="avatar__text slick-menu__avatar-text">
-                        Читайте тематические статьи психологов
-                    </span>
-                </a>
-            </div>
-            <div class=" link-block">
-                <a class="avatar link-block__normlink" href="#">
-                    <img class="avatar__photo slick-menu__avatar-photo"  src="<?php echo $this->getThemePath(); ?>/img/demo/iconmenu3.png" />
-                    <span class="avatar__text slick-menu__avatar-text">
-                        Запишитесь на консультацию психолога
-                    </span>
-                </a>
-            </div>
-            <div class=" link-block">
-                <a class="avatar link-block__normlink" href="#">
-                    <img class="avatar__photo slick-menu__avatar-photo"  src="<?php echo $this->getThemePath(); ?>/img/demo/iconmenu4.png" />
-                    <span class="avatar__text slick-menu__avatar-text">
-                        Ищите готовые ответы в форуме с психологами
-                    </span>
-                </a>
-            </div>
-            <div class=" link-block">
-                <a class="avatar link-block__normlink" href="#">
-                    <img class="avatar__photo slick-menu__avatar-photo" src="<?php echo $this->getThemePath(); ?>/img/demo/iconmenu1.png" />
-                    <span class="avatar__text slick-menu__avatar-text">
-                        2.Изучайте советы при типовых ситуациях
-                    </span>
-                </a>
-            </div>
-            <div class=" link-block">
-                <a class="avatar link-block__normlink" href="#">
-                    <img class="avatar__photo slick-menu__avatar-photo"  src="<?php echo $this->getThemePath(); ?>/img/demo/iconmenu2.png" />
-                    <span class="avatar__text slick-menu__avatar-text">
-                        2.Читайте тематические статьи психологов
-                    </span>
-                </a>
-            </div>
-            <div class=" link-block">
-                <a class="avatar link-block__normlink" href="#">
-                    <img class="avatar__photo slick-menu__avatar-photo"  src="<?php echo $this->getThemePath(); ?>/img/demo/iconmenu3.png" />
-                    <span class="avatar__text slick-menu__avatar-text">
-                        2.Запишитесь на консультацию психолога
-                    </span>
-                </a>
-            </div>
-            <div class=" link-block">
-                <a class="avatar link-block__normlink" href="#">
-                    <img class="avatar__photo slick-menu__avatar-photo"  src="<?php echo $this->getThemePath(); ?>/img/demo/iconmenu4.png" />
-                    <span class="avatar__text slick-menu__avatar-text">
-                        2.Ищите готовые ответы в форуме с психологами
-                    </span>
-                </a>
-            </div>
-        </div>
     </div>
 </div>

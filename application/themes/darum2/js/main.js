@@ -153,8 +153,14 @@ $(window).on('load', function () {
             $(this).addClass('active');
         }
     });
+
+    /*Слайдер страниц разобрать*/
+    var darumPager = new window.DarumPager();
+    $('.page').on('dpager_initialized', function(){console.log('page slider inited');});
+    darumPager.init();
     
 });
+
 
 /*TODO разобрать - для лэндинга*/
 $(function() {
@@ -172,7 +178,7 @@ $(function() {
 	});
 	
 
-	$(".carousel").flipster({
+	/*$(".carousel").flipster({
         itemContainer: "ul.carousel__ul",
         itemSelector: "li.carousel__ul_li",
         style: 'carousel',
@@ -182,7 +188,7 @@ $(function() {
         nav: false,
         loop: true,
         touch: true,
-    });
+    });*/
 
 	//SVG Fallback
 	if(!Modernizr.svg) {
@@ -211,14 +217,14 @@ $(function() {
 	});
 
 	//Chrome Smooth Scroll
-	try {
+	/*try {
 		$.browserSelector();
 		if($("html").hasClass("chrome")) {
 			$.smoothScroll();
 		}
 	} catch(err) {
 
-	};
+	};*/
 
 	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
 

@@ -20,8 +20,12 @@
     display:none;
 }
 
+.mainnav_collapsed {
+    opacity:0.95;
+}
+
 .mainnav_collapsed .mainnav__login-ico {
-    display:block;
+    display:block
 }
 
 @media screen and (max-width:480px)
