@@ -51,7 +51,7 @@
     <!--<meta property="og:image:width" content="<?= $ogImageWidth?>" />
     <meta property="og:image:height" content="<?= $ogImageHeight?>" />-->
     <!--<meta property="og:url" content="http://www.websiteaddress.com/article/" />-->
-    
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>    
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link href="<?php echo $view->getThemePath() ?>/css/screen.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="<?php echo $view->getThemePath() ?>/css/print.css" media="print" rel="stylesheet" type="text/css" />

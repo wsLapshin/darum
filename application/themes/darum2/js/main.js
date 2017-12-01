@@ -158,7 +158,7 @@ $(window).on('load', function () {
     var darumPager = new window.DarumPager();
     $('.page').on('dpager_initialized', function(){console.log('page slider inited');});
     
-    darumPager.init();
+    //darumPager.init();
     
 });
 
