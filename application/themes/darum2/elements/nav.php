@@ -14,7 +14,7 @@
             ?> 
         <?php endif; ?>
 
-        <a class="mainnav__magnifier-ico icolink" href="">
+        <a data-disabled class="mainnav__magnifier-ico icolink" href="">
             <img class="icolink__image" src="<?= $this->getThemePath() ?>/img/magnifier.png"/>
         </a>
         <div class="mainnav__login-ico icolink hoverup hoverup_ico" >
@@ -26,12 +26,12 @@
                     <div class="hoverup__content">
                         <ul class="menu__list menu__list_v">
                             <li class="menu__item link-block">
-                                <a class="menu__link menu__link_w link-block__normlink" href="#1">
+                                <a data-disabled class="menu__link menu__link_w link-block__normlink" href="#1">
                                     Вход
                                 </a>
                             </li>
                             <li>
-                                <a class="menu__link menu__link_w link-block__normlink" href="#1">
+                                <a data-disabled class="menu__link menu__link_w link-block__normlink" href="#1">
                                     Регистрация
                                 </a>
                             </li>
@@ -42,7 +42,10 @@
         </div>
 
         <div class="link-block">
-            <a href="#" class="download-mobile download-mobile_responsive link-block__brghtlink" data-action="downloadmobile">Скачайте приложение</a>
+            <a data-disabled href="#" class="download-mobile download-mobile_responsive link-block__brghtlink" data-action="downloadmobile">
+                <img src="<?=$this->getThemePath()?>/img/phone2.png" class="download-mobile__image"/>
+                Скачайте приложение
+            </a>
         </div>
     </nav>
     </div>

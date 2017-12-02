@@ -48,24 +48,24 @@
                 </div>
 
                 <div class="footer__bottom_social">
-                    <a href="#" class="footer__bottom_soc"><i class="fa fa-vk" aria-hidden="true"></i></a>
-                    <a href="#" class="footer__bottom_soc"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    <a href="#" class="footer__bottom_soc"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    <a href="#" class="footer__bottom_soc"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    <a href="#" class="footer__bottom_soc"><i class="fa fa-odnoklassniki" aria-hidden="true"></i></a>
+                    <a href="https://vk.com/centr_razvitiy_darum_roditelyam" class="footer__bottom_soc"><i class="fa fa-vk" aria-hidden="true"></i></a>
+                    <!--<a href="#" class="footer__bottom_soc"><i class="fa fa-facebook" aria-hidden="true"></i></a>-->
+                    <a href="https://www.instagram.com/darum_roditelyam/" class="footer__bottom_soc"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/darumroditelyam" class="footer__bottom_soc"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://ok.ru/group/53905558995033" class="footer__bottom_soc"><i class="fa fa-odnoklassniki" aria-hidden="true"></i></a>
                 </div>
 
-                <a href="#" class="footer__bottom_link">Скачать приложение</a>
+                <a data-disabled href="#" class="footer__bottom_link">Скачать приложение</a>
 
-                <a href="#" class="link"></a>
-                <a href="#" class="link"></a>
+                <a data-disabled href="#" class="link"></a>
+                <a data-disabled href="#" class="link"></a>
             </div>
         </div>
     </div>
 </footer>
 <div id="dialog" title="Basic dialog" style="display:none">
   <p>
-    Мобильное приложение будет доступно для скачивания позднее    
+      Функционал в стадии разработки. Скоро вы сможете воспользоваться личным кабинетом и мобильным приложением!
   </p>
 </div>
 <div style="display:none" id="AddFavViaSheens">

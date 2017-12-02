@@ -21,12 +21,12 @@ class Main extends PageTypeController
     {
         //top news articles
         $pL = new PageList();
-        DarumPageUtils::excludeGlobal($pL->getQueryObject());
         $pL->filterByParentID([
             DarumPageUtils::ARTICLE_PARENTS_CATEGORY_CID,
             DarumPageUtils::ARTICLE_STUDENTS_CATEGORY_CID,
             DarumPageUtils::ARTICLE_RELATIONS_CATEGORY_CID
         ]);
+        DarumPageUtils::excludeGlobal($pL->getQueryObject());
         $pL->filterByIsNew(1);
         $pL->sortByPublicDateDescending();
         $pL->getQueryObject()->setMaxResults(static::MAX_NEW_ARTICLE_RESULTS);
@@ -41,12 +41,12 @@ class Main extends PageTypeController
 
         //top news advices
         $pL1 = new PageList();
-        DarumPageUtils::excludeGlobal($pL1->getQueryObject());
         $pL1->filterByParentID([
             DarumPageUtils::ADVICE_PARENTS_CATEGORY_CID,
             DarumPageUtils::ADVICE_STUDENTS_CATEGORY_CID,
             DarumPageUtils::ADVICE_RELATIONS_CATEGORY_CID
         ]);
+        DarumPageUtils::excludeGlobal($pL1->getQueryObject());
         $pL1->filterByIsNew(1);
         $pL1->sortByPublicDateDescending();
         $pL1->getQueryObject()->setMaxResults(static::MAX_NEW_ADVICE_RESULTS);
@@ -57,14 +57,17 @@ class Main extends PageTypeController
 
         //middle articles
         $pL2 = new PageList();
-        DarumPageUtils::excludeGlobal($pL2->getQueryObject());
         $pL2->filterByParentID([
             DarumPageUtils::ARTICLE_PARENTS_CATEGORY_CID,
             DarumPageUtils::ARTICLE_STUDENTS_CATEGORY_CID,
             DarumPageUtils::ARTICLE_RELATIONS_CATEGORY_CID
         ]);
+        DarumPageUtils::excludeGlobal($pL2->getQueryObject());
         $pL2->filterByIsFeatured(1);
+
+        //расскоментировать когда будет много статей,иначе пустоты
         //$pL2->getQueryObject()->andWhere( 'p.cID not in ' . $this->getFetchedIdsString());
+        
         //@todo not opimized
         $pL2->getQueryObject()->orderBy('RAND ()');
         $pL2->getQueryObject()->setMaxResults(static::MAX_POPULAR_ARTICLES);
@@ -79,13 +82,15 @@ class Main extends PageTypeController
 
         //bottom advices
         $pL3 = new PageList();
-        DarumPageUtils::excludeGlobal($pL3->getQueryObject());
         $pL3->filterByParentID([
             DarumPageUtils::ADVICE_PARENTS_CATEGORY_CID,
             DarumPageUtils::ADVICE_STUDENTS_CATEGORY_CID,
             DarumPageUtils::ADVICE_RELATIONS_CATEGORY_CID
         ]);
+        DarumPageUtils::excludeGlobal($pL3->getQueryObject());
         $pL3->filterByIsFeatured(1);
+
+        //расскоментировать когда будет много статей,иначе пустоты 
         //$pL3->getQueryObject()->andWhere( 'p.cID not in ' . $this->getFetchedIdsString());
         //@todo not opimized
         $pL3->getQueryObject()->orderBy('RAND ()');
@@ -101,13 +106,23 @@ class Main extends PageTypeController
 
         //interesting (prefooter)
         $pL4 = new PageList();
-        
-        DarumPageUtils::excludeGlobal($pL4->getQueryObject());
-        $pL4->getQueryObject()->andWhere( 'p.cID not in ' . $this->getFetchedIdsString());
+        $pL4->filterByParentID([
+            DarumPageUtils::ADVICE_PARENTS_CATEGORY_CID,
+            DarumPageUtils::ADVICE_STUDENTS_CATEGORY_CID,
+            DarumPageUtils::ADVICE_RELATIONS_CATEGORY_CID,
+            DarumPageUtils::ARTICLE_PARENTS_CATEGORY_CID,
+            DarumPageUtils::ARTICLE_STUDENTS_CATEGORY_CID,
+            DarumPageUtils::ARTICLE_RELATIONS_CATEGORY_CID
+        ]);
+       
+        //расскоментировать когда будет много статей,иначе пустоты 
+        //$pL4->getQueryObject()->andWhere( 'p.cID not in ' . $this->getFetchedIdsString());
         //@todo not opimized
         $pL4->getQueryObject()->orderBy('RAND ()');
         $pL4->getQueryObject()->setMaxResults(static::MAX_INTERESTING_RESULTS);
+        DarumPageUtils::excludeGlobal($pL4->getQueryObject());
         $interestingPages = $pL4->getResults();
+
         DarumPageUtils::extendPages($interestingPages);
         $this->set('interestingPages', $interestingPages);
 

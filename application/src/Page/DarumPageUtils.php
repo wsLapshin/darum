@@ -8,7 +8,6 @@ use Concrete\Core\Page\PageList;
 
 class DarumPageUtils
 {
-
     /** Containers' ids */
     const ARTICLE_PARENTS_CATEGORY_CID = 203;
     const ARTICLE_STUDENTS_CATEGORY_CID = 204;
@@ -16,8 +15,12 @@ class DarumPageUtils
     const ADVICE_PARENTS_CATEGORY_CID = 200;
     const ADVICE_STUDENTS_CATEGORY_CID = 201;
     const ADVICE_RELATIONS_CATEGORY_CID = 202;
-    //@todo захаркодены idшники которые не выводятся в листингах
-    const GLOBAL_EXCLUDED_CIDS = [1, 412, 200, 201, 202, 203, 204, 205, 207,211, 413, 208, 414, 209, 423,424,425, 426,427, 428 ];
+
+
+    /*const GLOBAL_EXCLUDED_CIDS = [1, 412, 200, 201, 202, 203, 204, 205, 207,211, 413, 208, 414, 209, 423,424,425, 426,427, 428 ];*/
+
+    //захаркодены idшники которые не выводятся в previe - странички листингов 
+    const GLOBAL_EXCLUDED_CIDS = [316, 317, 320, 319, 321, 322 ];
 
     /** Containers' ontology attribute names, при добавлении/удалении поправте метод getCateogoryTitle стр74  Это аттрибут-селект, где выбираем онтологию */
     const ARTICLE_PARENTS_ONTOLOGY_ATTR = 'parents_articles';
@@ -82,10 +85,14 @@ class DarumPageUtils
      *
      * @param string $excludeSlug - исключить slug для онтологии
      * @return array ['title'=><заголовок>, 'css'=><css class>, 'href'=><link to category>]
+     * @deprecated
      */
     public function getCategoryTitle($excludeSlug = null)
     {
         $cParentID = $this->page->getCollectionParentID();
+
+        //because deprecated
+        return $this->getDefaultCategoryTitle();
 
         /* get title from ontology attributes or fallback default */
         $attributeNames = array(
@@ -165,20 +172,12 @@ class DarumPageUtils
 
     public static function getCategoryColor($categoryID)
     {
-        $colors = [
-            static::ARTICLE_PARENTS_CATEGORY_CID => static::ARTICLE_PARENTS_CATEGORY_TITLE_CSS_CLASS,
-            static::ARTICLE_STUDENTS_CATEGORY_CID => static::ARTICLE_STUDENTS_CATEGORY_TITLE_CSS_CLASS,
-            static::ARTICLE_RELATIONS_CATEGORY_CID => static::ARTICLE_RELATIONS_CATEGORY_TITLE_CSS_CLASS,
-            static::ADVICE_PARENTS_CATEGORY_CID => static::ADVICE_PARENTS_CATEGORY_TITLE_CSS_CLASS,
-            static::ADVICE_STUDENTS_CATEGORY_CID => static::ADVICE_STUDENTS_CATEGORY_TITLE_CSS_CLASS,
-            static::ADVICE_RELATIONS_CATEGORY_CID => static::ADVICE_RELATIONS_CATEGORY_TITLE_CSS_CLASS,
-        ];
-
-        if( isset($colors[$categoryID]) ) {
-            return $colors[$categoryID];
-        } else {
-            return static::DEFAULT_CSS_CLASS;
+        $parentPage = Page::getById($categoryID);
+        $cssAttr = $parentPage->getAttribute('nav_item_class');
+        if( empty($cssAttr) ) {
+            $cssAttr = '';
         }
+        return $cssAttr;
     }
 
 

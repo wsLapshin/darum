@@ -67,6 +67,8 @@
     <link rel="stylesheet" href="<?php echo $view->getThemePath()?>/js/vendor/jqueryui/jquery-ui.min.css" type="text/css"/>
     <link rel="stylesheet" href="<?php echo $view->getThemePath()?>/js/vendor/jqueryui/jquery-ui.theme.min.css" type="text/css"/>
 
+    <script type="text/javascript" src="//vk.com/js/api/openapi.js?150"></script>
+
     <!--[if IE]>
         <link href="/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <![endif]-->

@@ -11,6 +11,6 @@
 <!--<script src="<?php echo $view->getThemePath()?>/js/vendor/jquery.mobile-1.4.5.min.js"></script>-->
 <script src="<?php echo $view->getThemePath()?>/js/vendor/mousewheel.js"></script>
 <script src="<?php echo $view->getThemePath()?>/js/vendor/slick.min.js"></script>
-<script src="<?php echo $view->getThemePath()?>/js/vendor/smoothscroll.js" ></script>
+<!--<script src="<?php echo $view->getThemePath()?>/js/vendor/smoothscroll.js" ></script>-->
 <script src="<?php echo $view->getThemePath()?>/js/darum.pageslide.js"></script>
 <script src="<?php echo $view->getThemePath()?>/js/main.js"></script>

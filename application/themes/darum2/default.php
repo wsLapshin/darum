@@ -29,7 +29,7 @@
                                     <img class="avatar__photo slick-menu__avatar-photo"  src="<?php echo $this->getThemePath(); ?>/img/demo/iconmenu2.png" />
                                     <span class="avatar__text slick-menu__avatar-text">
                                         Читайте тематические статьи психологов
-                                    </span>
+                                   </span>
                                 </a>
                             </div>
                             <div class=" link-block">
@@ -52,7 +52,7 @@
                                 <a class="avatar link-block__normlink" href="#">
                                     <img class="avatar__photo slick-menu__avatar-photo" src="<?php echo $this->getThemePath(); ?>/img/demo/iconmenu1.png" />
                                     <span class="avatar__text slick-menu__avatar-text">
-                                        2.Изучайте советы при типовых ситуациях
+                                        Изучайте советы при типовых ситуациях
                                     </span>
                                 </a>
                             </div>
@@ -60,7 +60,7 @@
                                 <a class="avatar link-block__normlink" href="#">
                                     <img class="avatar__photo slick-menu__avatar-photo"  src="<?php echo $this->getThemePath(); ?>/img/demo/iconmenu2.png" />
                                     <span class="avatar__text slick-menu__avatar-text">
-                                        2.Читайте тематические статьи психологов
+                                        Читайте тематические статьи психологов
                                     </span>
                                 </a>
                             </div>
@@ -68,7 +68,7 @@
                                 <a class="avatar link-block__normlink" href="#">
                                     <img class="avatar__photo slick-menu__avatar-photo"  src="<?php echo $this->getThemePath(); ?>/img/demo/iconmenu3.png" />
                                     <span class="avatar__text slick-menu__avatar-text">
-                                        2.Запишитесь на консультацию психолога
+                                        Запишитесь на консультацию психолога
                                     </span>
                                 </a>
                             </div>
@@ -76,7 +76,7 @@
                                 <a class="avatar link-block__normlink" href="#">
                                     <img class="avatar__photo slick-menu__avatar-photo"  src="<?php echo $this->getThemePath(); ?>/img/demo/iconmenu4.png" />
                                     <span class="avatar__text slick-menu__avatar-text">
-                                        2.Ищите готовые ответы в форуме с психологами
+                                        Ищите готовые ответы в форуме с психологами
                                     </span>
                                 </a>
                             </div>
@@ -195,7 +195,12 @@
                                 <?php foreach( $mainPopularArticlePage as $p ): ?>
                                 <?php $pageUtils = new DarumPageUtils($p); ?>
                                 <?php $title = $pageUtils->getCategoryTitle(); ?>
-                                <div class="intro <?php /* green '_'.$title['css'] */ ?> link-block_white">
+                                <div class="intro 
+                                            <?php if( !empty($title['css']) ){ 
+                                                    echo 'intro_'.$title['css']; 
+                                                  } 
+                                             ?>
+                                             link-block_white">
                                     <div class="intro__image">
                                         <?php if(!empty($p->mainImage)) : ?>
                                         <?php echo $pageUtils->cropImage($p->mainImage, 555, 420, $p->altMainImage); ?>
@@ -215,9 +220,9 @@
                                         <div class="intro__text">
                                             <?php echo mb_substr($p->getAttribute('introtext'), 0, 100) . '...'; ?>
                                         </div>
-                                        <a class="link-block__brghtlink intro__author">
+                                        <!--<a class="link-block__brghtlink intro__author">
                                             Автор: Кравченко Полина
-                                        </a>
+                                        </a>-->
                                         <span class="like intro__like">
                                             <a href="" class="like__item like__item_intro link-block__brghtlink">
                                                 <i class="fa fa-fw fa-heart"></i>54 
@@ -235,13 +240,20 @@
                             <?php foreach ($popularArticlePages as $p): ?>
                             <?php $pageUtils = new DarumPageUtils($p);?>
                             <?php $title = $pageUtils->getCategoryTitle() ?>
-                            <li class="page__preview preview">
+                            <li class="page__preview 
+                                       preview
+                                       link-block
+                                       <?php if( !empty($title['css']) ){ 
+                                                echo 'link-block_'.$title['css']; 
+                                              } 
+                                       ?>
+                                       ">
                                 <a class="preview__image" href="<?= $p->getCollectionPath() ?>">
                                     <?php if(!empty($p->mainImage)) : ?>
                                     <?php echo $pageUtils->cropImage($p->mainImage, 263, 180, $p->altMainImage); ?>
                                     <?php endif; ?>                              
                                 </a>
-                                <div class="preview__content link-block">
+                                <div class="preview__content">
                                     <h3 class="preview__category">
                                         <!--class="<?= $title['css'] ?>"-->
                                         <a class="link-block__brghtlink" href="<?= $title['href'] ?>">
@@ -285,7 +297,14 @@
                      <?php foreach ($popularAdvicePages as $p): ?>
                         <?php $pageUtils = new DarumPageUtils($p);?>
                         <?php $title = $pageUtils->getCategoryTitle() ?>
-                        <li class="page__preview preview">
+                        <li class="page__preview 
+                                       preview
+                                       link-block
+                                       <?php if( !empty($title['css']) ){ 
+                                                echo 'link-block_'.$title['css']; 
+                                              } 
+                                       ?>
+                                       ">
                             <a class="preview__image" href="<?= $p->getCollectionPath() ?>">
                                 <?php if(!empty($p->mainImage)) : ?>
                                 <?php echo $pageUtils->cropImage($p->mainImage, 263, 180, $p->altMainImage); ?>
@@ -325,7 +344,12 @@
                             <?php foreach( $mainPopularAdvicePage as $p ): ?>
                             <?php $pageUtils = new DarumPageUtils($p); ?>
                             <?php $title = $pageUtils->getCategoryTitle(); ?>
-                            <div class="intro <?php /* green '_'.$title['css'] */ ?> link-block_white">
+                            <div class="intro 
+                                            <?php if( !empty($title['css']) ){ 
+                                                    echo 'intro_'.$title['css']; 
+                                                  } 
+                                             ?>
+                                             link-block_white">
                                 <div class="intro__image">
                                     <?php if(!empty($p->mainImage)) : ?>
                                     <?php echo $pageUtils->cropImage($p->mainImage, 555, 420, $p->altMainImage); ?>
@@ -368,7 +392,7 @@
                     </div>
                     <div class="mainbanner__overlay">
                         <span class="mainbanner__overlay-header">Получите профессиональную помощь психолога</span>
-                        <a href="#" class="mainbanner__overlay-action">Выбрать психолога</a>
+                        <a data-disabled href="#" class="mainbanner__overlay-action">Выбрать психолога</a>
                     </div>
                 </div>
             </div>
@@ -383,8 +407,14 @@
                             <?php foreach ($interestingPages as $p): ?>
                             <?php $pageUtils = new DarumPageUtils($p);?>
                             <?php $title = $pageUtils->getCategoryTitle() ?>
-                            <?php /*@todo*/ if( !empty($p->getAttribute('meta_title')) ):?>
-                            <li class="page__preview preview">
+                            <li class="page__preview 
+                                       preview
+                                       link-block
+                                       <?php if( !empty($title['css']) ){ 
+                                                echo 'link-block_'.$title['css']; 
+                                              } 
+                                       ?>
+                                       ">
                                 <a class="preview__image" href="<?= $p->getCollectionPath() ?>">
                                 <?php if(!empty($p->mainImage)) : ?>
                                 <?php echo $pageUtils->cropImage($p->mainImage, 263, 180, $p->altMainImage); ?>
@@ -412,19 +442,20 @@
                                     </span>
                                 </div> 
                             </li>
-                            <?php endif; ?>
                             <?php endforeach;?>
                         </ul>
                         <ul class="page__column-3 page__preview-container page__last">
-                            <li class="page__preview cpa">
-                                <a class="cpa" target="_blank" href="http://kshop2.biz/NmNHDQ/">
-                                    <img src="/application/themes/darum/img/CPA/main/3.jpeg"/>
-                                </a>
+                            <li class="page__preview">
+                                <!-- VK Widget -->
+                                <div id="vk_groups"></div>
                             </li>
-                            <li class="page__preview cpa">
-                                <a class="cpa" target="_blank" href="http://kshop2.biz/NmNHDQ/">
-                                    <img src="/application/themes/darum/img/CPA/main/3.jpeg"/>
-                                </a>
+                            <li class="page__preview page__preview_widget">
+                               <iframe id="insta-widget"
+                                       allowtransparency="true" 
+                                       frameborder="0" 
+                                       scrolling="no" 
+                                       style="border:none;overflow:hidden;" >
+                               </iframe> 
                             </li>    
                         </ul>
                     </div>

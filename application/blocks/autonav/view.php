@@ -113,11 +113,20 @@ foreach ($navItems as $ni) {
 <?php if (count($navItems) > 0) : ?>
         <div class="menu">
             <ul class="menu__list">
-                <?php foreach ($navItems as $ni) : ?>
+                <?php /*@todo hardcoded submenu*/ ?>
+                <?php 
+                foreach ($navItems as $ni) : 
+                    ?>
             <?php if( !in_array($ni->cID, PageUtils::getCIDHiddenFromMainMenu())):?>	
                 <li class="hoverup menu__item <?=$ni->attrClass?>">
+                    <li class="hoverup menu__item 
+                               <?php if( !empty($ni->attrClass) ){ 
+                                        echo 'link-block_'.$ni->attrClass; 
+                                      } 
+                               ?>
+                               ">
                     <a class="menu__link link-block__normlink <?php echo $ni->classes ?>" 
-                       href="<?php echo $ni->url ?>">
+                       href="<?php echo $ni->cObj->cPath ?>">
                         <?php echo $ni->name ?>
                     </a>
                     <div class="hoverup__layer hoverup__layer_m">
@@ -127,19 +136,27 @@ foreach ($navItems as $ni) {
                                 <div class="hoverup__content">
                                     <ul class="menu__list menu__list_v">
                                         <li class="menu__item">
-                                            <a class="menu__link menu__link_w link-block__normlink" href="#1">Помощь родителям</a>
+                                            <a class="menu__link menu__link_w link-block__normlink" href="<?php echo $ni->cObj->cPath?>">
+                                                Помощь родителям
+                                            </a>
                                         </li>
                                         <li class="menu__item">
-                                            <a class="menu__link menu__link_w link-block__normlink" href="#2">Советы</a>
+                                            <a class="menu__link menu__link_w link-block__normlink" href="<?=$ni->cObj->cPath?>/sovety">
+                                                Советы
+                                            </a>
                                         </li>
                                         <li class="menu__item">
-                                            <a class="menu__link menu__link_w link-block__normlink" href="#2">Статьи</a>
+                                            <a class="menu__link menu__link_w link-block__normlink" href="<?=$ni->cObj->cPath?>/stati">
+                                                Статьи
+                                            </a>
                                         </li>
                                         <li class="menu__item">
-                                            <a class="menu__link menu__link_w link-block__normlink" href="#2">Вопрос-Ответ</a>
+                                            <a class="menu__link menu__link_w link-block__normlink" href="<?=$ni->cObj->cPath?>/vopros-otvet">Вопрос-Ответ</a>
                                         </li>
                                         <li class="menu__item">
-                                            <a class="menu__link menu__link_w link-block__normlink" href="#2">Помощь психолога</a>
+                                            <a class="menu__link menu__link_w link-block__normlink" href="<?=$ni->cObj->cPath?>/pomosh-psihologa">
+                                                Помощь психолога
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>

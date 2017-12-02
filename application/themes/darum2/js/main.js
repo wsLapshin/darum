@@ -34,15 +34,74 @@ function addFav() {
 }
 
 $(window).on('load', function () {
+    /*Выравнивание блоков preview @deprecated*/
+    function resizePreviewHeight() {
+        var previewRatio = 1.11574,
+            previews = $('.preview'),
+            width = $('.preview').width(),
+            height = width*previewRatio;
+        console.error('height is' + height);
+       previews.height(height);
+       console.error(previews.length);
+       console.error('previews resized fun');
+       $(window).trigger('previews_resized');
+    }
+    
 
-    /*Скачать приложение*/
-    $('#downloadmobile').on('click', function () {
-        $(function () {
+    /*Виджет ВК*/
+    function VK_Widget_Init(){
+        document.getElementById('vk_groups').innerHTML = "";
+        var vk_width = $('.preview').width(),
+            vk_height = $('.preview').height();
+
+        VK.Widgets.Group("vk_groups", {mode: 0, width: vk_width, height:vk_height},147324513);
+    };
+
+    /*Виджет Инстаграмм*/
+    function INSTA_Widget_Init(){
+        var insta_width = $('.preview').width(),
+            insta_height = $('.preview').height(),
+            widget = $('#insta-widget'),
+            icosize = null,
+            columns = 4,
+            rows = 2,
+            gutter = 4,
+            nickname = "darum_roditelyam", 
+            url = "//widget.stapico.ru/?b=1&effect=1",
+            src = '';
+        widget.css('height', insta_height);
+        widget.css('width', insta_width);
+
+        src = url + "&q=" + nickname;
+
+        /*расчитать размер иконки - расчет эмпиирический*/
+        
+        var icosize = ((insta_width - gutter*2.65*(columns+1))/4).toFixed();
+
+        src += "&s=" + icosize;
+
+        /*grid*/
+        src += "&w=" + columns + "&h=" + rows + "&p=" + gutter;
+
+        widget.attr('src', src); 
+    };
+    
+    VK_Widget_Init();
+    INSTA_Widget_Init();
+    $(window).on('resize', VK_Widget_Init);
+    $(window).on('resize', INSTA_Widget_Init);
+    //resizePreviewHeight();
+    //$(window).on('resize', resizePreviewHeight);
+
+    /*Отключенные функции*/
+    $('[data-disabled]').on('click', function (e) {
+            e.preventDefault();
             $("#dialog").dialog({
                 title: "Дарум",
+                modal: true,
             });
-        });
     });
+    
     $('.addFav').on('click', addFav);
 
     /*Слайдер иконочного меню (под главным)*/

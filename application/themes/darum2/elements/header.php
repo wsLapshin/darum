@@ -3,11 +3,14 @@
         <div class="header">
             <div class="header__top">
                 <div class="header__download ">
-                    <a href="#" class="download-mobile link-block__brghtlink" data-action="downloadmobile download-mobile_desktop">Скачайте приложение</a>
+                    <a data-disabled href="#" class="download-mobile link-block__brghtlink" data-action="downloadmobile download-mobile_desktop">
+                        <img src="<?=$this->getThemePath()?>/img/phone2.png" class="download-mobile__image"/>
+                        Скачайте приложение
+                    </a>
                 </div>
                 <div class="header__login login" >
-                    <a class="login__item link-block__normlink" href="#">Вход</a>
-                    <a class="login__item link-block__normlink" href="#">Регистрация</a>
+                    <a data-disabled class="login__item link-block__normlink" href="#">Вход</a>
+                    <a data-disabled class="login__item link-block__normlink" href="#">Регистрация</a>
                 </div>
                 <div class="header__logo logo">
                     <div class="logo__head">Центр развития</div>
