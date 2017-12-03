@@ -83,16 +83,17 @@ class DarumPageUtils
      * Опирается на онтологии(задаваемые аттрибутом у страницы)
      * и fallback на значение заголовка по умолчанию
      *
+     * @param boolean $isMainPage - на главной странице логика отображения заголовка другая
      * @param string $excludeSlug - исключить slug для онтологии
      * @return array ['title'=><заголовок>, 'css'=><css class>, 'href'=><link to category>]
-     * @deprecated
      */
-    public function getCategoryTitle($excludeSlug = null)
+    public function getCategoryTitle($excludeSlug = null, $isMainPage = false)
     {
         $cParentID = $this->page->getCollectionParentID();
 
-        //because deprecated
-        return $this->getDefaultCategoryTitle();
+        if( $isMainPage ) {
+            return $this->getDefaultCategoryTitle();
+        }
 
         /* get title from ontology attributes or fallback default */
         $attributeNames = array(

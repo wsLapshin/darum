@@ -89,7 +89,7 @@
                         <ul class="page__column-3 page__preview-container">
                             <?php foreach( $newPages as $p ): ?>
                             <?php $pageUtils = new DarumPageUtils($p); ?>
-                            <?php $title = $pageUtils->getCategoryTitle() ?>
+                            <?php $title = $pageUtils->getCategoryTitle(null, false) ?>
                             <li class="page__preview preview">
                                 <a class="preview__image" href="<?= $p->getCollectionPath() ?>">
                                     <?php if(!empty($p->mainImage)) : ?>
@@ -124,7 +124,7 @@
                             <div class="slick-preview">
                                 <?php foreach( $mainNewPage as $p ): ?>
                                 <?php $pageUtils = new DarumPageUtils($p); ?>
-                                <?php $title = $pageUtils->getCategoryTitle(); ?>
+                                <?php $title = $pageUtils->getCategoryTitle(null, false) ?>
                                 <div class="intro <?php /* green '_'.$title['css'] */ ?> link-block_white">
                                     <div class="intro__image">
                                         <?php if(!empty($p->mainImage)) : ?>
@@ -194,7 +194,8 @@
                             <div class="slick-preview">
                                 <?php foreach( $mainPopularArticlePage as $p ): ?>
                                 <?php $pageUtils = new DarumPageUtils($p); ?>
-                                <?php $title = $pageUtils->getCategoryTitle(); ?>
+                                <?php $title = $pageUtils->getCategoryTitle(null, false) ?>
+
                                 <div class="intro 
                                             <?php if( !empty($title['css']) ){ 
                                                     echo 'intro_'.$title['css']; 
@@ -239,7 +240,7 @@
                         <ul class="page__column-6 page__preview-container page__last">
                             <?php foreach ($popularArticlePages as $p): ?>
                             <?php $pageUtils = new DarumPageUtils($p);?>
-                            <?php $title = $pageUtils->getCategoryTitle() ?>
+                            <?php $title = $pageUtils->getCategoryTitle(null, false) ?>
                             <li class="page__preview 
                                        preview
                                        link-block
@@ -296,7 +297,7 @@
                      <ul class="page__column-6 page__preview-container">
                      <?php foreach ($popularAdvicePages as $p): ?>
                         <?php $pageUtils = new DarumPageUtils($p);?>
-                        <?php $title = $pageUtils->getCategoryTitle() ?>
+                        <?php $title = $pageUtils->getCategoryTitle(null, false) ?>
                         <li class="page__preview 
                                        preview
                                        link-block
@@ -343,7 +344,7 @@
                          <div class="slick-preview">
                             <?php foreach( $mainPopularAdvicePage as $p ): ?>
                             <?php $pageUtils = new DarumPageUtils($p); ?>
-                            <?php $title = $pageUtils->getCategoryTitle(); ?>
+                            <?php $title = $pageUtils->getCategoryTitle(null, false) ?>
                             <div class="intro 
                                             <?php if( !empty($title['css']) ){ 
                                                     echo 'intro_'.$title['css']; 
