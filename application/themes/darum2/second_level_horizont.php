@@ -222,7 +222,6 @@
                      <div class="page__column-6 page__preview-container">
                          <div class="slick-preview">
                             <?php foreach( $mainCommentedPage as $p ): ?>
-                             <?php var_dump($p); die;?>
                             <?php $pageUtils = new DarumPageUtils($p); ?>
                             <?php $title = $pageUtils->getCategoryTitle(); ?>
                             <div class="intro 
