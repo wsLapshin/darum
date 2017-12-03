@@ -10,7 +10,7 @@ foreach ($navItems as $ni) {
 
     if ($ni->isCurrent) {
         //class for the page currently being viewed
-        $classes[] = 'link_active';
+        $classes[] = 'active';
     }
     $ni->classes = implode(" ", $classes);
 }
@@ -18,12 +18,12 @@ foreach ($navItems as $ni) {
 
 <?php if (count($navItems) > 0) : ?>
         <div class="menu menu_submenu menu_bordered">
-        <ul class="menu__list">
+        <ul class="menu__list menu__list_bordered link-block_blue"><!--TODO-->
         <?php $totalItems = count($navItems);?>
         <?php for($i=0; $i<$totalItems; $i++): ?>
             <?php $ni = $navItems[$i];?>
-            <li class="menu__item">
-                <a class="menu__link <?php echo $ni->classes ?>" href="<?php echo $ni->url ?>">
+            <li class="menu__item menu__item_bordered hoverup">
+                <a class="link-block__normlink menu__link <?php echo $ni->classes ?>" href="<?php echo $ni->url ?>">
                     <?php echo $ni->name ?>
                 </a>
 
@@ -35,37 +35,27 @@ foreach ($navItems as $ni) {
                         $urlNew = $containerURL . '/' . PageUtils::LIST_SLUG . '/' . PageUtils::NEW_SLUG;
                         $urlPopular = $containerURL . '/' . PageUtils::LIST_SLUG . '/' . PageUtils::POPULAR_SLUG;
                 ?>
-                    <div class="third-level-cont">
-                        <!--<div>
-                            <a href="<?php echo $urlNew?>"  class="third-level">
-                                Новые
-                            </a>
-                            <a href="<?php echo $urlPopular ?>"  class="third-level">
-                                Популярные
-                            </a>
-                        </div>-->
-                    </div>
-                <?php endif;?>
-                
-                <?php //not used ?>
-                <?php if($ni->hasSubmenu && false): //delete this block in future maybe?>
-                    <div class="third-level-cont">
-                        <div>
-                                
-                        <?php for($j=$i+1; $j<$totalItems; $j++):?>
-                            <?php $subNi = $navItems[$j];?>
-                            <?php if($subNi->level == 1) {break;}?>
-                            <a href="<?php echo $subNi->url?>"  class="third-level">
-                                <?php echo $subNi->name ?>
-                            </a>
-                        <?php endfor;?>
-                        <?php $i = $j-1; ?>
-
+                    <div class="hoverup__layer hoverup__layer_subm">
+                        <div class="hoverup__pointer"></div>
+                        <div class="hoverup__container_m hoverup__container">
+                            <div class="hoverup__bg"></div>
+                            <div class="hoverup__content">
+                                <ul class="menu__list menu__list_v">
+                                    <li class="menu__item">
+                                        <a class="menu__link menu__link_w link-block__normlink" href="<?php echo $urlNew?>">
+                                            Новые
+                                        </a>
+                                    </li>
+                                    <li class="menu__item">
+                                        <a class="menu__link menu__link_w link-block__normlink" href="<?php echo $urlPopular ?>">
+                                            Популярные
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
+                    </div> 
                 <?php endif;?>
-                <?php //\not used ?>
-
             </li>
         <?php endfor; ?>
         </ul>

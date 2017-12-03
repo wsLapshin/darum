@@ -4618,19 +4618,32 @@ sup {
   height: 160px;
 }
 
-/*layer in login ico menu*/
+/*layer in submenu*/
 /* line 43, ../scss/_hoverup.scss */
+.hoverup__layer_subm {
+  transition: height 0.5s ease-out 0s;
+  top: 15px;
+}
+
+/* line 49, ../scss/_hoverup.scss */
+.hoverup:hover .hoverup__layer_subm,
+.hoverup.active .hoverup__layer_subm {
+  height: 76px;
+}
+
+/*layer in login ico menu*/
+/* line 57, ../scss/_hoverup.scss */
 .hoverup__layer_i {
   top: 18px;
 }
 
-/* line 48, ../scss/_hoverup.scss */
+/* line 62, ../scss/_hoverup.scss */
 .hoverup:hover .hoverup__layer_i,
 .hoverup.active .hoverup__layer_i {
   height: 82px;
 }
 
-/* line 55, ../scss/_hoverup.scss */
+/* line 69, ../scss/_hoverup.scss */
 .hoverup__pointer {
   position: relative;
   left: 48px;
@@ -4640,12 +4653,12 @@ sup {
   border-bottom: 7.5px solid #000;
 }
 
-/* line 65, ../scss/_hoverup.scss */
+/* line 79, ../scss/_hoverup.scss */
 .hoverup_ico .hoverup__pointer {
   left: 84px;
 }
 
-/* line 69, ../scss/_hoverup.scss */
+/* line 83, ../scss/_hoverup.scss */
 .hoverup__pointer,
 .hoverup__bg {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
@@ -4653,26 +4666,26 @@ sup {
   z-index: 1;
 }
 
-/* line 76, ../scss/_hoverup.scss */
+/* line 90, ../scss/_hoverup.scss */
 .hoverup__container {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
 
-/* line 83, ../scss/_hoverup.scss */
+/* line 97, ../scss/_hoverup.scss */
 .hoverup_ico .hoverup__layer {
   left: auto;
   right: 0;
 }
 
 /*container in main menu with fixed width*/
-/* line 89, ../scss/_hoverup.scss */
+/* line 103, ../scss/_hoverup.scss */
 .hoverup__container_m {
   width: 160px;
 }
 
-/* line 94, ../scss/_hoverup.scss */
+/* line 108, ../scss/_hoverup.scss */
 .hoverup__bg {
   display: block;
   position: absolute;
@@ -4683,7 +4696,7 @@ sup {
   height: 100%;
 }
 
-/* line 105, ../scss/_hoverup.scss */
+/* line 119, ../scss/_hoverup.scss */
 .hoverup__content {
   padding: 15px;
   position: relative;
@@ -4691,12 +4704,12 @@ sup {
 }
 
 @media screen and (max-width: 480px) {
-  /* line 113, ../scss/_hoverup.scss */
+  /* line 127, ../scss/_hoverup.scss */
   .hoverup__layer_m {
     top: 22px;
   }
 
-  /* line 117, ../scss/_hoverup.scss */
+  /* line 131, ../scss/_hoverup.scss */
   .hoverup__container_m {
     width: 152px;
   }
@@ -4970,7 +4983,15 @@ sup {
     display: block;
   }
 }
-/* line 5, ../scss/_menu.scss */
+/*Menu border effect*/
+/* line 6, ../scss/_menu.scss */
+.menu_bordered {
+  border-top: 1px solid #cecece;
+  border-bottom: 1px solid #cecece;
+}
+
+/*Menu List*/
+/* line 13, ../scss/_menu.scss */
 .menu__list {
   list-style: none;
   margin: 0;
@@ -4978,7 +4999,28 @@ sup {
   text-align: center;
 }
 
-/* line 13, ../scss/_menu.scss */
+/* line 21, ../scss/_menu.scss */
+.menu__list_bordered:before,
+.menu__list_bordered:after {
+  content: "\00a0";
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+/* line 30, ../scss/_menu.scss */
+.menu__list_bordered:before {
+  border-left: 1px solid #cecece;
+}
+
+/* line 35, ../scss/_menu.scss */
+.menu__list_bordered:after {
+  border-right: 1px solid #cecece;
+}
+
+/*Menu Item*/
+/* line 42, ../scss/_menu.scss */
 .menu__item {
   display: inline-block;
   padding: 0 12.5px;
@@ -4986,20 +5028,30 @@ sup {
   line-height: 66px;
 }
 
-/* line 21, ../scss/_menu.scss */
+/* line 50, ../scss/_menu.scss */
+.menu__item_bordered {
+  font-size: 11px;
+  border-left: 1px solid #cecece;
+  border-right: 1px solid #cecece;
+  padding: 0 19px;
+  line-height: 16px;
+}
+
+/*Menu Link*/
+/* line 61, ../scss/_menu.scss */
 .menu__link {
   text-transform: uppercase;
   font-weight: 700;
   color: #111;
 }
 
-/* line 28, ../scss/_menu.scss */
+/* line 68, ../scss/_menu.scss */
 .menu__link_w {
   color: #fff;
 }
 
 /*VERTICAL MENU*/
-/* line 37, ../scss/_menu.scss */
+/* line 77, ../scss/_menu.scss */
 .menu__list_v .menu__item {
   display: block;
   padding: 0;
@@ -5007,68 +5059,36 @@ sup {
   margin-bottom: 7px;
   line-height: 16px;
 }
-/* line 45, ../scss/_menu.scss */
+/* line 85, ../scss/_menu.scss */
 .menu__list_v .menu__item:last-child {
   margin-bottom: 0px;
 }
-/* line 50, ../scss/_menu.scss */
+/* line 90, ../scss/_menu.scss */
 .menu__list_v .menu__link {
   display: block;
   font-size: 10px;
 }
 
-/*BORDER EFFECT*/
-/* line 57, ../scss/_menu.scss */
-.menu_bordered {
-  border-top: 1px solid #cecece;
-  border-bottom: 1px solid #cecece;
-}
-
 /*SUBMENU*/
-/* line 64, ../scss/_menu.scss */
+/* line 97, ../scss/_menu.scss */
 .menu_submenu {
   /*@extend .menu;*/
   line-height: 56px;
 }
-/* line 70, ../scss/_menu.scss */
-.menu_submenu .menu__list:before,
-.menu_submenu .menu__list:after {
-  content: "\00a0";
-  display: inline-block;
-  width: 1px;
-  height: 16px;
-  vertical-align: middle;
-}
-/* line 80, ../scss/_menu.scss */
-.menu_submenu .menu__list:before {
-  border-left: 1px solid #cecece;
-}
-/* line 85, ../scss/_menu.scss */
-.menu_submenu .menu__list:after {
-  border-right: 1px solid #cecece;
-}
-/* line 90, ../scss/_menu.scss */
-.menu_submenu .menu__item {
-  font-size: 11px;
-  border-left: 1px solid #cecece;
-  border-right: 1px solid #cecece;
-  padding: 0 19px;
-  line-height: 16px;
-}
-/* line 99, ../scss/_menu.scss */
+/* line 102, ../scss/_menu.scss */
 .menu_submenu .menu__link {
   font-weight: 500;
 }
 
-@media screen and (max-width: 480px) {
-  /* line 106, ../scss/_menu.scss */
+@media screen and (max-width: 510px) {
+  /* line 109, ../scss/_menu.scss */
   .menu__item {
     font-size: 11px;
     line-height: 40px;
     padding: 0 5.5px;
   }
 
-  /* line 113, ../scss/_menu.scss */
+  /* line 116, ../scss/_menu.scss */
   .menu_submenu {
     display: none;
   }

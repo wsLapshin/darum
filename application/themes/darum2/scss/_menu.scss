@@ -2,6 +2,14 @@ $menuHeight: 66px;
 $subMenuHeight: 56px;
 $itemHeight: 16px;
 
+/*Menu border effect*/
+.menu_bordered
+{
+    border-top: 1px solid $grey2;
+    border-bottom: 1px solid $grey2;
+}
+
+/*Menu List*/
 .menu__list
 {
     list-style: none;
@@ -10,6 +18,27 @@ $itemHeight: 16px;
     text-align: center;
 }
 
+.menu__list_bordered:before,
+.menu__list_bordered:after {
+    content:"\00a0";
+    display: inline-block;
+    width:1px;
+    height: $itemHeight;
+    vertical-align:middle;
+}
+
+.menu__list_bordered:before
+{
+    border-left: 1px solid $grey2;
+}
+
+.menu__list_bordered:after
+{
+    border-right: 1px solid $grey2; 
+}
+
+/*Menu Item*/
+
 .menu__item
 {
     display: inline-block;
@@ -17,6 +46,17 @@ $itemHeight: 16px;
     font-size: 13px;
     line-height: $menuHeight;
 }
+
+.menu__item_bordered 
+{
+    font-size: 11px;
+    border-left: 1px solid $grey2;
+    border-right: 1px solid $grey2;
+    padding: 0 19px;
+    line-height: $itemHeight;
+}
+
+/*Menu Link*/
 
 .menu__link
 {
@@ -53,48 +93,11 @@ $itemHeight: 16px;
     }
 }
 
-/*BORDER EFFECT*/
-.menu_bordered
-{
-    border-top: 1px solid $grey2;
-    border-bottom: 1px solid $grey2;
-}
-
 /*SUBMENU*/
 .menu_submenu
 {
     /*@extend .menu;*/
     line-height: $subMenuHeight;
-
-
-    .menu__list:before,
-        .menu__list:after
-        {
-        content:"\00a0";
-        display: inline-block;
-        width:1px;
-        height: $itemHeight;
-        vertical-align:middle;
-    }
-
-    .menu__list:before
-        {
-        border-left: 1px solid $grey2;
-    }
-
-    .menu__list:after
-        {
-        border-right: 1px solid $grey2; 
-    }
-
-    .menu__item 
-    {
-        font-size: 11px;
-        border-left: 1px solid $grey2;
-        border-right: 1px solid $grey2;
-        padding: 0 19px;
-        line-height: $itemHeight;
-    }
 
     .menu__link
     {
@@ -102,7 +105,7 @@ $itemHeight: 16px;
     } 
 }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:510px) {
     .menu__item
     {
         font-size:11px;

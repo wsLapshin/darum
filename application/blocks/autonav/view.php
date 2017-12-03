@@ -126,7 +126,7 @@ foreach ($navItems as $ni) {
                                ?>
                                ">
                     <a class="menu__link link-block__normlink <?php echo $ni->classes ?>" 
-                       href="<?php echo $ni->cObj->cPath ?>">
+                       href="#<?php //echo $ni->cObj->cPath ?>">
                         <?php echo $ni->name ?>
                     </a>
                     <div class="hoverup__layer hoverup__layer_m">

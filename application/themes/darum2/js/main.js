@@ -205,6 +205,7 @@ $(window).on('load', function () {
 
     /*Всплывающее меню по таппингу*/
     $('.hoverup').on('tap', function(e){
+        e.preventDefault();
         if( $(this).hasClass('active') ) {
             $(this).removeClass('active');
         } else {
