@@ -24,8 +24,13 @@ class AbstractContainer extends PageTypeController
         DarumPageUtils::extendPages($newPages);
         $this->addFetchedIds($newPages);
 
-        $mainNewPage[] = array_shift($newPages);
-        $mainNewPage[] = array_shift($newPages);
+        $mainNewPage = array(); 
+        for( $i=0; $i<static::MAX_MAIN_IMAGES ; $i++ ) {
+            $m = array_shift($newPages);
+            if( null !== $m ) {
+                $mainNewPage[] = $m;    
+            }
+        }
         
         //middle - popular advices for parents
         $pL2 = new PageList();
@@ -40,8 +45,14 @@ class AbstractContainer extends PageTypeController
         DarumPageUtils::extendPages($popularPages);
         $this->addFetchedIds($popularPages);
         
-        $mainPopularPage[] = array_shift($popularPages);
-        $mainPopularPage[] = array_shift($popularPages);
+
+        $mainPopularPage = array(); 
+        for( $i=0; $i<static::MAX_MAIN_IMAGES ; $i++ ) {
+            $m = array_shift($popularPages);
+            if( null !== $m ) {
+                 $mainPopularPage[] = $m;    
+            }
+        }
 
         //bottom - mostcommente
         $pL3 = new PageList();
@@ -56,9 +67,13 @@ class AbstractContainer extends PageTypeController
         DarumPageUtils::extendPages($commentedPages);
         $this->addFetchedIds($commentedPages);
         
-        $mainCommentedPage = array();
-        $mainCommentedPage[] = array_shift($commentedPages);
-        $mainCommentedPage[] = array_shift($commentedPages);
+        $mainCommentedPage = array(); 
+        for( $i=0; $i<static::MAX_MAIN_IMAGES ; $i++ ) {
+            $m = array_shift($commentedPages);
+            if( null !== $m ) {
+                 $mainCommentedPage[] = $m;    
+            }
+        }
 
         $pL4 = new PageList();
         DarumPageUtils::excludeGlobal($pL4->getQueryObject());

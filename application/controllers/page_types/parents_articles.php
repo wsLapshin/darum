@@ -11,6 +11,7 @@ class ParentsArticles extends AbstractContainer
     const MAX_POPULAR_RESULTS = 5;
     const MAX_COMMENTED_RESULTS = 5;
     const MAX_INTERESTING_RESULTS = 9;
+    const MAX_MAIN_IMAGES = 2;
 
     public function __construct(Page $c)
     {
