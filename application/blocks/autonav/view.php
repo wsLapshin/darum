@@ -137,7 +137,7 @@ foreach ($navItems as $ni) {
                                     <ul class="menu__list menu__list_v">
                                         <li class="menu__item">
                                             <a class="menu__link menu__link_w link-block__normlink" href="<?php echo $ni->cObj->cPath?>">
-                                                Помощь родителям
+                                                Тестирование
                                             </a>
                                         </li>
                                         <li class="menu__item">
