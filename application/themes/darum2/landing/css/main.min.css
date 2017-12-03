@@ -30,7 +30,9 @@ body {
   font-family: "OR", sans-serif;
   overflow-x: hidden;
   margin: 0 auto;
-  line-height: 1.375em; }
+  line-height: 1.375em; 
+   background: #EDEDED;
+}
 
 .hidden {
   display: none; }
