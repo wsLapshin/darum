@@ -30,6 +30,7 @@
   </head>
   <body>
       <div class="<?= $c->getPageWrapperClass() ?>">
+          <?php $this->inc('elements/header.php'); ?> 
           <?php $this->inc('elements/nav.php'); ?>
           <header class="headers">
             <div class="header-landing">

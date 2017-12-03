@@ -10,7 +10,7 @@ class StudentsArticles extends AbstractContainer
     const MAX_NEW_RESULTS = 7;
     const MAX_POPULAR_RESULTS = 5;
     const MAX_COMMENTED_RESULTS = 5;
-    const MAX_INTERESTING_RESULTS = 6;
+    const MAX_INTERESTING_RESULTS = 9;
 
     public function __construct(Page $c)
     {

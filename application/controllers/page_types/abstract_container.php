@@ -44,8 +44,8 @@ class AbstractContainer extends PageTypeController
         $mainPopularPage[] = array_shift($popularPages);
 
         //bottom - mostcommente
-        /*$pL3 = new PageList();
-        DarumPageUtils::excludeGlobal($pL3);
+        $pL3 = new PageList();
+        DarumPageUtils::excludeGlobal($pL3->getQueryObject());
         $pL3->filterByParentID($this->categoryCID);
         $pL3->filterByIsCommented(1);
         //$pL3->getQueryObject()->andWhere( 'p.cID not in ' . $this->getFetchedIdsString());
@@ -54,13 +54,11 @@ class AbstractContainer extends PageTypeController
         $pL3->getQueryObject()->setMaxResults(static::MAX_COMMENTED_RESULTS);
         $commentedPages = $pL3->getResults();
         DarumPageUtils::extendPages($commentedPages);
-        $this->addFetchedIds($commentedPages);*/
+        $this->addFetchedIds($commentedPages);
         
-        $commentedPages = array();
-        
-        $mainCommentedPage[] = array_shift($commentedPages);
-        $mainCommentedPage[] = array_shift($commentedPages);
         $mainCommentedPage = array();
+        $mainCommentedPage[] = array_shift($commentedPages);
+        $mainCommentedPage[] = array_shift($commentedPages);
 
         $pL4 = new PageList();
         DarumPageUtils::excludeGlobal($pL4->getQueryObject());
