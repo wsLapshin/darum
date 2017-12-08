@@ -1,78 +1,67 @@
 <?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php use Application\Src\Page\DarumPageUtils; ?>
+<?php use Concrete\Core\Localization\Service\Date; ?>
+<?php $landingDir = $this->getThemePath() . '/landing'; ?>
+<?php $this->inc('elements/head.php'); ?>
+<body class="page">
 
-<?php
-
-use Application\Src\Page\DarumPageUtils; ?>
-<?php
-
-use Concrete\Core\Localization\Service\Date ?>
-<?php $this->inc('elements/common/doctype.php'); ?>
-<?php $this->inc('elements/common/head.php'); ?>
-<body>
-    <style>
-	.aside-banner > a,
-	.in-block-banner > a {
-           display: block;
-        }
-        .aside-banner > a > img,
-        .in-block-banner > a > img {
-            display: inline-block;
-            text-align: center;
-            max-width: 100%;
-        }
-	.aside-banner-middle {
-            border: none;
-        }
-    </style>
-    <?php $this->inc('elements/common/ie8_warn.php'); ?>
+    <?php $this->inc('elements/ie8_warn.php'); ?>
     <div class="<?= $c->getPageWrapperClass() ?>">
-        <?php $this->inc('elements/nav.php'); ?>
-        <div class="l-container">
-            <div class="l-twocolumns">
-                <article class="right-bordered">
-                    <div class="topimage">
-                        <?php
-                        $a = new Area('MainImage');
-                        $a->display($c);
-                        ?>
+        <?php $this->inc('elements/header.php'); ?> 
+        <div class="l-container page__container">
+            <?php $this->inc('elements/nav.php'); ?>
+            <div class="l-twocolumns page__block">
+                <div class="page__column-9 page__preview-container">
+                    <div class="intro link-block_white">
+                        <div class="topimage intro__image">
+                            <?php
+                            $a = new Area('MainImage');
+                            $a->display($c);
+                            ?>
+                        </div>
+                        <div class="intro__content">
+                            
+                                <?php $pageUtils = new DarumPageUtils($c); ?>
+                                <?php $title = $pageUtils->getCategoryTitle(); ?> 
+                                <h2 class="intro__category">
+                                    <a class="<?= $title['css'] ?> link-block__brghtlink" href="<?= $title['href'] ?>">
+                                        <?= $title['title'] ?>
+                                    </a>
+                                </h2>
+                                <h1 class="intro__header">
+                                    <?= $c->getAttribute('meta_title'); ?>
+                                </h1>
+                                <a class="link-block__brghtlink intro__author">
+                                    Автор: Кравченко Полина
+                                </a> 
+                                <span class="like intro__like">
+                                    <?php/*
+                                    $dateService = new Date();
+                                    $prettyDate = $dateService->formatPrettyDate($c->getCollectionDateAdded());
+                                    */?>
+                                    <?// $prettyDate ?>
+                                            <a href="" class="like__item like__item_intro link-block__brghtlink">
+                                                <i class="fa fa-fw fa-heart"></i>54 
+                                            </a>
+                                            <a href="" class="like__item like__item_intro link-block__brghtlink">
+                                                <i class="fa fa-fw fa-comment"></i>31
+                                            </a>
+                                </span>
+                        </div>
                     </div>
-                    <header class="article-header">
-                        <div class="intro intro-article">
-                            <?php $pageUtils = new DarumPageUtils($c); ?>
-                            <?php $title = $pageUtils->getCategoryTitle(); ?> 
-                            <h2 class="intro-category">
-                                <a class="<?= $title['css'] ?>" href="<?= $title['href'] ?>">
-                                    <?= $title['title'] ?>
-                                </a>
-                            </h2>
-                            <h1 class="intro-header">
-                                <?= $c->getAttribute('meta_title'); ?>
-                            </h1>
-                            <span class="intro-author">
-                                Автор: Кравченко Полина
-                            </span> 
-                            <span class="intro-likes">
-                                <?php/*
-                                $dateService = new Date();
-                                $prettyDate = $dateService->formatPrettyDate($c->getCollectionDateAdded());
-                                */?>
-                                <?php// $prettyDate ?><i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
-                            </span>
-                        </div>
-                        <div class="social">
-                            <div class="social-share">
-                                <a href="#">
-                                    <i class="fa fa-fw fa-vk"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-fw fa-facebook"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-fw fa-twitter"></i>
-                                </a>
+                            <div class="social">
+                                <div class="social-share" style="margin-right:0px;">
+                                    <a href="#">
+                                        <i class="fa fa-fw fa-vk"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fa fa-fw fa-facebook"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fa fa-fw fa-twitter"></i>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    </header>
                     <main role="main">
                         <div class="article-text">
                             <?php
@@ -225,99 +214,109 @@ use Concrete\Core\Localization\Service\Date ?>
                             </div>-->
                         </footer>
                     </main>
-                </article>
-                <aside>
-		    <div class="aside-banner">
-		    <a href="http://goo.gl/E8hQ3k" target="_blank">
-                    <img style="max-width:100%" src="<?php echo $this->getThemePath() ?>/img/CPA/oadvice/1.gif"/>
-		    </a>
-		    </div>
-                    <div class="aside-list">
-                        <div class="aside-list-header">
+                </div>
+                <div class="page__column-3 page__preview-container page__last">
+                    <div class="aside-banner aside-banner-middle">
+                    <a href="http://goo.gl/E8hQ3k" target="_blank">
+                            <img style="max-width:100%" src="<?php echo $this->getThemePath() ?>/img/CPA/oadvice/1.gif"/>
+                    </a>
+                    </div>
+                    <div class="aside-list aside-list_mini">
+                        <div class="aside-list__header">
                              <?php if (in_array($categoryCID, [
                                  DarumPageUtils::ADVICE_PARENTS_CATEGORY_CID,
                                  DarumPageUtils::ADVICE_STUDENTS_CATEGORY_CID,
                                  DarumPageUtils::ADVICE_RELATIONS_CATEGORY_CID
                                  ])):?>
-                            <h3>Ещё советы</h3> 
+                            <h3 class="aside-list__header-inner">Ещё советы</h3> 
                             <?php elseif (in_array($categoryCID, [
                                  DarumPageUtils::ARTICLE_PARENTS_CATEGORY_CID,
                                  DarumPageUtils::ARTICLE_STUDENTS_CATEGORY_CID,
                                  DarumPageUtils::ARTICLE_RELATIONS_CATEGORY_CID
                                  ])):?>
-                            <h3>Ещё статьи</h3> 
+                            <h3 class="aside-list__header-inner">Ещё статьи</h3> 
                             <?php else:?>
-                            <h3>Ещё</h3> 
+                            <h3 class="aside-list__header-inner">Ещё</h3> 
                             <?php endif;?>
                         </div>
-                        <ul>
+                        <div class="aside-list__content" style="visibility:visible;">
                             <?php foreach( $morePages as $p ):?>
                             <?php $pageUtils = new DarumPageUtils($p);?>
-                            <li class="aside-list-item mini">
+                            <div class="aside-list__item">
+                                <a href="<?= $p->getCollectionPath() ?>" class="aside-list__image" >
                                 <?php if( !empty($p->mainImage)) :?>
                                     <?php echo $pageUtils->cropImage($p->mainImage, 72, 72, $p->altMainImage); ?>
                                 <?php endif;?>
-                                <div class="introtext">
-                                    <p>
+                                </a>
+                                <div class="aside-list__text link-block">
                                         <a href="<?= $p->getCollectionPath()?>">
                                             <?php echo mb_substr($p->getAttribute('introtext'), 0, 85) . '...';?>
                                         </a>
-                                    </p>
                                 </div>
-                            </li>
+                            </div>
                             <?php endforeach;?>
-                        </ul>
+                        </div>
                     </div>
-		    <div class="aside-banner-middle">
-		    <a target="_blank" href="http://goo.gl/d6Am5B">
-                    <img class="aside-banner-middle" src="<?php echo $this->getThemePath() ?>/img/CPA/oadvice/2.gif"/>
-		    </a>
-		    </div>
+                    <div class="aside-banner aside-banner-middle">
+                    <a target="_blank" href="http://goo.gl/d6Am5B">
+                            <img style="max-width:100%" src="<?php echo $this->getThemePath() ?>/img/CPA/oadvice/2.gif"/>
+                    </a>
+                    </div>
 
-                    <div class="aside-list">
-                        <div class="aside-list-header">
+                    <div class="aside-list aside-list_mini">
+                        <div class="aside-list__header">
                             <?php if (in_array($categoryCID, [
                                  DarumPageUtils::ADVICE_PARENTS_CATEGORY_CID,
                                  DarumPageUtils::ADVICE_STUDENTS_CATEGORY_CID,
                                  DarumPageUtils::ADVICE_RELATIONS_CATEGORY_CID
                                  ])):?>
-                            <h3>Статьи от психологов</h3> 
+                            <h3 class="aside-list__header-inner">Статьи от психологов</h3> 
                             <?php elseif (in_array($categoryCID, [
                                  DarumPageUtils::ARTICLE_PARENTS_CATEGORY_CID,
                                  DarumPageUtils::ARTICLE_STUDENTS_CATEGORY_CID,
                                  DarumPageUtils::ARTICLE_RELATIONS_CATEGORY_CID
                                  ])):?>
-                            <h3>Советы на все времена</h3> 
+                            <h3 class="aside-list__header-inner">Советы на все времена</h3> 
                             <?php else:?>
-                            <h3>Ещё</h3> 
+                            <h3 class="aside-list__header-inner">Ещё</h3> 
                             <?php endif;?>
                         </div>
-                        <ul>
+                        <div class="aside-list__content" style="visibility:visible;">
                             <?php foreach( $neighbourPages as $p ):?>
                             <?php $pageUtils = new DarumPageUtils($p);?>
-                            <li class="aside-list-item">
+                            <div class="aside-list__item">
+                                <a href="<?= $p->getCollectionPath() ?>" class="aside-list__image" >
                                 <?php if( !empty($p->mainImage)) :?>
                                     <?php echo $pageUtils->cropImage($p->mainImage, 98, 98, $p->altMainImage); ?>
                                 <?php endif;?>
-                                <div class="introtext">
-                                    <p>
+                                </a>
+                                <div class="aside-list__text link-block">
                                         <a href="<?= $p->getCollectionPath()?>">
                                             <?php echo mb_substr($p->getAttribute('introtext'), 0, 85) . '...';?>
                                         </a>
-                                    </p>
-                                    <span class="intro-likes intro-likes-list">
-                                       <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
+                                    <span class="like intro__like">
+                                        <?php/*
+                                        $dateService = new Date();
+                                        $prettyDate = $dateService->formatPrettyDate($c->getCollectionDateAdded());
+                                        */?>
+                                        <?// $prettyDate ?>
+                                                <a href="" class="like__item like__item_intro link-block__brghtlink">
+                                                    <i class="fa fa-fw fa-heart"></i>54 
+                                                </a>
+                                                <a href="" class="like__item like__item_intro link-block__brghtlink">
+                                                    <i class="fa fa-fw fa-comment"></i>31
+                                                </a>
                                     </span>
                                 </div>
-                            </li>
+                            </div>
                             <?php endforeach;?>
-                        </ul>
+                        </div>
                     </div>
-		    <div class="aside-banner-middle">
-		    <a target="_blank" href="http://kshop2.biz/e9Eu9s/">
-                    <img class="aside-banner-middle" src="<?php echo $this->getThemePath() ?>/img/CPA/oadvice/4.jpg"/>
-		    </a>
-		    </div>
+                    <div class="aside-banner aside-banner-middle">
+                    <a target="_blank" href="http://kshop2.biz/e9Eu9s/">
+                            <img style="max-width:100%" src="<?php echo $this->getThemePath() ?>/img/CPA/oadvice/4.jpg"/>
+                    </a>
+                    </div>
                     <!--<div class="aside-list">
                         <div class="aside-list-header">
                             <h3>Интересные советы</h3> 
@@ -351,7 +350,7 @@ use Concrete\Core\Localization\Service\Date ?>
                             </li>
                         </ul>
                     </div>-->
-                </aside>
+                </div>
             </div>
             <!--<div class="topadvice">
                 <div class="topadvice-inner">
@@ -466,92 +465,62 @@ use Concrete\Core\Localization\Service\Date ?>
                     </div> 
                 </div>
             </div>-->
-            <div class="l-moreadvice">
-                <h2>Интересно почитать</h2>
-                <ul class="moreadvice-list">
+            <div class="l-moreadvice page__block">
+                <span class="page__header">Интересно почитать</span>
+                <ul class="moreadvice-list page__column-9 page__preview-container">
                     <?php foreach ( $interestingPages as $p):?>
                     <?php $pageUtils = new DarumPageUtils($p);?>
-                    <li class="moreadvice-one moreadvice-listitem right-bordered">
+                    <li class="page__preview preview link-block">
+                        <a class="preview__image" href="<?= $p->getCollectionPath() ?>">
                         <?php if( !empty($p->mainImage)) :?>
                             <?php echo $pageUtils->cropImage($p->mainImage, 262, 179, $p->altMainImage); ?>
                         <?php endif;?>
                         <?php $title = $pageUtils->getCategoryTitle();?>
-                        <h2 class="subcategory-header">
-                            <a class="<?=$title['css']?>" href="<?=$title['href']?>">
-                                <?=$title['title']?>
-                            </a>
-                        </h2>
-                        <h3 class="moreadvice-listitem-header">
-                            <a href="<?= $p->getCollectionPath()?>">
-                                <?= $p->getAttribute('meta_title')?>
-                            </a>
-                        </h3>
-                        <span class="intro-likes intro-likes-list">
-                            <i class="fa fa-fw fa-heart"></i>54 <i class="fa fa-fw fa-comment"></i>31
-                        </span>
+                        </a>
+                        <div class="preview__content link-block">
+                            <h2 class="preview__category">
+                                <a class="<?=$title['css']?> link-block__brghtlink" href="<?=$title['href']?>">
+                                    <?=$title['title']?>
+                                </a>
+                            </h2>
+                            <h3 class="preview__header">
+                                <a class="link-block__normlink" href="<?= $p->getCollectionPath()?>">
+                                    <?= $p->getAttribute('meta_title')?>
+                                </a>
+                            </h3>
+                                    <span class="like intro__like">
+                                        <?php/*
+                                        $dateService = new Date();
+                                        $prettyDate = $dateService->formatPrettyDate($c->getCollectionDateAdded());
+                                        */?>
+                                        <?// $prettyDate ?>
+                                                <a href="" class="like__item like__item_intro link-block__brghtlink">
+                                                    <i class="fa fa-fw fa-heart"></i>54 
+                                                </a>
+                                                <a href="" class="like__item like__item_intro link-block__brghtlink">
+                                                    <i class="fa fa-fw fa-comment"></i>31
+                                                </a>
+                                    </span>
+                        </div>
                     </li>
                     <?php endforeach;?>
                 </ul>
-                <ul class="moreadvice-banner">
-                    <li class="moreadvice-one">
-                        <img src="/application/themes/darum/img/demo/vk.jpg" <="" li="">
-                    </li>
-                    <li class="in-block-banner moreadvice-one">
-			<a target="_blank" href="http://kshop2.biz/NmNHDQ/">
-                        <img src="/application/themes/darum/img/CPA/oadvice/3.jpeg" />
-			</a>
-                    </li>
-                </ul> 
+                <div class="moreadvice-banner page__column-3 page__preview-container page__last">
+                    <div class="aside-banner aside-banner-middle">
+                        <img style="max-width:100%" src="/application/themes/darum/img/demo/vk.jpg">
+                    </div>
+                    <div class="aside-banner aside-banner-middle">
+                    <a target="_blank" href="http://kshop2.biz/NmNHDQ/">
+                        <img style="max-width:100%" src="/application/themes/darum/img/CPA/oadvice/3.jpeg" />
+                    </a>
+                    </div>
+                </div> 
             </div>
         </div>
         <?php $this->inc('elements/footer.php'); ?>
     </div>
-    <?php $this->inc('elements/common/js.php'); ?>
-    <?php Loader::element('footer_required') ?>    
-    <!--<script type="text/javascript" src="<?php echo $this->getThemePath() ?>/js/vendor/jquery.flexslider-min.js" ></script>
-    <script type="text/javascript">
-        (function () {
+    <?php $this->inc('elements/js.php'); ?>
+    <?php Loader::element('footer_required') ?>
 
-            // store the slider in a local variable
-            var $window = $(window),
-                    flexslider = {vars: {}};
-
-            // tiny helper function to add breakpoints
-            function getGridSize() {
-                return (window.innerWidth < 600) ? 2 :
-                        (window.innerWidth < 900) ? 3 : 4;
-            }
-
-            $(function () {
-                SyntaxHighlighter.all();
-            });
-
-            $window.load(function () {
-                $('.top10carousel').flexslider({
-                    controlNav: false,
-                    directionNav: true,
-                    prevText: "",
-                    nextText: "",
-                    animation: "slide",
-                    animationLoop: false,
-                    itemWidth: 263,
-                    itemMargin: 0,
-                    start: function(){
-                        $('.top10carousel').addClass('active');
-                    },
-                    minItems: getGridSize(), // use function to pull in initial value
-                    maxItems: getGridSize() // use function to pull in initial value
-                });
-            });
-
-            // check grid size on resize event
-            $window.resize(function () {
-                var gridSize = getGridSize();
-
-                flexslider.vars.minItems = gridSize;
-                flexslider.vars.maxItems = gridSize;
-            });
-        }());
-    </script>-->
 </body>
-<?php $this->inc('elements/common/doctype_bot.php'); ?>
+</html>
