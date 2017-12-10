@@ -31,25 +31,27 @@
                                 <li class="allarticles-one page__block">
                                     <?php $pageUtils = new DarumPageUtils($p);?>
                                     <?php if( !empty($p->mainImage)) :?>
+                                    <div itemscope itemtype="http://schema.org/ImageObject">
                                         <?php echo $pageUtils->cropImage($p->mainImage, 300, 193, $p->altMainImage); ?>
+                                    </div>
                                     <?php endif;?>
 
-                                    <div class="allarticles-content">
+                                    <div class="allarticles-content" itemscope itemtype="http://schema.org/NewsArticle">
 
                                             <?php $title = $pageUtils->getCategoryTitle($slug); ?> 
                                             <h2 class="subcategory-header preview__category">
-                                                <a class="<?=$title['css']?>" href="<?=$title['href']?>">
+                                                <a class="<?=$title['css']?>" href="<?=$title['href']?>" itemprop="genre">
                                                      <?=$title['title']?>
                                                 </a>
                                             </h2>
                                             <h3 class="allarticles-content-header">
-                                                <a class="link-block__normlink" href="<?= $p->getCollectionPath()?>" >
+                                                <a class="link-block__normlink" href="<?= $p->getCollectionPath()?>" itemprop="name">
                                                     <?= $p->getAttribute('meta_title')?>
                                                 </a>
                                             </h3>
-
-                                            <?= $p->getAttribute('introtext');?>
-
+                                            <div class="intro__text" itemprop="description">
+                                                <?= $p->getAttribute('introtext');?>
+                                            </div>
                                         <span class="like intro__like">
                                             <?php /* 
                                                 $dateService = new Date();
@@ -83,13 +85,13 @@
                                     <?php foreach( $advices as $p ):?>
                                     <?php $pageUtils = new DarumPageUtils($p);?>
                                     <div  class="aside-list__item">
-                                        <a href="<?= $p->getCollectionPath() ?>" class="aside-list__image" >
+                                        <a href="<?= $p->getCollectionPath() ?>" class="aside-list__image">
                                             <?php if( !empty($p->mainImage)) :?>
                                             <?php echo $pageUtils->cropImage($p->mainImage, 98, 98, $p->altMainImage); ?>
                                             <?php endif;?>
                                         </a>
-                                        <div class="aside-list__text link-block">
-                                            <a href="<?= $p->getCollectionPath()?>" class="link-block__normlink">
+                                        <div class="aside-list__text link-block" itemscope itemtype="http://schema.org/NewsArticle">
+                                            <a href="<?= $p->getCollectionPath()?>" class="link-block__normlink" itemprop="description">
                                                 <?php echo mb_substr($p->getAttribute('introtext'), 0, 60) . '...';?>
                                             </a>
                                         </div>

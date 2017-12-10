@@ -33,8 +33,8 @@
                                             <?php echo $pageUtils->cropImage($p->mainImage, 72, 72, $p->altMainImage); ?>
                                             <?php endif; ?>
                                         </a>
-                                        <div class="aside-list__text link-block">
-                                            <a href="<?= $p->getCollectionPath() ?>" class="link-block__normlink">
+                                        <div class="aside-list__text link-block" itemscope itemtype="http://schema.org/NewsArticle">
+                                            <a href="<?= $p->getCollectionPath() ?>" class="link-block__normlink" itemprop="description">
                                                 <?php echo mb_substr($p->getAttribute('introtext'), 0, 100) . '...'; ?>
                                             </a>
                                         </div>
@@ -50,26 +50,26 @@
                                 <?php $pageUtils = new DarumPageUtils($p); ?>
                                 <?php $title = $pageUtils->getCategoryTitle(); ?>
                                 <div class="intro <?php /* green '_'.$title['css'] */ ?> link-block_white">
-                                    <div class="intro__image">
+                                    <div class="intro__image" itemscope itemtype="http://schema.org/ImageObject">
                                         <?php if(!empty($p->mainImage)) : ?>
                                         <?php echo $pageUtils->cropImage($p->mainImage, 555, 420, $p->altMainImage); ?>
                                         <?php endif; ?>
                                     </div>
-                                    <div class="intro__content">
+                                    <div class="intro__content" itemscope itemtype="http://schema.org/NewsArticle">
                                         <h3 class="intro__category">
-                                            <a class="link-block__brghtlink" href="<?= $title['href'] ?>">
+                                            <a class="link-block__brghtlink" href="<?= $title['href'] ?>" itemprop="genre">
                                                 <?= $title['title'] ?> 
                                             </a>
                                         </h3>
                                         <h2 class="intro__header">
-                                            <a class="link-block__brghtlink" href="<?= $p->getCollectionPath() ?>">
+                                            <a class="link-block__brghtlink" href="<?= $p->getCollectionPath() ?>" itemprop="name">
                                                 <?= $p->getAttribute('meta_title') ?>
                                             </a>
                                         </h2>
-                                        <div class="intro__text">
+                                        <div class="intro__text" itemprop="description">
                                             <?php echo mb_substr($p->getAttribute('introtext'), 0, 100) . '...'; ?>
                                         </div>
-                                        <a class="link-block__brghtlink intro__author">
+                                        <a class="link-block__brghtlink intro__author" itemprop="author">
                                             Автор: Кравченко Полина
                                         </a>
                                         <span class="like intro__like">
@@ -159,23 +159,23 @@
                                                   } 
                                              ?>
                                              link-block_white">
-                                    <div class="intro__image">
+                                    <div class="intro__image" itemscope itemtype="http://schema.org/ImageObject">
                                         <?php if(!empty($p->mainImage)) : ?>
                                         <?php echo $pageUtils->cropImage($p->mainImage, 555, 420, $p->altMainImage); ?>
                                         <?php endif; ?>
                                     </div>
-                                    <div class="intro__content">
+                                    <div class="intro__content" itemscope itemtype="http://schema.org/NewsArticle">
                                         <h3 class="intro__category">
-                                            <a class="link-block__brghtlink" href="<?= $title['href'] ?>">
+                                            <a class="link-block__brghtlink" href="<?= $title['href'] ?>" itemprop="genre">
                                                 <?= $title['title'] ?> 
                                             </a>
                                         </h3>
                                         <h2 class="intro__header">
-                                            <a class="link-block__brghtlink" href="<?= $p->getCollectionPath() ?>">
+                                            <a class="link-block__brghtlink" href="<?= $p->getCollectionPath() ?>" itemprop="name">
                                                 <?= $p->getAttribute('meta_title') ?>
                                             </a>
                                         </h2>
-                                        <div class="intro__text">
+                                        <div class="intro__text" itemprop="description">
                                             <?php echo mb_substr($p->getAttribute('introtext'), 0, 100) . '...'; ?>
                                         </div>
                                         <!--<a class="link-block__brghtlink intro__author">
@@ -230,26 +230,26 @@
                                                   } 
                                              ?>
                                              link-block_white">
-                                <div class="intro__image">
+                                <div class="intro__image" itemscope itemtype="http://schema.org/ImageObject">
                                     <?php if(!empty($p->mainImage)) : ?>
                                     <?php echo $pageUtils->cropImage($p->mainImage, 555, 420, $p->altMainImage); ?>
                                     <?php endif; ?>
                                 </div>
-                                <div class="intro__content">
+                                <div class="intro__content" itemscope itemtype="http://schema.org/NewsArticle">
                                     <h3 class="intro__category">
-                                        <a class="link-block__brghtlink" href="<?= $title['href'] ?>">
+                                        <a class="link-block__brghtlink" href="<?= $title['href'] ?>" itemprop="genre">
                                             <?= $title['title'] ?> 
                                         </a>
                                     </h3>
                                     <h2 class="intro__header">
-                                        <a class="link-block__brghtlink" href="<?= $p->getCollectionPath() ?>">
+                                        <a class="link-block__brghtlink" href="<?= $p->getCollectionPath() ?>" itemprop="name">
                                             <?= $p->getAttribute('meta_title') ?>
                                         </a>
                                     </h2>
-                                    <div class="intro__text">
+                                    <div class="intro__text" itemprop="description">
                                         <?php echo mb_substr($p->getAttribute('introtext'), 0, 100) . '...'; ?>
                                     </div>
-                                    <a class="link-block__brghtlink intro__author">
+                                    <a class="link-block__brghtlink intro__author" itemprop="author">
                                         Автор: Кравченко Полина
                                     </a>
                                     <span class="like intro__like">
