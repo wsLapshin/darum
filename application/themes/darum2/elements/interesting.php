@@ -31,7 +31,7 @@
     <?= $p->getAttribute('meta_title') ?>
                     </a>
                 </div>
-                <meta itemprop="description" content="<?= $p->getAttribute('introtext');?>">
+                <meta itemprop="description" content="<?= strip_tags($p->getAttribute('introtext'));?>">
                 <span class="like preview__like">
                     <a href="" class="like__item link-block__normlink">
                         <i class="fa fa-fw fa-heart"></i>54 

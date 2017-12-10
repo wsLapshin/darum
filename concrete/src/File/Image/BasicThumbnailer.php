@@ -436,7 +436,7 @@ class BasicThumbnailer implements ThumbnailerInterface, ApplicationAwareInterfac
     public function outputThumbnail($mixed, $maxWidth, $maxHeight, $alt = null, $return = false, $crop = false)
     {
         $thumb = $this->getThumbnail($mixed, $maxWidth, $maxHeight, $crop);
-        $html = '<img class="ccm-output-thumbnail" alt="' . $alt . '" src="' . $thumb->src . '" width="' . $thumb->width . '" height="' . $thumb->height . '" />';
+        $html = '<img itemprop="contentUrl" class="ccm-output-thumbnail" alt="' . $alt . '" src="' . $thumb->src . '" width="' . $thumb->width . '" height="' . $thumb->height . '" />';
         if ($return) {
             return $html;
         } else {
