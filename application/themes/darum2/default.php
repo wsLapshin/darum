@@ -4,6 +4,9 @@
 <?php $this->inc('elements/head.php'); ?>
 
 <body class="page">
+<style>
+.aside-list__image{margin-right:10px;}
+</style>
     <?php $this->inc('elements/ie8_warn.php'); ?>
     <div class="<?= $c->getPageWrapperClass() ?>">
         <?php $this->inc('elements/header.php'); ?> 
@@ -91,23 +94,26 @@
                             <?php $pageUtils = new DarumPageUtils($p); ?>
                             <?php $title = $pageUtils->getCategoryTitle(null, true) ?>
                             <li class="page__preview preview">
-                                <a class="preview__image" href="<?= $p->getCollectionPath() ?>">
-                                    <?php if(!empty($p->mainImage)) : ?>
-                                    <?php echo $pageUtils->cropImage($p->mainImage, 263, 180, $p->altMainImage); ?>
-                                    <?php endif; ?>                              
-                                </a>
-                                <div class="preview__content link-block">
+                                <div itemscope itemtype="http://schema.org/ImageObject">
+                                    <a class="preview__image" href="<?= $p->getCollectionPath() ?>">
+                                        <?php if(!empty($p->mainImage)) : ?>
+                                        <?php echo $pageUtils->cropImage($p->mainImage, 263, 180, $p->altMainImage); ?>
+                                        <?php endif; ?>                              
+                                    </a>
+                                </div>
+                                <div class="preview__content link-block" itemscope itemtype="http://schema.org/NewsArticle">
                                     <h3 class="preview__category">
                                         <!--class="<?= $title['css'] ?>"-->
-                                        <a class="link-block__brghtlink" href="<?= $title['href'] ?>">
+                                        <a class="link-block__brghtlink" href="<?= $title['href'] ?>" itemprop="genre">
                                             <?= $title['title'] ?> 
                                         </a>
                                     </h3>
                                     <div class="preview__header">
-                                        <a class="link-block__normlink" href="<?= $p->getCollectionPath() ?>" >
+                                        <a class="link-block__normlink" href="<?= $p->getCollectionPath() ?>" itemprop="name">
                                             <?= $p->getAttribute('meta_title') ?>
                                         </a>
                                     </div>
+                                    <meta itemprop="description" content="<?= $p->getAttribute('introtext');?>">
                                     <span class="like preview__like">
                                         <a href="" class="like__item link-block__normlink">
                                             <i class="fa fa-fw fa-heart"></i>54 
@@ -170,11 +176,13 @@
                                     <?php foreach( $newAdvicePages as $p ): ?>
                                     <?php $pageUtils = new DarumPageUtils($p); ?>
                                     <div  class="aside-list__item">
-                                        <a href="<?= $p->getCollectionPath() ?>" class="aside-list__image" >
-                                            <?php if(!empty($p->mainImage)) : ?>
-                                            <?php echo $pageUtils->cropImage($p->mainImage, 72, 72, $p->altMainImage); ?>
-                                            <?php endif; ?>
-                                        </a>
+                                        <div class="aside-list__image" itemscope itemtype="http://schema.org/ImageObject">
+                                            <a href="<?= $p->getCollectionPath() ?>">
+                                                <?php if(!empty($p->mainImage)) : ?>
+                                                <?php echo $pageUtils->cropImage($p->mainImage, 72, 72, $p->altMainImage); ?>
+                                                <?php endif; ?>
+                                            </a>
+                                        </div>
                                         <div class="aside-list__text link-block" itemscope itemtype="http://schema.org/NewsArticle">
                                             <a href="<?= $p->getCollectionPath() ?>" class="link-block__normlink" itemprop="description">
                                                 <?php echo mb_substr($p->getAttribute('introtext'), 0, 100) . '...'; ?>
@@ -249,23 +257,26 @@
                                               } 
                                        ?>
                                        ">
-                                <a class="preview__image" href="<?= $p->getCollectionPath() ?>">
-                                    <?php if(!empty($p->mainImage)) : ?>
-                                    <?php echo $pageUtils->cropImage($p->mainImage, 263, 180, $p->altMainImage); ?>
-                                    <?php endif; ?>                              
-                                </a>
-                                <div class="preview__content">
+                                <div itemscope itemtype="http://schema.org/ImageObject">
+                                    <a class="preview__image" href="<?= $p->getCollectionPath() ?>">
+                                        <?php if(!empty($p->mainImage)) : ?>
+                                        <?php echo $pageUtils->cropImage($p->mainImage, 263, 180, $p->altMainImage); ?>
+                                        <?php endif; ?>                              
+                                    </a>
+                                </div>
+                                <div class="preview__content" itemscope itemtype="http://schema.org/NewsArticle">
                                     <h3 class="preview__category">
                                         <!--class="<?= $title['css'] ?>"-->
-                                        <a class="link-block__brghtlink" href="<?= $title['href'] ?>">
+                                        <a class="link-block__brghtlink" href="<?= $title['href'] ?>" itemprop="genre">
                                             <?= $title['title'] ?> 
                                         </a>
                                     </h3>
                                     <div class="preview__header">
-                                        <a class="link-block__normlink" href="<?= $p->getCollectionPath() ?>">
+                                        <a class="link-block__normlink" href="<?= $p->getCollectionPath() ?>" itemprop="name">
                                             <?= $p->getAttribute('meta_title') ?>
                                         </a>
                                     </div>
+                                    <meta itemprop="description" content="<?= $p->getAttribute('introtext');?>">
                                     <span class="like preview__like">
                                         <a href="" class="like__item link-block__normlink">
                                             <i class="fa fa-fw fa-heart"></i>54 
@@ -304,23 +315,26 @@
                                               } 
                                        ?>
                                        ">
-                            <a class="preview__image" href="<?= $p->getCollectionPath() ?>">
-                                <?php if(!empty($p->mainImage)) : ?>
-                                <?php echo $pageUtils->cropImage($p->mainImage, 263, 180, $p->altMainImage); ?>
-                                <?php endif; ?>                              
-                            </a>
-                            <div class="preview__content link-block">
+                            <div itemscope itemtype="http://schema.org/ImageObject">
+                                <a class="preview__image" href="<?= $p->getCollectionPath() ?>">
+                                    <?php if(!empty($p->mainImage)) : ?>
+                                    <?php echo $pageUtils->cropImage($p->mainImage, 263, 180, $p->altMainImage); ?>
+                                    <?php endif; ?>                              
+                                </a>
+                            </div>
+                            <div class="preview__content link-block" itemscope itemtype="http://schema.org/NewsArticle">
                                 <h3 class="preview__category">
                                     <!--class="<?= $title['css'] ?>"-->
-                                    <a class="link-block__brghtlink" href="<?= $title['href'] ?>">
+                                    <a class="link-block__brghtlink" href="<?= $title['href'] ?>" itemprop="genre">
                                         <?= $title['title'] ?> 
                                     </a>
                                 </h3>
                                 <div class="preview__header">
-                                    <a class="link-block__normlink" href="<?= $p->getCollectionPath() ?>">
+                                    <a class="link-block__normlink" href="<?= $p->getCollectionPath() ?>" itemprop="name">
                                         <?= $p->getAttribute('meta_title') ?>
                                     </a>
                                 </div>
+                                <meta itemprop="description" content="<?= $p->getAttribute('introtext');?>">
                                 <span class="like preview__like">
                                     <a href="" class="like__item link-block__normlink">
                                         <i class="fa fa-fw fa-heart"></i>54 
@@ -354,7 +368,7 @@
                                     <?php echo $pageUtils->cropImage($p->mainImage, 555, 420, $p->altMainImage); ?>
                                     <?php endif; ?>
                                 </div>
-                                <div class="intro__content">
+                                <div class="intro__content" itemscope itemtype="http://schema.org/NewsArticle">
                                     <h3 class="intro__category">
                                         <a class="link-block__brghtlink" href="<?= $title['href'] ?>" itemprop="genre">
                                             <?= $title['title'] ?> 

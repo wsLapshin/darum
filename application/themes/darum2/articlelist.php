@@ -5,6 +5,9 @@
 <?php $this->inc('elements/head.php'); ?>
 
 <body class="page">
+<style>
+.aside-list__image{margin-right:10px;}
+</style>
     <?php $this->inc('elements/ie8_warn.php'); ?>
     <div class="<?= $c->getPageWrapperClass() ?>">
         <?php $this->inc('elements/header.php'); ?> 
@@ -85,11 +88,13 @@
                                     <?php foreach( $advices as $p ):?>
                                     <?php $pageUtils = new DarumPageUtils($p);?>
                                     <div  class="aside-list__item">
-                                        <a href="<?= $p->getCollectionPath() ?>" class="aside-list__image">
+                                        <div class="aside-list__image" itemscope itemtype="http://schema.org/ImageObject">
+                                        <a href="<?= $p->getCollectionPath() ?>">
                                             <?php if( !empty($p->mainImage)) :?>
-                                            <?php echo $pageUtils->cropImage($p->mainImage, 98, 98, $p->altMainImage); ?>
+                                            <?php echo $pageUtils->cropImage($p->mainImage, 72, 72, $p->altMainImage); ?>
                                             <?php endif;?>
                                         </a>
+                                        </div>
                                         <div class="aside-list__text link-block" itemscope itemtype="http://schema.org/NewsArticle">
                                             <a href="<?= $p->getCollectionPath()?>" class="link-block__normlink" itemprop="description">
                                                 <?php echo mb_substr($p->getAttribute('introtext'), 0, 60) . '...';?>
