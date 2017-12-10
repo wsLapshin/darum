@@ -93,15 +93,15 @@
                             <?php foreach( $newPages as $p ): ?>
                             <?php $pageUtils = new DarumPageUtils($p); ?>
                             <?php $title = $pageUtils->getCategoryTitle(null, true) ?>
-                            <li class="page__preview preview">
-                                <div itemprop="image"  >
-                                    <a itemscope itemtype="http://schema.org/ImageObject" class="preview__image" href="<?= $p->getCollectionPath() ?>">
+                            <li class="page__preview preview" itemscope itemtype="http://schema.org/NewsArticle">
+                                <div itemprop="image" itemscope itemtype="http://schema.org/ImageObject" >
+                                    <a  class="preview__image" href="<?= $p->getCollectionPath() ?>">
                                         <?php if(!empty($p->mainImage)) : ?>
                                         <?php echo $pageUtils->cropImage($p->mainImage, 263, 180, $p->altMainImage); ?>
                                         <?php endif; ?>                              
                                     </a>
                                 </div>
-                                <div class="preview__content link-block" itemscope itemtype="http://schema.org/NewsArticle">
+                                <div class="preview__content link-block" >
                                     <h3 class="preview__category">
                                         <!--class="<?= $title['css'] ?>"-->
                                         <a class="link-block__brghtlink" href="<?= $title['href'] ?>" itemprop="genre">
