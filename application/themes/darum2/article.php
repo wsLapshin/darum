@@ -36,7 +36,7 @@
                                 <a class="link-block__brghtlink intro__author" itemprop="author">
                                     Автор: Кравченко Полина
                                 </a>
-                                <meta itemprop="description" content="<?= $c->getAttribute('introtext');?>">
+                                <meta itemprop="description" content="<?= strip_tags($c->getAttribute('introtext'));?>">
                                 <span class="like intro__like">
                                     <?php/*
                                     $dateService = new Date();
@@ -497,7 +497,7 @@
                                     <?= $p->getAttribute('meta_title')?>
                                 </a>
                             </h3>
-                            <meta itemprop="description" content="<?= $p->getAttribute('introtext');?>">
+                            <meta itemprop="description" content="<?= strip_tags($p->getAttribute('introtext'));?>">
                                     <span class="like intro__like">
                                         <?php/*
                                         $dateService = new Date();
