@@ -94,8 +94,8 @@
                             <?php $pageUtils = new DarumPageUtils($p); ?>
                             <?php $title = $pageUtils->getCategoryTitle(null, true) ?>
                             <li class="page__preview preview">
-                                <div itemprop="image" itemscope >
-                                    <a itemtype="http://schema.org/ImageObject" class="preview__image" href="<?= $p->getCollectionPath() ?>">
+                                <div itemprop="image"  >
+                                    <a itemscope itemtype="http://schema.org/ImageObject" class="preview__image" href="<?= $p->getCollectionPath() ?>">
                                         <?php if(!empty($p->mainImage)) : ?>
                                         <?php echo $pageUtils->cropImage($p->mainImage, 263, 180, $p->altMainImage); ?>
                                         <?php endif; ?>                              
